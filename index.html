@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('B0.png');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        #overlay-left,
+        #overlay-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 5%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #overlay-left {
+            left: 0;
+            background-image: url('B1.png');
+        }
+
+        #overlay-right {
+            right: 0;
+            background-image: url('B2.png');
+        }
+
+        #character {
+            position: fixed;
+            max-width: 30vw;
+            max-height: 85vh;
+            display: block;
+            bottom: 0px;
+            left: 15vw;
+        }
+
+        .button-container {
+            text-align: center;
+            z-index: 1; /* Ensure that the buttons appear above the overlays */
+        }
+
+        .resizable-button {
+            margin: 1vh;
+            display: inline-block;
+            margin-top: 1vh;
+            max-width: 70%;
+            max-height: 15vh;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .resizable-button:hover {
+            transform: scale(1.1);
+        }
+
+        .list-button {
+            margin: 1vh;
+            display: inline-block;
+            max-width: 70%;
+        }
+
+        #Welcome {
+            max-height: 30vh;
+        }
+
+        #orsign {
+            max-height: 5vh;
+        }
+
+        #startButton{
+            max-height: 21vh;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: fixed;
+            right: 10vw;
+            top: 10vh;
+            bottom: 10vh;
+            max-width: 40vw;
+            /* background-color: blueviolet; */
+            display: flex;
+            flex-direction: column; /* Display list items vertically */
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="overlay-left"></div>
+    <div id="overlay-right"></div>
+    <img id="character" src="C1.png" alt="Character Image">
+
+    <ul>
+        <li><img class="list-button" id="Welcome" src="E1.png" alt="Button 1"></li>
+        <li><img class="resizable-button" src="E2.png" alt="Button 1" onclick="alert('Button 1 clicked')"></li>
+        <li><img class="resizable-button" src="E3.png" alt="Button 2" onclick="alert('Button 2 clicked')"></li>
+        <li><img class="list-button" id="orsign" src="B3.png" alt="Button 1"></li>
+        <li><a href="01.html"><img class="resizable-button" id="startButton" src="E4.png" alt="Button 2"></a></li>
+    </ul>
+
+</body>
+
+</html>
