@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('B0.png');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        #overlay-left,
+        #overlay-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 5%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #overlay-left {
+            left: 0;
+            background-image: url('B1.png');
+        }
+
+        #overlay-right {
+            right: 0;
+            background-image: url('B2.png');
+        }
+
+        .character-container {
+          display: inline-flex;
+          justify-content: center;
+        }
+
+        .character {
+            max-width: 30vw;
+            max-height: 80vh;
+            display: block;
+            margin-left: 4vw;
+            margin-right: 4vw;
+            align-items: center;
+            margin-bottom: 2vh;
+        }
+
+        .button-container {
+            text-align: center;
+            z-index: 1; /* Ensure that the buttons appear above the overlays */
+        }
+
+        .resizable-button {
+            display: inline-block;
+            width: 80%;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-left: 20vw;
+            margin-right: 20vw;
+        }
+
+        .resizable-button:hover{
+            transform: scale(1.1);
+        }
+
+        .list-button {
+            position: fixed;
+            display: inline-block;
+            max-width: 50vw;
+            max-height: 20vh;
+            top: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container {
+          display: flex;
+          align-items: center;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center; /* Align text to the right */
+        }
+
+        #back {
+            position: fixed;
+            display: inline-block;
+            max-width: 10vw;
+            max-height: 10vh;
+            top: 5vh;
+            left: 10vh
+        }
+
+    </style>
+</head>
+
+<body>
+    <img id="back" src="E22.png" alt="Button 1">
+    <div id="overlay-left"></div>
+    <div id="overlay-right"></div>
+    <div class="container">
+        <img class="list-button" src="E21.png" alt="Button 1">
+        <div class="character-container" >
+                <img class="character" src="C21.png" alt="Button 1" onclick="navigateToHome('button1')">
+                <img class="character" src="C22.png" alt="Button 1" onclick="navigateToHome('button2')">
+                <img class="character" src="C23.png" alt="Button 1" onclick="navigateToHome('button3')">
+        </div>
+        <div class="invisible-block"></div>
+
+
+    </div>
+    
+    <script>
+        function navigateToHome(buttonId) {
+            // Redirect to Home.html with the buttonId as a query parameter
+            window.location.href = '02.html?button=' + buttonId;
+        }
+    </script>
+
+</body>
+
+</html>

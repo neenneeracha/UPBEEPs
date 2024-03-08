@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('B4.png');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        #mall {
+            position: fixed;
+            width: 20vw;
+            height: 20vw;
+            top: 7vh;
+            display: block;
+            left: 6vw;
+            background: url("E5.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+
+        #mall:hover {
+            background: url("E51.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .characterImg {
+            position: fixed;
+            width: 18vw;
+            height: auto;
+            bottom: 0;
+            left: 5vw;
+            z-index: 1;
+        }
+
+        #ID1 {
+            position: fixed;
+            width: 20vw;
+            height: 20vw;
+            bottom: 3vh;
+            display: block;
+            right: 6vw;
+            background: url("E6.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+
+        #ID1:hover {
+            background: url("E61.png");
+            width: 27vw;
+            height: 27vw;
+            bottom: -3vh;
+            right: 3vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #phone {
+            position: fixed;
+            width: 20vw;
+            height: 50vh;
+            top: 5vh;
+            display: block;
+            right: 5vw;
+            background: url("E8.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #phone:hover {
+            background: url("E81.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #aboutus {
+            position: fixed;
+            width: 20vw;
+            height: 20vh;
+            bottom: 8vh;
+            display: block;
+            right: 27vw;
+            background: url("E7.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #aboutus:hover {
+            background: url("E71.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div id="mall"></div>
+    <img class="characterImg" id="characterImage" src="" alt="Character">
+    <div id="aboutus"></div>
+    <div id="phone"></div>
+    <div id="ID1"></div>
+
+    <script>
+        // Retrieve the buttonId from the query parameter
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const buttonId = urlParams.get('button');
+
+        // Get the character image based on the button clicked
+        let characterImageSrc;
+        switch (buttonId) {
+            case 'button1':
+                characterImageSrc = 'C31.png';
+                break;
+            case 'button2':
+                characterImageSrc = 'C32.png';
+                break;
+            case 'button3':
+                characterImageSrc = 'C33.png';
+                break;
+            default:
+                characterImageSrc = ''; // Default image or placeholder if no button is specified
+        }
+
+        // Set the source of the character image
+        document.getElementById('characterImage').src = characterImageSrc;
+
+        document.getElementById('ID1').addEventListener('click', function() {
+        // Navigate to CARD1.html and pass characterImageSrc as a query parameter
+        window.location.href = '03.html?characterImageSrc=' + encodeURIComponent(characterImageSrc); });
+
+        
+        
+    </script>
+</body>
+
+</html>

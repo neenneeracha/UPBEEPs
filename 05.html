@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            width: 100vw;
+        }
+
+        #fixmenu {
+            background-color: white;
+            color: skyblue;
+            font-size: 2vmax;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 5vh;
+            z-index: 4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            width: 100vw;
+        }
+
+        .menulist {
+            margin-right: 10px;
+            opacity: 0.5;
+        }
+
+        .menulist:hover {
+            opacity: 1;
+        }
+
+        section {
+            text-align: left;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .sec-1 {
+            background-color: #038bb2;
+        }
+
+        .menu-button {
+            top: 0px;
+            left: 10px;
+            width: 30px; /* Adjust the width as needed */
+            height: 20px; /* Adjust the height as needed */
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Styling for the lines */
+        .menu-button span {
+            position: absolute;
+            height: 3px; /* Height of each line */
+            width: 100%; /* Width of each line */
+            background-color: black; /* Color of each line */
+            transition: all 0.3s ease; /* Transition effect for animation */
+        }
+
+        /* Styling for positioning the lines */
+        .menu-button span:nth-child(1) {
+            top: 0;
+        }
+
+        .menu-button span:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .menu-button span:nth-child(3) {
+            bottom: 0;
+        }
+
+        /* Styling for the animation when the button is active */
+        .menu-button.active span:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .menu-button.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-button.active span:nth-child(3) {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+
+        .topic {
+            position: absolute;
+            top: 2vh;
+            left: 5vw;
+            font-size: 2vmax;
+            transition: opacity 1s ease;
+        }
+
+        .topic2 {
+            position: absolute;
+            font-size: 2vmax;
+            transition: opacity 1s ease;
+        }
+
+        .topic2:nth-child(1) {
+            top: 5vh;
+            left: 5vw;
+        }
+
+        .topic2:nth-child(2) {
+            top: 50vh;
+            left: 5vw;
+        }
+
+        .topic2:nth-child(3) {
+            top: 60vh;
+            left: 5vw;
+        }
+
+        .topic2:nth-child(4) {
+            top: 70vh;
+            left: 5vw;
+        }
+
+        .topic2:nth-child(5) {
+            top: 80vh;
+            left: 5vw;
+        }
+
+        #logo {
+            position: fixed;
+            height: 5vh;
+            z-index: 9;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .form-popup {
+          position: fixed;
+          bottom: 10vh;
+          left: 10vw;
+          height: 50vh;
+          width: 50vh;
+          background-color: #ffd7f4;
+          z-index: 9;
+        }
+
+        .close-button {
+            width: 30px;
+            height: 30px; 
+            position: absolute;
+            top: 15px; 
+            right: 10px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Styling for the lines */
+        .close-button span {
+            position: absolute;
+            height: 2px; /* Height of each line */
+            width: 100%; /* Width of each line */
+            background-color: black; /* Color of each line */
+            transition: all 0.3s ease; /* Transition effect for animation */
+        }
+
+        /* Styling for positioning the lines */
+        .close-button span:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        .close-button span:nth-child(2) {
+            transform: rotate(-45deg);
+        }
+
+        .sec-2 span {
+            position: absolute;
+            top: 8vh;
+            left: 5vw;
+            height: 1px; /* Height of each line */
+            width: 90vw; /* Width of each line */
+            background-color: black; /* Color of each line */
+            transition: all 0.3s ease; /* Transition effect for animation */
+        }
+
+        .show_canva {
+            background-color: #ffd7f4;
+            position: absolute;
+            top: 10vh;
+            left: 5vw;
+            width: 90vw;
+            height: 80vh;
+            transition: background-color 1s ease; 
+        }
+
+        .search-icon {
+            font-size: 0.6em;
+            color: black;
+            margin-right: 10px; /* Adjust margin as needed */
+        }
+
+        .search-box{
+            height: 3.5vh;
+            display: flex;
+            cursor: pointer;
+            border-radius: 3.5vh;
+            align-items: center;
+        }
+
+        .search-box:hover{
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-box:hover input{
+            width: 20vw;
+        }
+
+        .search-box input{
+            width: 0;
+            outline: none;
+            border: none;
+            font-weight: 500;
+            transition: 0.8s;
+            background: transparent;
+            margin-left: 10px;
+        }
+
+        .sub-box {
+            position: absolute;
+            left: 5vw;
+            width: 90vw;
+            height: 40vh;
+            justify-content: space-between;
+            display: flex;
+            align-items: center; 
+        }
+
+        #sub-all {
+            top: 10vh;
+        }
+
+        #sub-set {
+            top: 60vh;
+        }
+
+        .sub2-box {
+            width: 20vw;
+            height: 40vh;
+
+        }
+
+        .square {
+            width: 20vw;
+            height: 20vw;
+            background-color: #ffd7f4;
+            position: relative;
+            top: 0vh;
+            left: 0vw;
+        }
+
+        .sub3-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px; /* Adjust padding as needed */
+        }
+
+        .sub3-box div {
+            margin-top: 0.2vh;
+            font-size: 1.5em;
+            text-align: center; /* Center align the text */
+            flex-grow: 1; /* Allow the div to grow to fill the space */
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div id="fixmenu">
+    <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <a href="search#">
+            <i class="fas fa-search search-icon"></i>
+        </a>
+    </div>
+</div>
+
+<img src="B11.png" alt="Logo" id="logo">
+
+<div class="form-popup" id="myForm">
+    <div class="close-button">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<section class="sec-1 show-animate">
+</section>
+
+<section class="sec-2">
+    <div class="topic">New</div>
+    <span></span>
+    <div class="show_canva"></div>
+</section>
+
+<section class="sec-3">
+    <div class="topic2">All</div>
+    <div class="sub-box" id="sub-all">
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic2">Set</div>
+        <div class="sub-box" id="sub-set">
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+
+        <div class="sub2-box">
+            <div class="square" id="s1"></div>
+            <div class="sub3-box">
+                <div>Butterfly Set 001</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="sec-4">
+    <div class="topic2">Top</div>
+    <div class="topic2">Skirt</div>
+</section>
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+
+        document.querySelector('.close-button').addEventListener('click', function () {
+            document.getElementById('myForm').style.display = 'none';
+        });
+
+        var topics = ['New', 'Butterfly set 001', 'Butterfly set 002','Flower dress 003','Chic Skirt 004','Long Chic Skirt 005','Dress Beep 006'];
+        var colors = ['#ffd7f4', '#d7f4ff', '#f4ffd7','#97e6ac','#b997e6','#cb97e6','#e697d6'];
+
+        // Initialize index
+        var index = 0;
+
+        // Change topic text and show_canva color every 5 seconds
+        setInterval(function () {
+            var topic = document.querySelector('.topic');
+            var showCanva = document.querySelector('.show_canva');
+
+            // Change topic text
+            topic.textContent = topics[index];
+
+            // Change show_canva color
+            showCanva.style.backgroundColor = colors[index];
+
+            // Increment index and loop back to 0 if out of bounds
+            index = (index + 1) % topics.length;
+        }, 2000);
+
+    </script>
+
+</body>
+
+</html>
