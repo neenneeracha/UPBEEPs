@@ -1,119 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPBEEPS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-image: url('B0.png');
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            position: relative;
+            background-image: url(./images/start/BG\ start.PNG);
+            background-size: cover; 
+            /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
+            background-position: center center; 
+            /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
         }
-
-        #overlay-left,
-        #overlay-right {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            height: 100%;
-            width: 5%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        #overlay-left {
-            left: 0;
-            background-image: url('B1.png');
-        }
-
-        #overlay-right {
-            right: 0;
-            background-image: url('B2.png');
-        }
-
-        #character {
+        #charecter_start {
             position: fixed;
-            max-width: 30vw;
-            max-height: 85vh;
-            display: block;
+            max-width: 35vw;
+            width: 30%;
+            height: auto;
             bottom: 0px;
             left: 15vw;
         }
-
-        .button-container {
-            text-align: center;
-            z-index: 1;
-        }
-
         .resizable-button {
-            margin: 1vh;
-            display: inline-block;
-            margin-top: 1vh;
-            max-width: 70%;
-            max-height: 15vh;
-            cursor: pointer;
+          max-width: 28vw;
+            width: 100%;
             transition: transform 0.3s ease;
+            object-fit: cover;
         }
-
         .resizable-button:hover {
             transform: scale(1.1);
         }
-
-        .list-button {
-            margin: 1vh;
-            display: inline-block;
-            max-width: 70%;
-        }
-
-        #Welcome {
-            max-height: 30vh;
-        }
-
-        #orsign {
-            max-height: 5vh;
-        }
-
-        #startButton{
-            max-height: 21vh;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+        .menu {
             position: fixed;
-            right: 10vw;
+            right: 18vw;
             top: 10vh;
             bottom: 10vh;
-            max-width: 40vw;
+            max-width: 28vw;
+            width: 100%;
             display: flex;
             flex-direction: column; 
             justify-content: center;
             align-items: center;
         }
+        @media (max-width: 1208px) {
+            #charecter_start {
+            max-width: 38vw;
+            width: 38%;
+            height: auto;
+            bottom: 0px;
+            left: 31vw;
+        }
+        .menu { 
+                left: 30vw;
+                top: -42vh;
+                bottom: 0;
+                max-width: 45%;
+                width: 45%;
+            }
+}
+@media (max-width: 768px) {
+    #charecter_start {
+        max-width: 38vw;
+            width: 38%;
+            height: auto;
+            left: 32vw;      
+        }
+}
     </style>
 </head>
-
 <body>
-    <div id="overlay-left"></div>
-    <div id="overlay-right"></div>
-    <img id="character" src="C1.png" alt="Character Image">
-
-    <ul>
-        <li><img class="list-button" id="Welcome" src="E1.png" alt="Button 1"></li>
-        <li><img class="resizable-button" src="E2.png" alt="Button 1" onclick="alert('Button 1 clicked')"></li>
-        <li><img class="resizable-button" src="E3.png" alt="Button 2" onclick="alert('Button 2 clicked')"></li>
-        <li><img class="list-button" id="orsign" src="B3.png" alt="Button 1"></li>
-        <li><a href="01.html"><img class="resizable-button" id="startButton" src="E4.png" alt="Button 2"></a></li>
-    </ul>
-
+    <section class="container-fluid">
+            <div>
+                <img src="./images/start/C1.png" id="charecter_start">
+            </div>
+            <div class="menu">
+                <div class="row m-3">
+                    <img src="./images/start/E1.png" >
+                </div>
+                <div class="row m-3">
+                    <img class="resizable-button" src="./images/start/E2.png" onclick="alert('Button 1 clicked')">
+                </div>
+                <div class="row m-3 ">
+                    <img class="resizable-button" src="./images/start/E3.png" alt="Button 2" onclick="alert('Button 2 clicked')" >
+                </div>
+                <div class="row m-3">
+                    <img src="./images/start/or.png" alt="Button 1" >
+                </div>
+                <div class="row m-5">
+                  <a href="characters.html">
+                    <img class="resizable-button" src="./images/start/E4.png">
+                  </a>
+                </div>
+            </div>
+    </section>  
 </body>
-
 </html>

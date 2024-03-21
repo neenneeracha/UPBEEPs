@@ -1,134 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-image: url('B4.png');
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-end;
-            position: relative;
+            background-image: url(./images/home/B4.png);
+            background-size: cover; 
+            /* width: 50%;
+            height: auto;
+            /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
+            /* background-position: center center;  */
+            /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
         }
-
         #mall {
             position: fixed;
-            width: 20vw;
-            height: 20vw;
-            top: 7vh;
+            width: 32vw;
+            height: 26vw;
+            /* top: 1vh; */
             display: block;
-            left: 6vw;
-            background: url("E5.png");
+            left: 7vw;
+            background: url("./images/home/Mall1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             transition: background 0.3s ease;
         }
-
         #mall:hover {
-            background: url("E51.png");
+            background: url("./images/home/Mall2.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
-
         .characterImg {
             position: fixed;
-            width: 18vw;
+            max-width: 27vw;
+            width: 27%;
             height: auto;
             bottom: 0;
-            left: 5vw;
+            left: 1vw;
             z-index: 1;
         }
-
         #ID1 {
             position: fixed;
-            width: 20vw;
-            height: 20vw;
-            bottom: 3vh;
+            width: 28vw;
+            height: 28vw;
+            bottom: -3vh;
             display: block;
-            right: 6vw;
-            background: url("E6.png");
+            right: 2vw;
+            background: url("./images/home/Card1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             transition: background 0.3s ease;
         }
-
         #ID1:hover {
-            background: url("E61.png");
-            width: 27vw;
-            height: 27vw;
+            background: url("./images/home/Card2.PNG");
+            width: 28vw;
+            height: 28vw;
             bottom: -3vh;
-            right: 3vw;
+            right: 2vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
-
         #phone {
             position: fixed;
-            width: 20vw;
+            width: 25vw;
             height: 50vh;
             top: 5vh;
             display: block;
             right: 5vw;
-            background: url("E8.png");
+            background: url("./images/home/SOS1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             transition: background 0.3s ease;
             z-index: 9;
         }
-
         #phone:hover {
-            background: url("E81.png");
+            background: url("./images/home/SOS2.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
-
         #aboutus {
             position: fixed;
             width: 20vw;
-            height: 20vh;
-            bottom: 8vh;
+            height: 32vh;
+            bottom: 4vh;
             display: block;
             right: 27vw;
-            background: url("E7.png");
+            background: url("./images/home/About\ us1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
             transition: background 0.3s ease;
             z-index: 9;
         }
-
         #aboutus:hover {
-            background: url("E71.png");
+            background: url("./images/home/About\ us2.PNG");
+            width: 20vw;
+            height: 32vh;
+            bottom: 4vh;
+            right: 27vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
-
-
-
+        .back {
+        position: fixed;
+        max-width: 9vw;
+        max-height: auto;
+        top: 3vh;
+        left: 5vh;
+        z-index: 1;
+      }
     </style>
 </head>
-
 <body>
-    <div id="mall"></div>
+    <section>
+        <a href="characters.html" class="back" >
+            <img src="./images/characters/back.png" class="h-100 w-100" alt="Button 1" />
+          </a>
+          <div id="mall"></div>
     <img class="characterImg" id="characterImage" src="" alt="Character">
     <div id="aboutus"></div>
     <div id="phone"></div>
     <div id="ID1"></div>
-
+    </section>
     <script>
         // Retrieve the buttonId from the query parameter
         const queryString = window.location.search;
@@ -136,31 +139,26 @@
         const buttonId = urlParams.get('button');
 
         // Get the character image based on the button clicked
-        let characterImageSrc;
+        let characterImage;
         switch (buttonId) {
             case 'button1':
-                characterImageSrc = 'C31.png';
+                characterImageSrc = './images/home/Ch1.PNG';
                 break;
             case 'button2':
-                characterImageSrc = 'C32.png';
+                characterImageSrc = './images/home/Ch2.PNG';
                 break;
             case 'button3':
-                characterImageSrc = 'C33.png';
+                characterImageSrc = './images/home/Ch3.PNG';
                 break;
             default:
                 characterImageSrc = ''; // Default image or placeholder if no button is specified
         }
-
         // Set the source of the character image
         document.getElementById('characterImage').src = characterImageSrc;
 
         document.getElementById('ID1').addEventListener('click', function() {
         // Navigate to CARD1.html and pass characterImageSrc as a query parameter
-        window.location.href = '03.html?characterImageSrc=' + encodeURIComponent(characterImageSrc); });
-
-        
-        
+        window.location.href = 'JoinClub.html?characterImageSrc=' + encodeURIComponent(characterImageSrc); });
     </script>
 </body>
-
 </html>
