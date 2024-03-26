@@ -82,18 +82,16 @@
             position: absolute;
             top: 25%;
             left: 8.1%;
-            width: 52%; /* ขนาดเท่ากับขนาดของตัว div */
-            height: 50%; /* ขนาดเท่ากับขนาดของตัว div */
-            background-image: url('images/card/card2/Frame1.PNG'); /* รูปภาพที่ต้องการให้ทับ */
-            background-size: contain; /* ให้ปรับขนาดภาพให้พอดีกับขนาดของ div */
+            width: 52%; 
+            height: 50%; 
+            background-image: url('images/card/card2/Frame1.PNG');
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
-            z-index: 1; /* ให้ทับและอยู่ด้านล่างของรูปภาพหลัก */
+            z-index: 1; 
         }
         .overlay-text {
             position: absolute;
-            /* top: 25%;
-            left: 8.1%; */
             width: 52%;
             height: 50%; 
             z-index: 1; 
@@ -142,18 +140,52 @@
             <div class="col-md-10 d-flex justify-content-center" style="position: relative;">
                 <div class="overlay-image"></div>
                 <div class="overlay-text">
-                    <input type="text"  class="input bg-white" id="fname" name="fname">
+                    <input type="text"  class="input" id="fname" name="fname">
                     <input type="date"  class="input" id="fdate" name="fdate">
-                    <input type="text"  class="input" id="fbirth" placeholder="DD/MM/YYYY" name="fbirth">
-                    <input type="text"  class="input bg-white" id="fgoal" name="fbirth">
-                    <input type="text"  class="input bg-body-tertiary" id="fstrength" name="fbirth">
+                    <input type="date"  class="input" id="fbirth"  name="fbirth">
+                    <input type="text"  class="input" id="fgoal" name="fgoal">
+                    <input type="text"  class="input" id="fstrength" name="fstrength">
                 </div>
-                <img src="images/card/card2/Card.PNG" style="width: 60%; background-size: contain;" />     
+                <img src="images/card/card2/Card.PNG" style="width: 60%; background-size: contain;" />
+                <!-- ตำแหน่งเพิ่มปุ่มเพื่อเปลี่ยนโปรไฟล์      -->
             </div>
         </div>
     </section>
-    <a id="next" href="card3.html"></a>
+    <a id="next" href="#" onclick="showPage2()"></a>
     <a id="home" href="home.html"></a>
     <a id="back" href="JoinClub.html"></a>
+        <script>
+            function showPage2() {
+                var name = document.getElementById("fname").value;
+                var date = document.getElementById("fdate").value; 
+                var birth = document.getElementById("fbirth").value;
+                var goal = document.getElementById("fgoal").value;
+                var strength = document.getElementById("fstrength").value;
+        
+                if (name === "" || date === "" || birth === "" || goal === "" || strength === "") {
+                    alert("Please fill out all fields.");
+                    return false;
+                }
+        
+                var namePattern = /^[a-zA-Z]+$/;
+                var isValid = true; 
+        
+                if (!namePattern.test(name)) {
+                    alert("Please enter your name in letters only");
+                    isValid = false;
+                }
+                if (!isValid) {
+                    resetInputs(name);
+                    return false;
+                }
+                var url = "test2.html?" + "name=" + encodeURIComponent(name) + "&date=" + encodeURIComponent(date) + "&birth=" + encodeURIComponent(birth) + "&goal=" + encodeURIComponent(goal) + "&strength=" + encodeURIComponent(strength);
+                window.location.href = url;
+            }
+            function resetInputs(name) {
+                if (!/^[a-zA-Z]+$/.test(name)) {
+                    document.getElementById("fname").value = ''; 
+                }
+            }
+        </script>
 </body>
 </html>

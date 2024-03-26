@@ -1,617 +1,553 @@
-<!doctype html>
-<html lang="en" data-bs-theme="auto">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <title>Blog Template · Bootstrap v5.3</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- loading -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- loading -->
+    <title>Setting Card ID</title>
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
-
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-
-
-      /* .carousel */
-      .carousel,
-        .item,
-        .active {
+        body {
+            background-image: url('./images/card/card3/BG.PNG');
+            background-size: cover; 
             height: 100%;
         }
-        .carousel-inner {
-            height: 100%;
-            background: #000;
-        }
-        .carousel-caption {
-            padding-bottom: 80px;
-        }
-        h2 {
-            font-size: 60px;
-        }
-        p {
-            padding: 10px
-        }
-
-        /* Background images are set within the HTML using inline CSS, not here */
-
-        .fill {
-            width: 100%;
-            height: 100%;
-            background-position: center;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            background-size: cover;
-            -o-background-size: cover;
-            opacity: 0.6;
-        }
-        /**
-         * Button
-         */
-        .btn-transparent {
-            background: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-
-        .btn-transparent:hover {
-            background-color: #fff;
-        }
-
-        .btn-rounded {
-            border-radius: 70px;
-        }
-
-        .btn-large {
-            padding: 11px 45px;
-            font-size: 18px;
-        }
-
-        /**
-         * Change animation duration
-         */
-        .animated {
-            -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-        }
-
-        @-webkit-keyframes fadeInRight {
-            from {
-                opacity: 0;
-                -webkit-transform: translate3d(100px, 0, 0);
-                transform: translate3d(100px, 0, 0);
-            }
-
-            to {
-                opacity: 1;
-                -webkit-transform: none;
-                transform: none;
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                -webkit-transform: translate3d(100px, 0, 0);
-                transform: translate3d(100px, 0, 0);
-            }
-
-            to {
-                opacity: 1;
-                -webkit-transform: none;
-                transform: none;
-            }
-        }
-        .fadeInRight {
-            -webkit-animation-name: fadeInRight;
-            animation-name: fadeInRight;
-        }
-        .carousel-inner .item img {
-            display: block;
-            margin: auto;
-        }
-
-        /* Agenda */
-  .timeline {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  padding: 20px;
-  width: 100%;
-}
-
-.timeline-item {
-  margin-right: 20px;
-  padding: 20px;
-  border: 1px solid #333;
-  box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.3);
-  border-radius: 10px;
- 
-}
-.timeline-item:hover {
-  border: 1px solid #f4f3ef;
-  background-color: #3a96c1;
-
-
-.timeline-content {
-  transition: 0.2s ease-in-out;
-}
-h3{
-color: #f4f3ef;
-}
-p{
-    color: #f4f3ef;
-}
-}
-
-.timeline-content {
-  /* margin-left: 20px; */
-  width: 300px;
-  height: 200px;
-
-}
-
-    </style>
-
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="blog.css" rel="stylesheet">
-  </head>
-  <body>
-<div class="container">
-  <header class="py-3">
-  <nav class="navbar" aria-label="Light offcanvas navbar">
-    <div class="container-fluid justify-content-center align-items-center">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-4">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">All</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Set</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Top</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Skirt</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Dress</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">ACC</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Review special</a>
-                          </li>
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                              <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
-                    <img src="./images/mall/Logo.PNG" class="w-25 h-25">
-                </a>
-              </div>
-
-              <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="link-secondary" href="#" aria-label="Search">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-              </div>
+        #home {
+            width: 20vw;
+            height: 12vh;
+            background: url("./images/card/card3/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat; 
+            background-position: center center; 
+            transition: background 0.3s ease; 
             
-        </div>
-    </div>
-  </nav>
-</header>
-</div>
+        }
+        #home:hover {
+            width: 20vw;
+            height: 12vh;
+            background: url("./images/card/card3/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat; 
+            background-position: center center; 
+        }
+        .overlay-image {
+            position: absolute;
+            top: 33%;
+            width: 32%; 
+            height: 29%;
+            left: 7%; 
+            background-image: url('images/card/card3/FramePNG.PNG');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 3; 
+        }
+        .overlay-text {
+            position: absolute;
+            /* width: 52%; */
+            left: 30%;
+            z-index: 1; 
+            color: #5BFFD8;
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 18px;
+            top: 36%;
+        }
+        .input {
+            position: absolute;
+            right: 0vw;
+            height: 5vh;
+            width: 18vw;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: right; 
+            caret-color: #5BFFD8;
+            font-size: 2em;
+            color: #5BFFD8;
+            font-family: 'Love Ya Like A Sister', cursive;
+        }
+          
+/*DEMO*/
+.preview {
+  margin: 10px;
+  display: none;
+}
+.preview--rounded {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+/* IMMUTABLE */
+.hide {
+  display: none !important;
+}
+* {
+  box-sizing: border-box;
+}
+.photo__zoom {
+  position: relative;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+.photo__zoom input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  height: 18px;
+}
+.photo__zoom input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.photo__zoom input[type=range]:focus {
+  outline: none;
+}
+.photo__zoom input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.photo__zoom input[type=range]:focus::-ms-thumb {
+  border-color: #268eff;
+  box-shadow: 0 0 1px 0px #268eff;
+}
+.photo__zoom input[type=range]:focus::-moz-range-thumb {
+  border-color: #268eff;
+  box-shadow: 0 0 1px 0px #268eff;
+}
+.photo__zoom input[type=range]:focus::-webkit-slider-thumb {
+  border-color: #268eff;
+  box-shadow: 0 0 1px 0px #268eff;
+}
+.photo__zoom input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -9px;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+.photo__zoom input[type=range]::-webkit-slider-thumb:hover {
+  border-color: #c1c1c1;
+}
+.photo__zoom input[type=range]::-ms-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+.photo__zoom input[type=range]::-ms-thumb:hover {
+  border-color: #c1c1c1;
+}
+.photo__zoom input[type=range]::-moz-range-thumb {
+  margin-top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  display: block;
+  border-radius: 50%;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+.photo__zoom input[type=range]::-moz-range-thumb:hover {
+  border-color: #c1c1c1;
+}
+.photo__zoom input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: #eee;
+  border: 0;
+}
+.photo__zoom input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: #eee;
+  border: 0;
+}
+.photo__zoom input[type=range]::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: #eee;
+  border: 0;
+}
+.photo__zoom input[type=range].zoom--minValue::before,
+.photo__zoom input[type=range].zoom--maxValue::after {
+  color: #f8f8f8;
+}
+.photo__zoom input[type=range]::before,
+.photo__zoom input[type=range]::after {
+  position: absolute;
+  content: "\f03e";
+  display: block;
+  font-family: 'FontAwesome';
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+.photo__zoom input[type=range]::after {
+  font-size: 18px;
+  right: -2px;
+  top: 2px;
+}
+.photo__zoom input[type=range]::before {
+  font-size: 14px;
+  left: 4px;
+  top: 4px;
+}
+/**
+* FRAME STYLE
+*/
+.photo__frame--circle {
+  border: 1px solid #e2e2e2;
+  /* border-radius: 50%; */
+}
+.photo__helper {
+  position: relative;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding: 15px 0;
+}
+.photo__helper .canvas--helper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.photo__frame img,
+.photo__helper {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-<main class="container">
-  <div class="p-md-5 mb-4 rounded align-items-center" style="height: 450px;  background-image: url('./images/mall/test-web/bg6.jpeg'); background-size: cover;  background-repeat: no-repeat;">
-    <div class="row d-flex justify-content-end mt-5">
-        <div class="col-lg-5">
-            <div class="row mt-5 d-flex ">
-                <h1 class="fs-1 fw-normal" style="color: #dfdfdf;">Every dream with upbeep's</h1>
-            </div>
+.profile {
+    position: absolute;
+    top: 35.5%; 
+    left: 7%; 
+    z-index: 2; 
+}
+.photo {
+  /* text-align: center; */
+  margin-bottom: 15px;
+}
+.photo input[type=file] {
+  display: none;
+}
+.photo__options {
+  margin-top: 15px;
+  position: relative;
+  text-align: left;
+}
 
-            <div class="row mt-5">
-                    <div class="container p-3" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="caption">
-                            <div class="row d-flex justify-content-center m-3">
-                                <img src="./images/mall/test-web/gift1.png" class="w-50">
+/* ถังขยะ */
+.photo__options .remove {
+  padding: 0;
+  padding: 0;
+  display: inline-block;
+  text-decoration: none;
+  color: #bd0d0d;
+  font-size: 18px;
+  width: 20%;
+  text-align: center;
+  vertical-align: middle;
+}
+.photo__options .remove:hover {
+  color: #000;
+}
+.photo__zoom {
+  vertical-align: middle;
+  width: 30%;
+  display: inline-block;
+}
+
+/* ขนาดกรอบรูป */
+.photo__frame {
+  cursor: move;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 181px;
+  height: 228px;
+}
+.photo__frame img,
+.photo__helper img {
+  position: relative;
+}
+.photo__frame .message {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  /* color: #268eff; */
+  z-index: 3;
+}
+.photo__frame .is-dragover {
+  display: none;
+}
+/* .message p {
+  font-size: 0.9em;
+} */
+.photo__options {
+  list-style: none;
+}
+.photo__options li {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+.photo--empty .photo__frame {
+  cursor: pointer;
+}
+/**
+* IMG states
+*/
+.profile.is-dragover .photo__frame img,
+.photo--empty img,
+.photo--error img,
+.photo--error--file-type img,
+.photo--error--image-size img,
+.photo--loading img {
+  display: none;
+}
+/**
+* States
+*/
+/** SELECT PHOTO MESSAGE */
+.message--desktop,
+.message--mobile {
+  display: none;
+}
+/* MOBILE */
+.is-mobile .message--mobile {
+  display: inline-block;
+}
+.is-mobile .message--desktop {
+  display: none;
+}
+/* DESKTOP */
+.is-desktop .message--desktop {
+  display: inline-block;
+}
+.is-desktop .message--mobile {
+  display: none;
+}
+/* DEFAULT */
+.message.is-empty,
+.message.is-loading,
+.message.is-wrong-file-type,
+.message.is-wrong-image-size,
+.message.is-something-wrong,
+.message.is-dragover {
+  display: none;
+}
+/* EMPTY */
+.photo--empty .photo__options {
+  display: none;
+}
+.photo--empty .message.is-empty {
+  display: inline-block;
+}
+/* .photo--empty .photo__frame:hover {
+  background: #268eff;
+} */
+.photo--empty .photo__frame:hover .message {
+  color: #fff;
+}
+/* LOADING */
+.photo--loading .message.is-loading {
+  display: inline-block;
+}
+.photo--loading .message.is-empty,
+.photo--loading .message.is-wrong-file-type,
+.photo--loading .message.is-dragover,
+.photo--loading .message.is-wrong-image-size,
+.photo--loading .photo__options {
+  display: none;
+}
+/* ERROR */
+/* UNKNOWN */
+.photo--error .message.is-empty,
+.photo--error .message.is-loading,
+.photo--error .message.is-dragover,
+.photo--error .message.is-wrong-image-size,
+.photo--error .photo__options {
+  display: none;
+}
+.photo--error .message.is-something-wrong {
+  display: inline-block;
+}
+/* FILE TYPE*/
+.photo--error--file-type .message.is-empty,
+.photo--error--file-type .message.is-loading,
+.photo--error--file-type .message.is-dragover,
+.photo--error--file-type .message.is-wrong-image-size,
+.photo--error--file-type .photo__options {
+  display: none;
+}
+.photo--error--file-type .message.is-wrong-file-type {
+  display: inline-block;
+}
+/* IMAGE SIZE */
+.photo--error--image-size .message.is-empty,
+.photo--error--image-size .message.is-loading,
+.photo--error--image-size .message.is-dragover,
+.photo--error--image-size .message.is-wrong-file-type,
+.photo--error--image-size .photo__options {
+  display: none;
+}
+.photo--error--image-size .message.is-wrong-image-size {
+  display: inline-block;
+}
+/* DRAGOVER */
+.profile.is-dragover .photo__frame .is-dragover {
+  display: inline-block;
+}
+.profile.is-dragover .message.is-empty,
+.profile.is-dragover .message.is-loading,
+.profile.is-dragover .message.is-wrong-file-type,
+.profile.is-dragover .message.is-wrong-image-size {
+  display: none;
+}
+        
+    </style>
+</head>
+<body>
+    <section class="container-fluid">
+        <div class="row d-flex justify-content-between ">
+            <!-- left -->
+            <div class="col-md-6 ps-5">
+                <div class="row d-flex justify-content-start mt-5">
+                    <img src="./images/card/card3/Logo.PNG" class="w-25 h-25">
+                    <a id="home" href="home.html"></a>
+                </div>
+
+                <div class="row mt-4">
+                    <!-- <div class="overlay-image"></div> -->
+                <!-- <div class="overlay-text ms-5 ps-5">
+                    <div id="display_name" class="mt-2"></div>
+                    <div id="display_date" class="mt-3"></div>
+                    <div id="display_birth" class="mt-3"></div>
+                    <div id="display_goal" class="mt-3"></div>
+                    <div id="display_strength" class="mt-4"></div>
+                </div> -->
+                <!-- Image uploading -->
+                <div class="profile">
+                    <div class="photo">
+                        <input type="file" accept="image/*">
+                        <!-- <div class="photo__helper"> -->
+                            <div class="photo__frame photo__frame--circle">
+                                <canvas class="photo__canvas"></canvas>
                             </div>
-                            <div class="main-button">
-                                <div class="row d-flex justify-content-between mt-5">
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <p>Special Gift</p>
-                                    </div>
-                                    <div class="col-md-4 d-flex justify-content-center">
-                                        <a href="#">click here!</a>
-                                    </div>
-                                </div>
+                        <!-- </div> -->
+                        <div class="photo__options hide">
+                            <div class="photo__zoom">
+                                <input type="range" class="zoom-handler">
                             </div>
-                          </div>
+                            <!-- ถังขยะ -->
+                            <a href="javascript:;" class="remove">
+                                <!-- <i class="fa fa-trash"></i> -->
+                                <img src="./images/card/card3/Trash.PNG" style="width: 32%;" >
+                            </a>
                         </div>
-                      </div>
                     </div>
+                </div>
+                <!-- End of Image uploading -->  
+                <img src="./images/card/card3/Card2.PNG" > 
+                </div>
+
+                <div class="row d-flex justify-content-between mt-4">
+                    <div class="col-md-4 lign-items-center ">
+                        <a href="card2.html" class="d-flex justify-content-center pt-4">
+                            <img src="./images/card/card3/Back.PNG " class="w-100">
+
+                        </a>
+                    </div>
+
+                    <!-- <div class="col-md-3 align-items-center">
+                        <a href="javascript:;" class="d-flex justify-content-center p-3 remove">
+                            <img src="./images/card/card3/Next.PNG" class=" w-75" >
+                            <img src="./images/card/card3/Trash.PNG" class=" w-75" >
+                        </a>
+                    </div> -->
+
+                    <div class="col-md-4 align-items-center">
+                        <a href="" class="d-flex justify-content-center" style="padding-top: 17% ;">
+                            <!-- <img src="./images/card/card3/Next.PNG" class=" w-75" > -->
+                            <img src="./images/card/card3/Confirm.PNG" style="width: 90%;" >
+                        </a>
+                    </div>
+                </div>
+
             </div>
+            <!-- left -->
+
+            <!-- right -->
+            <div class="col-md-6" style="padding-left: 6vw;">
+                <div class="row d-flex justify-content-end mt-3">
+                    <img src="./images/card/card3/credit.PNG" class="w-25">
+                </div>
+
+                <div class="row d-flex justify-content-center" style="margin-top: 13vh;">
+                    <img src="./images/card/card3/Jeans.PNG" class="w-75">
+                </div>
+
+                <div class="row d-flex justify-content-end mt-5">
+                    <!-- <a id="home" href="home.html"></a> -->
+                    <a href="card4.html" class="d-flex justify-content-end pt-4">
+                        <img src="./images/card/card3/Next.PNG" style="width: 32%;" >
+                    </a>
+                </div>
+                
+            </div>
+            <!-- right -->
+
         </div>
-    </div>
+    </section>
     
-  </div>
+    <script>
+        window.onload = function() {
+            var params = new URLSearchParams(window.location.search);
+            var name = params.get('name');
+            var date = params.get('date');
+            var birth = params.get('birth');
+            var goal = params.get('goal');
+            var strength = params.get('strength');
+            
+            document.getElementById("display_name").innerText = name;
+            document.getElementById("display_date").innerText = date;
+            document.getElementById("display_birth").innerText = birth;
+            document.getElementById("display_goal").innerText = goal;
+            document.getElementById("display_strength").innerText = strength;
+        }
+        </script>
+         <script src="js/uploadImg.js"></script>
 
-  <div class="row mt-5">
-    <h1 class="pb-4 mb-4 fst-italic border-bottom">
-        NEW
-      </h1>
-    <div class="col-md-12">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <!-- <div id="carouselExampleIndicators" class="carousel slide h-25" >
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./images/mall/test-web/8.JPG" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./images/mall/test-web/15.JPG" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./images/mall/test-web/14.JPG" class="d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div> -->
-          <div id="myCarousel" class="carousel slide">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Wrapper for Slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill "><img src="./images/mall/test-web/8.JPG" class="d-block w-100" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInLeft">Butterfly set 001</h2>
-                        <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
-                    </div>
-                </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill"><img src="./images/mall/test-web/15.JPG" class="d-block w-100" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInDown">Butterfly Top 002</h2>
-                        <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
-                    </div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill"><img src="./images/mall/test-web/14.JPG" class="d-block w-100" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInRight">Flower dress 003</h2>
-                        <!-- <p class="animated fadeInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInRight"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="icon-prev "></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        </div>
-    
-        </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Butterfly set 001
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis ">
-        <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg2.jpeg'); background-size: cover;  background-repeat: no-repeat;">
-             <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/bg2.jpeg" class="w-75">
-            </div> -->
-            <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/products/mall 63.png" class="w-75">
-            </div> -->
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Butterfly Top 002
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <!-- <div class="row d-flex justify-content-between"> -->
-            <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg5.jpeg'); background-size: cover;  background-repeat: no-repeat;"></div>
-             <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/products/mall 65.png" class="w-75">
-            </div> -->
-            <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/products/mall 64.png" class="w-50"  >
-            </div> -->
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Flower dress 003
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <!-- <div class="row d-flex justify-content-between"> -->
-            <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg7.jpeg'); background-size: cover;  background-repeat: no-repeat;"></div>
-            <!-- <div class="col-md-3 d-flex justify-content-center">
-               <img src="./images/mall/test-web/products/mall 59.png" class="w-75">
-           </div>
-           <div class="col-md-3 d-flex justify-content-center">
-               <img src="./images/mall/test-web/products/mall 60.png" class="w-75">
-           </div> -->
-       </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Chic Skirt 004
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <!-- <div class="row d-flex justify-content-between"> -->
-            <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg8.jpeg'); background-size: cover;  background-repeat: no-repeat;"></div>
-             <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/products/m 58.png" class="w-75">
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/products/m 67.png" class="w-75">
-            </div> -->
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Long Chic Skirt 005
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <!-- <div class="row d-flex justify-content-between"> -->
-            <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg9.jpeg'); background-size: cover;  background-repeat: no-repeat;"></div>
-            <!-- <div class="col-md-3 d-flex justify-content-center">
-               <img src="./images/mall/test-web/products/mall 61.png" class="w-75">
-           </div>
-           <div class="col-md-3 d-flex justify-content-center">
-               <img src="./images/mall/test-web/products/mall 62.png" class="w-75">
-           </div> -->
-       </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        Dress Beep 006
-      </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row" style="height: 350px;  background-image: url('./images/mall/test-web/bg1.jpeg'); background-size: cover;  background-repeat: no-repeat;"></div>
-        <!-- <div class="row d-flex justify-content-between"> -->
-             <!-- <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/mall3.png" class="w-75">
-            </div>
-            <div class="col-md-3 d-flex justify-content-center">
-                <img src="./images/mall/test-web/mall4.png" class="w-75"  >
-            </div> -->
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h1 class="pb-4 mb-4 border-bottom">
-        All
-      </h1>
-      <div class="row mx-auto">
-        <div class="col-md-12 col-sm-12">
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-content">
-                <!-- <h3 class="timeline-title" id="feb">February </h3>
-                <p style="text-indent: 4%;" id="feb-1">Open to creative works in 3 branch : visual art and design, performing arts, and music.</p> -->
-                <!-- <img src="./images/mall/test-web/mall3.png" class="w-50"> -->
-              </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                  <!-- <img src="./images/mall/test-web/mall3.png" class="w-50"> -->
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-content">
-                  <!-- <img src="./images/mall/test-web/mall3.png" class="w-50"> -->
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-content">
-                  <!-- <img src="./images/mall/test-web/mall3.png" class="w-50"> -->
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-content">
-                  <!-- <img src="./images/mall/test-web/mall3.png" class="w-50"> -->
-                </div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-content">
-                  <!-- <img src="./images/mall/test-web/mall3.png" class="w-75"> -->
-                </div>
-              </div>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-</main>
-
-<!-- <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-  <p class="mb-0">
-    <a href="#">Back to top</a>
-  </p>
-</footer> -->
-<script src="js/bootstrap.bundle.min.js"></script>
-<!-- Script สำหรับเริ่มต้นการเล่น Carousel อัตโนมัติ -->
-<!-- <script>
-    $(document).ready(function(){
-      $('#carouselExampleIndicators').carousel('cycle');
-    });
-  </script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    </body>
+        
+</body>
 </html>
