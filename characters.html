@@ -57,7 +57,7 @@
           class="character"
           src="./images/characters/Character1.PNG"
           alt="Button 1"
-          onclick="navigateToHome('button1')"
+          onclick="navigateToHome('1')"
         />
       </div>
       <div class="col-md-3 d-flex justify-content-center">
@@ -65,7 +65,7 @@
           class="character"
           src="./images/characters/Character2.PNG"
           alt="Button 1"
-          onclick="navigateToHome('button2')"
+          onclick="navigateToHome('2')"
         />
       </div>
       <div class="col-md-3 d-flex justify-content-center">
@@ -73,16 +73,20 @@
           class="character"
           src="./images/characters/Character3.PNG"
           alt="Button 1"
-          onclick="navigateToHome('button3')"
+          onclick="navigateToHome('3')"
         />
       </div>
     </div>
   </section>
 
   <script>
+    // function navigateToHome(buttonId) {
+    //   window.location.href = "home.html?button=" + buttonId;
+    // }
     function navigateToHome(buttonId) {
-      window.location.href = "home.html?button=" + buttonId;
-    }
+    localStorage.setItem('selectedButtonId', buttonId);
+    window.location.href = "home.html";
+}
   </script>
 </body>
 </html>

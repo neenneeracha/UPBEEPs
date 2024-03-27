@@ -133,40 +133,24 @@
           <a href="mall.html">
             <div id="mall"></div>
           </a>
-    <img class="characterImg" id="characterImage" src="" alt="Character">
-    <div id="aboutus"></div>
-    <a href="sos.html">
-        <div id="phone"></div>
-    </a>
-    <div id="ID1"></div>
-    </section>
+          <!-- แสดงรูปที่เลือกมาจากหน้าที่แล้ว -->
+          <img class="characterImg" id="characterImage" src="" alt="Character">
+          <!-- แสดงรูปที่เลือกมาจากหน้าที่แล้ว -->
+          <div id="aboutus"></div>
+          <a href="sos.html">
+            <div id="phone"></div>
+        </a>
+        <div id="ID1"></div>
+
     <script>
-        // Retrieve the buttonId from the query parameter
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const buttonId = urlParams.get('button');
-
-        // Get the character image based on the button clicked
-        let characterImage;
-        switch (buttonId) {
-            case 'button1':
-                characterImageSrc = './images/home/Ch1.PNG';
-                break;
-            case 'button2':
-                characterImageSrc = './images/home/Ch2.PNG';
-                break;
-            case 'button3':
-                characterImageSrc = './images/home/Ch3.PNG';
-                break;
-            default:
-                characterImageSrc = ''; // Default image or placeholder if no button is specified
-        }
-        // Set the source of the character image
-        document.getElementById('characterImage').src = characterImageSrc;
-
-        document.getElementById('ID1').addEventListener('click', function() {
-        // Navigate to CARD1.html and pass characterImageSrc as a query parameter
-        window.location.href = 'JoinClub.html?characterImageSrc=' + encodeURIComponent(characterImageSrc); });
-    </script>
+        window.onload = function() {
+    if (localStorage.getItem('selectedButtonId')) {
+        var selectedButtonId = localStorage.getItem('selectedButtonId');
+        var imageUrl = "./images/home/Ch" + selectedButtonId + ".PNG";
+        document.getElementById('characterImage').src = imageUrl;
+    }
+}
+      </script>
+      
 </body>
 </html>
