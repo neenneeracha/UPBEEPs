@@ -20,7 +20,7 @@
             position: fixed;
             width: 19vw;
             height: 13vh;
-            bottom: 1vh;
+            bottom: 6vh;
             display: block;
             right: 19vw;
             margin: 10px;
@@ -36,7 +36,7 @@
             position: fixed;
             width: 20vw;
             height: 15vh;
-            bottom: 1vh;
+            bottom: 6vh;
             display: block;
             left: 18vw;
             background: url("./images/card/card2/Back.PNG");
@@ -45,11 +45,14 @@
             background-position: center center;
             transition: background 0.3s ease;
         }
+        #back:hover, #next:hover {
+            transform: scale(1.1);
+        }
         #home {
             position: fixed;
             width: 25vw;
             height: 16vh;
-            bottom: 1vh;
+            bottom: 6vh;
             display: block;
             right: 0vw;
             background: url("./images/card/card2/Home1.PNG");
@@ -64,7 +67,7 @@
             position: fixed;
             width: 25vw;
             height: 15vh;
-            bottom: 1vh;
+            bottom: 6vh;
             display: block;
             right: 0vw;
             background: url("./images/card/card2/Home2.PNG");
@@ -135,7 +138,10 @@
     </style>
 </head>
 <body>
-    <section class="contain">
+    <div class="row d-flex justify-content-end mt-2 me-3" style="z-index: -100;">
+        <img src="./images/home/upbeep2024.PNG" style="width: 13%;">
+    </div>
+    <section class="contain mt-4">
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-md-10 d-flex justify-content-center" style="position: relative;">
                 <div class="overlay-image"></div>
@@ -151,9 +157,11 @@
             </div>
         </div>
     </section>
+
     <a id="next" href="#" onclick="showPage2()"></a>
     <a id="home" href="home.html"></a>
     <a id="back" href="JoinClub.html"></a>
+    
         <script>
             function showPage2() {
                 var name = document.getElementById("fname").value;
