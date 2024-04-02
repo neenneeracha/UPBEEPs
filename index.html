@@ -10,6 +10,7 @@
         body {
             background-image: url(./images/start/BG\ start.PNG);
             background-size: cover; 
+            overflow: hidden;
             /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
             background-position: center center; 
             /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
@@ -17,11 +18,11 @@
         }
         #charecter_start {
             position: fixed;
-            max-width: 30vw;
-            width: 28%;
+            max-width: 32vw;
+            width: 32vw;
             height: auto;
             bottom: 0px;
-            left: 25vw;
+            left: 20vw;
         }
         .resizable-button {
           max-width: 28vw;
@@ -34,10 +35,10 @@
         }
         .menu {
             position: fixed;
-            right: 18vw;
-            top: 10vh;
+            right: 10vw;
+            /* top: 10vh; */
             bottom: 10vh;
-            max-width: 28vw;
+            max-width: 35vw;
             width: 100%;
             display: flex;
             flex-direction: column; 
@@ -71,19 +72,19 @@
 #sound {
     position: fixed;
     background-image: url("./images/sound/Sound1.PNG");
-    width: 12vw;
-    height: 12vh;
+    width: 16vw;
+    height: 16vh;
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 5vh;
-    left: 12vw;
+    left: 8vw;
 }
     </style>
 </head>
 <body>
     <section class="container-fluid">
         <div class="col-md-3">
-            <div id="sound">
+            <div id="sound" type="button">
             </div>
         </div>
  
