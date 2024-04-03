@@ -13,8 +13,9 @@
         body {
             background-image: url('./images/card/card2/bg-card2.png');
             background-size: cover; 
-            height: 100%;
+            height: 100vh;
             overflow: hidden;
+            background-repeat: no-repeat;
         }
 
         #next {
@@ -63,7 +64,6 @@
             transition: background 0.3s ease;
             
         }
-
         #home:hover {
             position: fixed;
             width: 25vw;
@@ -96,8 +96,8 @@
         }
         .overlay-text {
             position: absolute;
-            width: 52%;
-            height: 50%; 
+            width: 50vw;
+            height: 50vh; 
             z-index: 1; 
         }
         .input {
@@ -117,25 +117,113 @@
 
         #fname{
             top: 14vh;
+
         }
 
         #fdate{
             top: 21vh;
             width: 15.5vw;
+          
         }
 
         #fbirth{
             top: 28vh;
             width: 15.5vw;
+            
         }
 
         #fgoal{
             top: 34vh;
+            
         }
 
         #fstrength{
             top: 41vh;
+           
         }
+        @media (max-width: 2560px) {
+            #fname{
+            top: 15vh;
+
+        }
+
+        #fdate{
+            top: 22vh;
+            width: 15.5vw;
+          
+        }
+        #fbirth{
+            top: 29vh;
+            width: 15.5vw;
+            
+        }
+        #fgoal{
+            top: 35vh;
+            
+        }
+        #fstrength{
+            top: 42vh;
+           
+        }
+
+        }
+
+        @media (max-width: 1280px) {
+            #fname{
+            top: 12vh;
+        }
+
+        #fdate{
+            top: 19vh;
+            width: 15.5vw;
+        }
+
+        #fbirth{
+            top: 25.5vh;
+            width: 15.5vw;
+        }
+
+        #fgoal{
+            top: 30.5vh;
+        }
+
+        #fstrength{
+            top: 36.5vh;
+        }
+        #back, #next, #home{
+            position: fixed;
+            bottom: 18vh;
+        }
+        }
+        
+        @media (max-width: 1024px) {
+        .input{
+            font-size: 22px;
+        }
+        #fname{
+            top: 13vh;
+        }
+        #fdate{
+            top: 20vh;
+            width: 15.5vw;
+        }
+        #fbirth{
+            top: 26vh;
+            width: 15.5vw;
+        }
+        #fgoal{
+            top: 32.5vh;
+        }
+        #fstrength{
+            top: 39.5vh;
+        }
+
+        #back, #next, #home{
+            position: fixed;
+            bottom: 12vh;
+        }
+    }
+
     </style>
 </head>
 <body>

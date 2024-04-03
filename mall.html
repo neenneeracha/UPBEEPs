@@ -23,6 +23,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
+      .bg-mall {
+            background-image: url('./images/card/card1/Bg.PNG');
+            background-size: cover; 
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -259,6 +266,7 @@ outline: none !important;
 .line-title {
 position: relative;
 width: 400px;
+font-size: 30px;
 }
 .line-title::before,
 .line-title::after {
@@ -281,7 +289,7 @@ background: #e73700;
 /******* Middle section CSS Start ******/
 /* -------- Landing page ------- */
 .all-section {
-padding: 60px 50px;
+padding: 20px 
 }
 .all-section .owl-stage {
 margin: 15px 0;
@@ -460,87 +468,87 @@ transform: translateY(calc(100% - 42px));
     <!-- <link href="blog.css" rel="stylesheet"> -->
   </head>
   <body>
-<div class="container">
+<section class="container-fluid">
   <header class="py-3">
-  <nav class="navbar" aria-label="Light offcanvas navbar">
-    <div class="container-fluid justify-content-center align-items-center">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-4">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">All</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Set</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Top</a>
+    <nav class="navbar" aria-label="Light offcanvas navbar">
+      <div class="container justify-content-center align-items-center">
+          <div class="row justify-content-between align-items-center">
+              <div class="col-4">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">All</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Skirt</a>
+                            <a class="nav-link" href="#">Set</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Dress</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">ACC</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#">Review special</a>
-                          </li>
-                        <!-- <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                          </a>
-                          <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                              <hr class="dropdown-divider">
+                              <a class="nav-link" href="#">Top</a>
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          </ul>
-                        </li> -->
-                      </ul>
-                      <!-- <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                      </form> -->
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Skirt</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Dress</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">ACC</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="#">Review special</a>
+                            </li>
+                          <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Action</a></li>
+                              <li><a class="dropdown-item" href="#">Another action</a></li>
+                              <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                          </li> -->
+                        </ul>
+                        <!-- <form class="d-flex mt-3" role="search">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form> -->
+                      </div>
                     </div>
-                  </div>
-            </div>
-
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
-                    <img src="./images/mall/Logo head.PNG" class="w-25 h-25">
-                </a>
               </div>
+  
+              <div class="col-4 text-center">
+                  <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
+                      <img src="./images/mall/Logo head.PNG" class="w-25 h-25">
+                  </a>
+                </div>
+  
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                  <a class="link-secondary" href="#" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                  </a>
+                  <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+              
+          </div>
+      </div>
+    </nav>
+  </header>
+</section>
 
-              <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="link-secondary" href="#" aria-label="Search">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-              </div>
-            
-        </div>
-    </div>
-  </nav>
-</header>
-</div>
-
-<main class="container">
-  <!-- <div class="p-md-5 mb-4 rounded align-items-center" style="height: 450px;  background-image: url('./images/mall/test-web/bg6.jpeg'); background-size: cover;  background-repeat: no-repeat;"> -->
-    <div class="p-md-5 mb-4 rounded align-items-center bg-body-tertiary">
+<!-- promotion -->
+<section class="contain">
+  <div class="p-md-5 mb-5 rounded align-items-center bg-body-tertiary">
     <div class="row d-flex justify-content-start m-5 mt-5"> 
         <div class="col-lg-5">
             <div class="row mt-5 d-flex ">
@@ -578,11 +586,16 @@ transform: translateY(calc(100% - 42px));
 </div>
   </div>
 
-  <div class="row mt-5">
-    <h1 class="pb-4 mb-4 fst-italic border-bottom">
-        NEW
-      </h1>
-    <div class="col-md-12">
+</section>
+<!-- promotion -->
+
+<!-- new -->
+<section class="contain bg-mall">
+  <h1 class="fst-italic" style="padding-left: 15%; padding-top: 3%;">
+    NEW
+  </h1>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-9 pt-5">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div id="myCarousel" class="carousel slide">
             <!-- Indicators -->
@@ -633,9 +646,15 @@ transform: translateY(calc(100% - 42px));
         </div>
     </div>
   </div>
+    
+</section>
+<!-- new -->
 
-  <div class="row mt-5">
-    <div class="col-md-12">
+<!-- product -->
+<section class="container">
+  <div class="row">
+    <div class="row mt-5 ">
+    <div class="col-md-12" >
       <h1 class="pb-4 mb-4 border-bottom">
         Butterfly set 001
       </h1>
@@ -653,6 +672,7 @@ transform: translateY(calc(100% - 42px));
         </div>
     </div>
   </div>
+</div>
 
   <div class="row mt-5">
     <div class="col-md-12">
@@ -674,7 +694,6 @@ transform: translateY(calc(100% - 42px));
     </div>
     </div>
     </div>
-  </div>
 
   <div class="row mt-5">
     <div class="col-md-12">
@@ -695,8 +714,7 @@ transform: translateY(calc(100% - 42px));
         </div>
     </div>
     </div>
-    </div>
-  </div>
+    
 
   <div class="row mt-5">
     <div class="col-md-12">
@@ -718,8 +736,7 @@ transform: translateY(calc(100% - 42px));
     </div>
     </div>
     </div>
-  </div>
-
+  
   <div class="row mt-5">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 border-bottom">
@@ -740,6 +757,7 @@ transform: translateY(calc(100% - 42px));
     </div>
     </div>
     </div>
+
   </div>
 
   <div class="row mt-5">
@@ -763,7 +781,11 @@ transform: translateY(calc(100% - 42px));
     </div>
     </div>
   </div>
+</section>
+<!-- product -->
 
+<!-- All -->
+<section class="container-fluid bg-mall">
   <div class="row mt-5">
     <div class="col-md-12">
         <section class="all-section">
@@ -799,20 +821,17 @@ transform: translateY(calc(100% - 42px));
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
               </div>
-              <div class="item" style="background-image: url(./images/mall/test-web/bg9.jpeg);">
+              <div class="item" style="background-image: url(./images/mall/product/Flower\ dress\(4\).PNG);">
                 <div class="item-desc">
                   <h3>Flower Dress 003</h3>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
                 </div>
               </div>
-            </div>
-            </div>
-          </section>
-      
+            </div> 
     </div>
-  </div>
+</section>
+<!-- All -->
 
-</main>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/specialGift.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
