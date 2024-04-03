@@ -246,34 +246,39 @@
 	scroll-snap-align: start;
 	height: 342px;
 	list-style: none;
-	background: #fff;
+	background: transparent;
 	cursor: pointer;
-	padding-bottom: 15px;
+	/* padding-bottom: 15px; */
 	flex-direction: column;
-	border-radius: 8px;
+	/* border-radius: 8px; */
 }
-.carousel .card .img {
-	/* background: #8b53ff; */
-	height: 148px;
-	width: 148px;
-	border-radius: 50%;
-}
+/* .carousel .card .img {
+	background: #8b53ff;
+	height: 150px;
+	width: 150px;
+	
+} */
 .card .img img {
-	width: 140px;
-	height: 140px;
-	border-radius: 50%;
-	object-fit: cover;
-	border: 4px solid #fff;
+	width: 100%;
+	height: 100%;
+	/* border-radius: 50%; */
+	object-fit: contain;
+	/* border: 4px solid #cb7373; */
 }
 .carousel .card h2 {
 	font-weight: 500;
-	font-size: 1.56rem;
-	margin: 30px 0 5px;
+	font-size: 28px;
+    text-shadow: 2px 2px 2px #000;
+    color: #fefefe;
+    position: absolute;
+    z-index: 2000;
+    bottom: 1vh;
+	/* margin: 30px 0 5px; */
 }
-.carousel .card span {
+/* .carousel .card span {
 	color: #6a6d78;
 	font-size: 1.31rem;
-}
+} */
 
 @media screen and (max-width: 900px) {
 	.arrow .carousel {
@@ -614,6 +619,7 @@
 
 <!-- All -->
 <section class="container-fluid bg-mall">
+    <!-- all -->
   <div class="row" style="margin-top: 5vh ;">
     <h3 class="pb-5" style=" padding-left: 10vw;">All</h3>
     <div class="col-md-12 d-flex justify-content-center ">
@@ -621,39 +627,86 @@
                 <i id="left" class="fa-solid fa-angle-left" style=" z-index: 100;"></i>
                 <ul class="carousel">
                     <li class="card">
-                        <div class="img"><img src="https://t4.ftcdn.net/jpg/03/50/40/93/240_F_350409330_2bqhjowfBmrqEia5U8lBsGrvD7h8EIo6.jpg" alt="img" draggable="false"></div>
-                        <h2>Blanche Pearson</h2>
-                        <span>Sales Manager</span>
+                        <div class="img">
+                            <h2>Butterfly Set 001</h2>
+                            <img src="./images/mall/product/Butterfly set(1).PNG" alt="img" draggable="false">
+                        </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="https://t3.ftcdn.net/jpg/00/57/55/40/240_F_57554079_g3LhdDR5C0f2mc2ZxjFgsbb6WMqouUwQ.jpg" alt="img" draggable="false"></div>
-                        <h2>Joenas Brauers</h2>
-                        <span>Web Developer</span>
+                        <div class="img">
+                            <h2>Butterfly Top 002</h2>
+                            <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
+                        </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="https://t3.ftcdn.net/jpg/06/15/91/36/240_F_615913669_1GvdMMT0H44Z4owh9SCYsml6mCcy8g3G.jpg" alt="img" draggable="false"></div>
-                        <h2>Lariach French</h2>
-                        <span>Online Teacher</span>
+                        <div class="img">
+                            <h2>Butterfly Skirt 002</h2>
+                            <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
+                        </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="https://t3.ftcdn.net/jpg/02/60/67/80/240_F_260678009_gV1PBTotxDIwTngnmn3nYqWshbznYf24.jpg" alt="img" draggable="false"></div>
-                        <h2>James Khosravi</h2>
-                        <span>Freelancer</span>
+                        <div class="img">
+                            <h2>Flower Dress 003</h2>
+                            <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                        </div>
                     </li>
                     <li class="card">
-                        <div class="img"><img src="https://t3.ftcdn.net/jpg/03/99/91/62/240_F_399916297_1JwXdmC6ViCG4YhZuhLVz7xfuZhfHCY9.jpg" alt="img" draggable="false"></div>
-                        <h2>Kristina Zasiadko</h2>
-                        <span>Bank Manager</span>
-                    </li>
-        
-                    <li class="card">
-                        <div class="img"><img src="https://t4.ftcdn.net/jpg/06/81/01/43/240_F_681014359_dyMjwn4JYLtY985umiBOeytmLmVxEjC0.jpg" alt="img" draggable="false"></div>
-                        <h2>Donald Horton</h2>
-                        <span>App Designer</span>
+                        <div class="img">
+                            <h2>Flower Dress 003</h2>
+                            <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                        </div>
                     </li>
                 </ul>
                 <i id="right" class="fa-solid fa-angle-right"></i>
             </div>
+        </div>
+    </div>
+    <!-- all -->
+
+    <!-- set -->
+    <div class="row" style="margin-top: 5vh ;">
+        <h3 class="pb-5" style=" padding-left: 10vw;">Set</h3>
+        <div class="col-md-12 d-flex justify-content-center ">
+                <div class="arrow">
+                    <i id="left" class="fa-solid fa-angle-left" style=" z-index: 100;"></i>
+                    <ul class="carousel">
+                        <li class="card">
+                            <div class="img">
+                                <h2>Butterfly Set 001</h2>
+                                <img src="./images/mall/product/Butterfly set(1).PNG" alt="img" draggable="false">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>Butterfly Top 002</h2>
+                                <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>Butterfly Skirt 002</h2>
+                                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>Flower Dress 003</h2>
+                                <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>Flower Dress 003</h2>
+                                <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            </div>
+                        </li>
+                    </ul>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    <!-- set -->
+
 </section>
 <!-- All -->
 
