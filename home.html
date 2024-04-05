@@ -74,7 +74,7 @@
             height: 50vh;
             top: 5vh;
             display: block;
-            right: 5vw;
+            right: 9vw;
             background: url("./images/home/SOS1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -137,6 +137,28 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 12vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 60px;
+    right: -18px;
+}
+    @media (width: 2240px) {
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 12vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 100px;
+    right: -18px;
+}
+}
     </style>
 </head>
 <body>
@@ -144,11 +166,10 @@
         <div class=" row  mt-2 me-4">
             <div class="col-md-6 d-flex justify-content-start ps-3">
                 <a href="characters.html" id="back"></a>
-            </div>   
+            </div>  
             <div class="col-md-6 d-flex justify-content-end pt-2" style="z-index: -100;">
                 <img src="./images/home/upbeep2024.PNG" class="col-md-6 d-block justify-content-end"  style="width: 28%;">
             </div>
-             
         </div>
         <!-- <div class="row d-flex justify-content-start ps-3 w-50">
             <a href="characters.html" id="back"></a>
@@ -170,6 +191,7 @@
         <a href="JoinClub.html" >
             <div id="ID1"></div>
         </a>
+        <div id="sound" type="button"></div> 
         
 
     <script>
@@ -181,6 +203,7 @@
     }
 }
       </script>
+      <script src="./js/audio.js"></script>
       
 </body>
 </html>

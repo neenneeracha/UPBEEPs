@@ -13,6 +13,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <!-- loading -->
+
+    <!-- Fabric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.1/fabric.min.js"></script>
+    <!-- Fabric.js -->
+    
     <title>Setting Card ID</title>
     <style>
         body {
@@ -52,26 +57,24 @@
         }
         .overlay-text {
             position: absolute;
-            top: 34.5%;
+            top: 290px;
             left: 35%;
             z-index: 1; 
             color: #5BFFD8;
             font-family: 'Love Ya Like A Sister', cursive;
             font-size: 23px;
         }
-        .input {
-            position: absolute;
-            right: 0vw;
-            height: 5vh;
-            width: 18vw;
-            background: transparent;
-            border: none;
-            outline: none;
-            text-align: right; 
-            caret-color: #5BFFD8;
-            font-size: 2em;
-            color: #5BFFD8;
-            font-family: 'Love Ya Like A Sister', cursive;
+        #date{
+          padding-top: 15px;
+        }
+        #birth{
+          padding-top: 18px;
+        }
+        #goal{
+          padding-top: 18px;
+        }
+        #strength{
+          padding-top: 18px;
         }
           
 /*DEMO*/
@@ -218,7 +221,7 @@
 * FRAME STYLE
 */
 .photo__frame--circle {
-  border: 1px solid #e2e2e2;
+  border: 1px solid #a25454;
   /* border-radius: 50%; */
 }
 .photo__helper {
@@ -259,7 +262,6 @@
 .photo__options {
     left: -2%;
   position: relative;
-
 }
 
 /* ถังขยะ */
@@ -332,92 +334,7 @@
 /**
 * States
 */
-/** SELECT PHOTO MESSAGE */
-.message--desktop,
-.message--mobile {
-  display: none;
-}
-/* MOBILE */
-.is-mobile .message--mobile {
-  display: inline-block;
-}
-.is-mobile .message--desktop {
-  display: none;
-}
-/* DESKTOP */
-.is-desktop .message--desktop {
-  display: inline-block;
-}
-.is-desktop .message--mobile {
-  display: none;
-}
-/* DEFAULT */
-.message.is-empty,
-.message.is-loading,
-.message.is-wrong-file-type,
-.message.is-wrong-image-size,
-.message.is-something-wrong,
-.message.is-dragover {
-  display: none;
-}
-/* EMPTY */
-.photo--empty .photo__options {
-  display: none;
-}
-.photo--empty .message.is-empty {
-  display: inline-block;
-}
-/* .photo--empty .photo__frame:hover {
-  background: #268eff;
-} */
-.photo--empty .photo__frame:hover .message {
-  color: #fff;
-}
-/* LOADING */
-.photo--loading .message.is-loading {
-  display: inline-block;
-}
-.photo--loading .message.is-empty,
-.photo--loading .message.is-wrong-file-type,
-.photo--loading .message.is-dragover,
-.photo--loading .message.is-wrong-image-size,
-.photo--loading .photo__options {
-  display: none;
-}
-/* ERROR */
-/* UNKNOWN */
-.photo--error .message.is-empty,
-.photo--error .message.is-loading,
-.photo--error .message.is-dragover,
-.photo--error .message.is-wrong-image-size,
-.photo--error .photo__options {
-  display: none;
-}
-.photo--error .message.is-something-wrong {
-  display: inline-block;
-}
-/* FILE TYPE*/
-.photo--error--file-type .message.is-empty,
-.photo--error--file-type .message.is-loading,
-.photo--error--file-type .message.is-dragover,
-.photo--error--file-type .message.is-wrong-image-size,
-.photo--error--file-type .photo__options {
-  display: none;
-}
-.photo--error--file-type .message.is-wrong-file-type {
-  display: inline-block;
-}
-/* IMAGE SIZE */
-.photo--error--image-size .message.is-empty,
-.photo--error--image-size .message.is-loading,
-.photo--error--image-size .message.is-dragover,
-.photo--error--image-size .message.is-wrong-file-type,
-.photo--error--image-size .photo__options {
-  display: none;
-}
-.photo--error--image-size .message.is-wrong-image-size {
-  display: inline-block;
-}
+
 /* DRAGOVER */
 .profile.is-dragover .photo__frame .is-dragover {
   display: inline-block;
@@ -433,7 +350,6 @@
     position: relative;
     
 }
-
 .element1-image {
     position: absolute;
     top: 8vh;
@@ -463,6 +379,52 @@
 #back:hover, #confirm:hover , #next:hover {
     transform: scale(1.1);
 }
+
+@media (width: 2240px) {
+  .overlay-text {
+            position: absolute;
+            top: 400px;
+            left: 800px;
+            color: #5BFFD8;
+            font-family: 'Love Ya Like A Sister', cursive;
+            font-size: 40px;
+        }
+        #name{
+
+        }
+        #date{
+          padding-top: 20px;
+
+        }
+        #birth{
+          padding-top: 25px;
+        }
+        #goal{
+          padding-top: 22px;
+        }
+        #strength{
+          padding-top: 24px;
+        }
+        .profile {
+    position: absolute;
+    top: 33.2%; 
+    left: 6.2%; 
+    z-index: 2; 
+}
+        .photo__frame {
+          cursor: move;
+          overflow: hidden;
+          position: relative;
+          display: inline-block;
+          width: 310px;
+          height: 360px;
+}
+.photo__zoom {
+  width:40%;
+  display: inline-block;
+}
+
+        }
 
         
     </style>
@@ -502,20 +464,20 @@
                     </div>
                     <div class="col-md-4">
                         <div class="overlay-text">
-                            <div class="row">
+                            <div class="row" id="name">
                                 <div id="display_name"></div>
                             </div>
-                            <div class="row">
-                                <div id="display_date" style="margin-top: 12%;"></div>
+                            <div class="row" id="date">
+                                <div id="display_date"></div>
                             </div>
-                            <div class="row">
-                                <div id="display_birth" style="margin-top: 14%;" ></div>
+                            <div class="row" id="birth">
+                                <div id="display_birth"></div>
                             </div>
-                            <div class="row">
-                                <div id="display_goal" style="margin-top: 15%;"></div>
+                            <div class="row" id="goal">
+                                <div id="display_goal"></div>
                             </div>
-                            <div class="row">
-                                <div id="display_strength" style="margin-top: 13%;"></div>
+                            <div class="row" id="strength">
+                                <div id="display_strength"></div>
                             </div>
                         </div>
                     </div>
@@ -541,7 +503,6 @@
 
                     <div class="col-md-4">
                         <a href="" class="d-flex justify-content-center mt-4 pt-2">
-                            <!-- <img src="./images/card/card3/Next.PNG" class=" w-75" > -->
                             <img src="./images/card/card3/Confirm.PNG" id="confirm" style="width: 90%;" >
                         </a>
                     </div>
@@ -682,6 +643,20 @@
         }
         </script>
          <script src="js/uploadImg.js"></script>
+         <script>
+        $(document).ready(function() {
+    // เมื่อกดปุ่ม Confirm
+    $('#confirm').click(function(event) {
+        event.preventDefault(); // ป้องกันการโหลดหน้าใหม่เมื่อคลิกที่ลิงก์
+
+        // บันทึกข้อมูลลง Local Storage
+        localStorage.setItem('profileImage', self.model.file);
+
+        // แสดงข้อความยืนยันการบันทึกข้อมูล
+        alert('ข้อมูลได้ถูกบันทึกลงใน Local Storage เรียบร้อยแล้ว');
+    });
+});
+         </script>
 
         
 </body>

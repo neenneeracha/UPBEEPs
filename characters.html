@@ -41,6 +41,49 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+    @media (width: 1024px) {
+      #ch{
+        position: fixed;
+        top:  40vh;
+        bottom: 40vh;
+        width: 1000px;
+        /* right: 0.006vw; */
+        height: 350px;
+        /* justify-content: center; */
+      }
+      #choose{
+        position: fixed;
+        top:  20vh;
+        width: 1000px;
+        height: 200px;
+        
+      }
+        }
+        @media (max-width: 2560px) {
+          #back {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      top: 50px;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      top: 50px;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+        }
+
   </style>
 </head>
 
@@ -49,10 +92,10 @@
     <div class="row d-flex justify-content-start ms-5 ps-5 mt-3">
       <a href="index.html" id="back"></a>
     </div>
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center" id="choose">
       <img class="list-button w-50" src="./images/characters/Choose your beep.PNG" alt="Button 1" />
     </div>
-    <div class="row d-flex justify-content-center">        
+    <div class="row d-flex justify-content-center" id="ch">        
       <div class="col-md-3 d-flex justify-content-center">
         <img
           class="character"

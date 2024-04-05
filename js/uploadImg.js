@@ -361,6 +361,8 @@
                             }
                             self.model.file = file;
                             reader.readAsDataURL(file);
+                            console.log(self.model.file);
+
                         }
                     }
                     /**
@@ -660,7 +662,7 @@
                         self.imageHelperCanvas = canvas;
                         self.imageHelperCanvasContext = canvas.getContext('2d');
                         self.imageHelperCanvasContext.mozImageSmoothingEnabled = false;
-                                  self.imageHelperCanvasContext.msImageSmoothingEnabled = false;
+                        self.imageHelperCanvasContext.msImageSmoothingEnabled = false;
                         self.imageHelperCanvasContext.imageSmoothingEnabled = false;
                     }
                     /**

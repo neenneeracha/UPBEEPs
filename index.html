@@ -45,22 +45,62 @@
             justify-content: center;
             align-items: center;
         }
-        @media (max-width: 1208px) {
-            #charecter_start {
-            max-width: 38vw;
-            width: 38%;
-            height: auto;
-            bottom: 0px;
-            left: 31vw;
-        }
-        .menu { 
-                left: 30vw;
-                top: -42vh;
-                bottom: 0;
+        @media (max-width: 2560px) {
+            .resizable-button {
+            max-width: 29vw;
+            width: 100%;
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            }
+            .menu { 
+                bottom: 15%;
                 max-width: 45%;
                 width: 45%;
             }
+
+            #start{
+                width: 640px;
+            }
+        }
+
+        /* @media (max-width: 1280px){
+            #start a{
+                width: 360px;
+            }
+        } */
+        @media (max-width: 1208px) {
+            #charecter_start {
+            max-width: 40vw;
+            width: 33%;
+            height: auto;
+            bottom: 0px;
+            left: 19vw;
+        }
+        .menu { 
+                right: 5vw;
+                top: -4vh;
+                bottom: 0;
+                max-width: 43%;
+                width: 43%;
+            }
 }
+        @media (width: 1024px) {
+            #charecter_start {
+            max-width: 40vw;
+            width: 40%;
+            height: auto;
+            bottom: 0px;
+            left: 30vw;
+        }
+        .menu { 
+                right: 15vw;
+                top: -45vh;
+                bottom: 0;
+                max-width: 80%;
+                width: 70%;
+            }
+        }
+       
 @media (max-width: 768px) {
     #charecter_start {
         max-width: 38vw;
@@ -69,24 +109,17 @@
             left: 32vw;      
         }
 }
-#sound {
-    position: fixed;
-    background-image: url("./images/sound/Sound1.PNG");
-    width: 13vw;
-    height: 13vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    bottom: 5vh;
-    left: 8vw;
-}
     </style>
 </head>
 <body>
     <section class="container-fluid">
-        <div class="col-md-3">
-            <div id="sound" type="button">
-            </div>
-        </div>
+        <!-- <div class="col-md-3">
+            <audio autoplay>
+                <source src="audio/SoundUpbeep.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="sound" type="button"></div>
+        </div> -->
  
         <div class="col-md-3">
             <div>
@@ -108,13 +141,13 @@
                 <div class="row m-3 w-75 justify-content-center">
                     <img src="./images/start/or.png" alt="Button 1" >
                 </div>
-                <div class="row m-3 d-flex justify-content-center" style="width: 398px;">
-                    <a href="characters.html">
+                <div class="row m-3 d-flex justify-content-center" id="start">
+                    <a href="characters.html" class="d-flex justify-content-center" >
                         <img class="resizable-button" src="./images/start/E4.png" >
                     </a>
                 </div>
             </div>
         </div>
-    </section>  
+    </section> 
 </body>
 </html>
