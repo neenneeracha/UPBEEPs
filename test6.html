@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+     <style>
+        body {
+            background-image: url(./images/aboutUs/Bg.PNG);
+            background-size: cover; 
+            overflow: hidden;
+            /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
+            background-position: center center; 
+            /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
+
+        }
+        #back {
+      /* position: fixed; */
+      /* width: 10vw; 
+      height: 10vh;
+      left: 4vw; */
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      /* position: fixed; */
+      /* width: 10vw; 
+      height: 10vh; */
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 14vw;
+    height: 14vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 8vw;
+}
+#home {
+            position: fixed;
+            width: 20vw;
+            height: 16vh;
+            bottom: 1vh;
+            display: block;
+            right: 0vw;
+            margin: 10px;
+            background: url("./images/card/card1/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            background: url("./images/card/card1/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 9;
+        }
+        #logo{
+            height: 5vh;
+            width: 14vw;
+        }
+        #flip {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/aboutUs/Flip1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #flip:hover {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/aboutUs/Flip2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+    }
+    @media (max-width: 2560px) {
+          #back {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="container-fluid">
+        <div class="row d-flex justify-content-between mt-3">
+            <div class="col-md-6 d-flex justify-content-start ps-5">
+                <a href="index.html" id="back"></a>
+            </div>
+            
+            <div class="col-md-6 d-flex justify-content-end">
+                <img src="./images/home/upbeep2024.PNG" id="logo">
+            </div>
+            
+        </div>
+
+        <div class="row d-flex justify-content-between" style="margin-top: 85px;">
+            <div class="col-md-8 d-flex justify-content-end" style="">
+                <img src="./images/aboutUs/Letter1.PNG" id="image1" class="change">
+                <img src="./images/aboutUs/Butterfly1.PNG" id="butterfly" class="hidden">
+            </div>
+
+            <div class="col-md-4" style="padding-top: 150px;">
+                <div class="row d-block justify-content-center">
+                    <img src="./images/aboutUs/Flip click.PNG" class="w-50 ">
+                </div>
+                <div class="row">
+                    <a id="flip"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <a id="home" href="home.html"></a>
+            <div id="sound" type="button"></div>
+        </div>
+
+    </section>
+    <script src="./js/audio.js"></script>
+    <script>
+        window.onload = function() {
+            var flipButton = document.getElementById('flip');
+            var image1 = document.getElementById('image1');
+            var image2 = document.querySelector('.change');
+            var butterfly = document.getElementById('butterfly');
+
+            flipButton.onclick = function() {
+                if (image2.src.includes('Letter1')) {
+                    image2.src = './images/aboutUs/Letter2.PNG';
+                    butterfly.classList.remove('hidden');
+                } else {
+                    image2.src = './images/aboutUs/Letter1.PNG';
+                    butterfly.classList.add('hidden');
+                }
+            };
+
+            // butterfly.onclick = function() {
+                
+            //     alert('You clicked on the butterfly image!');
+            // };
+        };
+    </script>
+</body>
+</html>
