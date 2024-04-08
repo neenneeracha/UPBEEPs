@@ -11,25 +11,15 @@
             background-image: url(./images/aboutUs/Bg.PNG);
             background-size: cover; 
             overflow: hidden;
-            /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
             background-position: center center; 
-            /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
-
         }
         #back {
-      /* position: fixed; */
-      /* width: 10vw; 
-      height: 10vh;
-      left: 4vw; */
       background: url("./images/sos/elements/Back\ pink1.PNG");
       background-size: contain;
       background-repeat: no-repeat;
       transition: background 0.3s ease;
     }
     #back:hover {
-      /* position: fixed; */
-      /* width: 10vw; 
-      height: 10vh; */
       background: url("./images/sos/elements/Back\ pink2.PNG");
       background-size: contain;
       background-repeat: no-repeat;
@@ -89,7 +79,16 @@
       background-repeat: no-repeat;
       transform: scale(1.1);
     }
-    @media (max-width: 2560px) {
+    #letter{
+        width: 650px;
+    }
+    .hidden {
+            display: none;
+        }
+    @media (width: 2560px) {
+        #letter{
+        width: 1000px;
+    }
           #back {
       width: 10vw; 
       height: 10vh;
@@ -106,6 +105,11 @@
       background: url("./images/sos/elements/Back\ pink2.PNG");
       background-size: contain;
       background-repeat: no-repeat;
+    }
+    #butterfly{
+        position: absolute;
+        top: 500px;
+        left: 918px;
     }
 
         }
@@ -126,9 +130,9 @@
             
         </div>
 
-        <div class="row d-flex justify-content-between" style="margin-top: 85px;">
-            <div class="col-md-8 d-flex justify-content-end" style="">
-                <img src="./images/aboutUs/Letter1.PNG" class="change">
+        <div class="row d-flex justify-content-between" >
+            <div class="col-md-8 d-flex justify-content-end">
+                <img src="./images/aboutUs/Letter1.PNG" id="letter" class="change">
             </div>
 
             <div class="col-md-4" style="padding-top: 150px;">
@@ -165,7 +169,7 @@ window.onload = function() {
 
     </script>
 
-<script>
+<!-- <script>
     // Array of image sources
     var imageSources = ["./images/a", "./images/card/card1/Join club2.PNG"];
     // Index to keep track of the current image
@@ -181,7 +185,7 @@ window.onload = function() {
     }
     // Set an interval to call the changeImage function every 2000 milliseconds (2 seconds)
     setInterval(changeImage, 300);
-</script>
+</script> -->
     
 </body>
 </html>
