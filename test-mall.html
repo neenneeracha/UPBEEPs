@@ -274,6 +274,13 @@
     position: absolute;
     bottom: 1vh;
 }
+.nav-link:hover{
+    color: #5BFFD8;
+
+}
+#textAll:hover{
+    color: #5BFFD8;
+}
 
 
 @media screen and (max-width: 900px) {
@@ -287,38 +294,12 @@
 		grid-auto-columns: 100%;
 	}
 }
-/* @media (max-width: 1280px) {
-    .arrow {
-	max-width: 2000px;
-	width: 80vw;
-	position: relative;
-}
-#promotion{
-    margin-top: 100px;
-}
-h1{
-    font-size: 35px;
-    text-shadow: 2px 2px 2px #ffffff;
-}
-#promotion {
-    background-image: url('./images/mall/promotion.jpg');
-    background-size: cover; 
-}
-#all,#top,#skirt,#dress,#acc, #set{
-   margin-top: 50px;
-}
-} */
-
-
 @media (max-width: 1470px) {
     .arrow {
 	max-width: 2000px;
 	width: 80vw;
 	position: relative;
 }
-#promotion{
-    margin-top: 100px;
-}
 h1{
     font-size: 35px;
     text-shadow: 2px 2px 2px #ffffff;
@@ -326,12 +307,31 @@ h1{
 #promotion {
     background-image: url('./images/mall/promotion.jpg');
     background-size: cover; 
+    height: 600px;
+    margin-top: 80px;
 }
 #all,#top,#skirt,#dress,#acc, #set{
-   margin-top: 50px;
+   margin-top: 80px;
+}
+#search{
+    width: 25px;
+    height: 25px;
+}
+.nav-link{
+    font-size: 16px;
+    padding-left: 12px;
+}
+.arrow i{
+    font-size: 20px;
+}
+#Search{
+    width: 200px ;
+    height: 35px;
+}
+#btSeacrh{
+    font-size: 15px;
 }
 }
-
 
 @media (width: 2240px) {
     .arrow {
@@ -340,7 +340,10 @@ h1{
 	position: relative;
 }
 #promotion{
-    margin-top: 100px;
+    background-image: url('./images/mall/promotion.jpg');
+    background-size: cover;
+    margin-top: 200px;
+    height: 750px;
 }
 h1{
     font-size: 65px;
@@ -351,6 +354,27 @@ h1{
 }
 #all,#top,#skirt,#dress,#acc, #set{
    margin-top: 90px;
+}
+#popup {
+    position: absolute;
+}
+.navbar-toggler-icon {
+    width: 50px;
+    height: 50px;
+}
+#Search{
+    width: 300px ;
+    height: 45px;
+}
+#btSeacrh{
+    font-size: 18px;
+}
+.nav-link{
+    font-size: 20px;
+    padding-left: 12px;
+}
+.arrow i{
+    font-size: 25px;
 }
     }
  /* all */
@@ -364,7 +388,7 @@ h1{
   </head>
   <body>
 <section class="container-fluid fixed-top" style="background-color: #fff;">
-  <header class="py-3" style="z-index: 1000;">
+  <header class="py-3">
     <nav class="navbar" aria-label="Light offcanvas navbar">
           <div class="row justify-content-between align-items-center">
               <div class="col-4 ps-5">
@@ -373,50 +397,32 @@ h1{
                     </button>
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
                       <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h5>
+                        <h3 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                       </div>
                       <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">All</a>
+                            <a class="nav-link active" id="textAll" aria-current="page" href="#all2">All</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Set</a>
+                            <a class="nav-link" href="#set2">Set</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="#">Top</a>
+                              <a class="nav-link" href="#top2">Top</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Skirt</a>
+                              <a class="nav-link" href="#skirt2">Skirt</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Dress</a>
+                              <a class="nav-link" href="#dress2">Dress</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">ACC</a>
+                              <a class="nav-link" href="#acc2">ACC</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Review special</a>
+                              <a class="nav-link" href="#review2">Review special</a>
                             </li>
-                          <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                          </li> -->
-                        </ul>
-                        <!-- <form class="d-flex mt-3" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> -->
                       </div>
                     </div>
               </div>
@@ -427,28 +433,35 @@ h1{
                   </a>
                 </div>
   
-                <div class="col-4 d-flex justify-content-end align-items-center">
+                <!-- <div  class="col-4 d-flex justify-content-end align-items-center">
                   <a class="link-secondary" href="#" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
                   </a>
                   <a class="btn btn-sm btn-outline-secondary" href="#"></a>
+                </div> -->
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <form class="d-flex" role="search" >
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
+                        <button class="btn btn-outline-success" type="submit" id="btSeacrh">Search</button>
+                    </form>
                 </div>
+                 
               
           </div>
     </nav>
   </header>
 </section>
-
 <!-- promotion -->
 <section class="contain">
-  <div class="p-md-5 mb-5 rounded align-items-center" id="promotion">
+  <div class="p-md-5 rounded align-items-center" id="promotion">
     <div class="row d-flex justify-content-center m-5 mt-5"> 
         <div class="col-md-10">
             <div class="row mt-5 d-flex ">
                 <h1 class="fw-normal" style="color: #000000;">Every dream with upbeep's</h1>
             </div>
-            <div class="row mt-5">
-                <div id="popup" class="popup" style="z-index: 2000;">
+
+            <!-- <div class="row mt-5"> -->
+                <div id="popup" class="popup">
                     <div class="popup-content justify-content-center d-flex align-items-center">
                       <div class="container p-3" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
                         <div class="row">
@@ -474,7 +487,7 @@ h1{
                       </div>
                     </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 </div>
   </div>
@@ -608,7 +621,6 @@ h1{
     </div>
     </div>
     
-
   <div class="row mt-5">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 border-bottom">
@@ -650,9 +662,7 @@ h1{
     </div>
     </div>
     </div>
-
   </div>
-
   <div class="row mt-5">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 border-bottom">
@@ -663,7 +673,7 @@ h1{
              <div class="col-md-4 d-flex justify-content-center">
                 <img src="./images/mall/product/Flower dress(4).PNG" class="w-75">
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
+            <div class="col-md-4 d-flex justify-content-center" id="all2">
                 <img src="./images/mall/product/Flower dress(3).PNG" class="w-75">
             </div>
             <div class="col-md-4 d-flex justify-content-center">
@@ -671,23 +681,22 @@ h1{
             </div>
         </div>
     </div>
-    </div>
+    </div> 
     </div>
   </div>
 </section>
 <!-- product -->
-
 <!-- All -->
-<section class="container-fluid bg-mall">
-  <div class="row" style="margin-top: 5vh ;">
-    <h1 class="pb-5" style=" padding-left: 10vw;">All</h1>
+<section class="container-fluid bg-mall" >
+  <div class="row" style="margin-top: 5vh ;" id="all">
+    <h1 class="pb-5" style=" padding-left: 10vw;" id="all2">All</h1>
     <div class="col-md-12 d-flex justify-content-center ">
             <div class="arrow">
                 <i id="left" class="fa-solid fa-angle-left" style=" z-index: 100;"></i>
                 <ul class="carousel">
                     <li class="card">
                         <div class="img">
-                            <h2>Butterfly Set 001 (Halter+Skirt+Headband)</h2>
+                            <h2>Butterfly Set 001</h2>
                             <a href="https://shope.ee/8pOtw4zkA9">
                                 <img src="./images/mall/product/Butterfly set(1).PNG" alt="img" draggable="false">
                             </a>
@@ -697,37 +706,52 @@ h1{
                     <li class="card">
                         <div class="img">
                             <h2>Butterfly Top 002</h2>
-                            <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
-                        </div>
-                    </li>
-                    <li class="card">
-                        <div class="img">
-                            <h2>Butterfly Skirt 002</h2>
-                            <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
-                        </div>
-                    </li>
-                    <li class="card">
-                        <div class="img">
-                            <h2>Flower Dress 003</h2>
-                            <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                            <a href="https://shope.ee/4KwUZmdooz">
+                                <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
+                            </a>
                         </div>
                     </li>
                     <li class="card">
                         <div class="img">
                             <h2>Flower Dress 003</h2>
-                            <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            <a href="https://shope.ee/1VcJCcIaxM">
+                                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
+                            </a>
                         </div>
                     </li>
                     <li class="card">
                         <div class="img">
-                            <h2>Flower Dress 003</h2>
-                            <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            <h2>Chic Skirt 004</h2>
+                            <a href="https://shope.ee/4KwUZqKKSi">
+                                <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                            </a>
+                            
                         </div>
                     </li>
                     <li class="card">
                         <div class="img">
-                            <h2>Flower Dress 003</h2>
-                            <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            <h2>Long Chic Skirt 005</h2>
+                            <a href="https://shope.ee/6AO8m8q3fg">
+                                <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            </a>
+                            
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <h2>Dress Beep 006</h2>
+                            <a href="https://shope.ee/5plINwTcpt">
+                                <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="card" id="set2">
+                        <div class="img">
+                            <h2>Dream Jeans Set 007</h2>
+                            <a href="https://shope.ee/8pOty4gS5l">
+                                <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                            </a>
+                            
                         </div>
                     </li>
                 </ul>
@@ -735,10 +759,9 @@ h1{
             </div>
         </div>
     </div>
-    <!-- all -->
 </section>
 <!-- All -->
-    
+
 <!-- set -->
     <section class="container-fluid bg-mall" >
         <div class="row" id="set">
@@ -754,8 +777,8 @@ h1{
                                 </a>
                             </div>
                         </li>
-                        <li class="card">
-                            <div class="img">
+                        <li class="card" >
+                            <div class="img" id="top2">
                                 <h2>Dream Jeans Set 007 (Vest+Skirt)</h2>
                                 <a href="https://shope.ee/8pOty4gS5l">
                                     <img src="./images/mall/product/set2.jpg" id="set2">
@@ -764,7 +787,6 @@ h1{
                         </li>
                     </ul>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -795,7 +817,7 @@ h1{
                             </div>
                         </li>
                         <li class="card">
-                            <div class="img">
+                            <div class="img" id="skirt2">
                                 <h2>Dream Jeans Set 007 (Vest)</h2>
                                 <a href="https://shope.ee/Vjm3DECcl">
                                     <img src="./images/mall/promotion1.jpg" id="set2">
@@ -842,7 +864,7 @@ h1{
                             </div>
                         </li>
                         <li class="card">
-                            <div class="img">
+                            <div class="img" id="dress2">
                                 <h2>Dream Jeans Set 007 (Skirt)</h2>
                                 <a href="https://shope.ee/30R71mwI1h">
                                     <img src="./images/mall/product/skirt4.jpg" id="set2">
@@ -861,7 +883,7 @@ h1{
     <!-- Dress -->
     <section class="container-fluid bg-mall" >
         <div class="row" id="dress">
-            <h1 class="pb-5" style=" padding-left: 10vw;">Dress</h1>
+            <h1 class="pb-5" style=" padding-left: 10vw;" >Dress</h1>
             <div class="col-md-12 d-flex justify-content-center">
                 <div class="arrow">
                     <ul class="carousel">
@@ -874,7 +896,7 @@ h1{
                             </div>
                         </li>
                         <li class="card">
-                            <div class="img">
+                            <div class="img" id="acc2">
                                 <h2>Dress Beep 006</h2>
                                 <a href="https://shope.ee/5plINwTcpt">
                                     <img src="./images/mall/promotion.jpg" id="set2">
@@ -891,8 +913,56 @@ h1{
 
     <!-- ACC -->
     <section class="container-fluid bg-mall" >
-        <div class="row" id="acc">
+        <div class="row" id="acc" >
             <h1 class="pb-5" style=" padding-left: 10vw;">ACC</h1>
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="arrow">
+                    <ul class="carousel">
+                        <li class="card">
+                            <div class="img">
+                                <h2>Butterfly Set 001 (Headband)</h2>
+                                <a href="https://shope.ee/9pHR87v9ay">
+                                    <img src="./images/mall/product/acc1.jpeg" id="set1">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>Bowbeep</h2>
+                                <a href="https://shope.ee/2VUqOdWLLc">
+                                    <img src="./images/mall/product/acc2.jpeg" id="set2">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img">
+                                <h2>DreamJeans Set 007 (Scrunchies)</h2>
+                                <a href="https://shope.ee/9pHR87v9ay">
+                                    <img src="./images/mall/product/acc3.jpeg" id="set2">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img" id="review2">
+                                <h2>necklace (UPBEEP's x nibnubnib)</h2>
+                                <a href="https://shope.ee/1VcJEJXEuP">
+                                    <img src="./images/mall/product/acc4.jpg" id="set2">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <i id="right" class="fa-solid fa-angle-right"></i>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- ACC -->
+
+    <!-- review -->
+    <section class="container-fluid bg-mall" >
+        <div class="row" id="acc">
+            <h1 class="pb-5" style=" padding-left: 10vw;">Review special</h1>
             <div class="col-md-12 d-flex justify-content-center">
                 <div class="arrow">
                     <ul class="carousel">
@@ -935,8 +1005,13 @@ h1{
             </div>
         </div>
     </section>
-    <!-- ACC -->
+    <!-- review -->
 
+    <footer class="container-fluid bg-mall">
+        <div style="width: 100px; height: 100px;" >
+        </div>
+    </footer>
+   
 
 
 <script src="js/bootstrap.bundle.min.js"></script>
@@ -1052,6 +1127,11 @@ arrow.addEventListener("mouseleave", autoPlay);
 
 </script>
 <!-- all -->
+
+<!-- search -->
+<script src="./js/search.js">
+</script>
+<!-- search -->
 
     </body>
 </html>
