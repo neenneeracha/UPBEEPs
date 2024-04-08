@@ -41,6 +41,7 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+    
     @media (width: 1024px) {
       #ch{
         position: fixed;
@@ -58,7 +59,18 @@
         height: 200px;
         
       }
+      #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 12vw;
+    height: 14vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 4vw;
+}
         }
+
         @media (max-width: 2560px) {
           #back {
       position: fixed;
@@ -81,7 +93,16 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
-
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 11vw;
+    height: 11vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 2vh;
+    left: 8vw;
+}
         }
 
   </style>
@@ -121,6 +142,8 @@
         />
       </div>
     </div>
+    <div id="sound" type="button"></div>
+            <script src="./js/audio.js"></script>
   </section>
 
   <script>
