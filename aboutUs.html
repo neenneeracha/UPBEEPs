@@ -164,6 +164,24 @@ window.onload = function() {
 };
 
     </script>
+
+<script>
+    // Array of image sources
+    var imageSources = ["./images/a", "./images/card/card1/Join club2.PNG"];
+    // Index to keep track of the current image
+    var currentIndex = 0;
+    // Function to change the image
+    function changeImage() {
+        // Get the image element
+        var imgElement = document.getElementById("myImage");
+        // Change the image source
+        imgElement.src = imageSources[currentIndex];
+        // Increment the index for the next image
+        currentIndex = (currentIndex + 1) % imageSources.length;
+    }
+    // Set an interval to call the changeImage function every 2000 milliseconds (2 seconds)
+    setInterval(changeImage, 300);
+</script>
     
 </body>
 </html>
