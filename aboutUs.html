@@ -177,6 +177,139 @@
     }
 
     }
+
+    @media (width: 1440px) {
+        .btFlip{
+            position: absolute;
+            right: 120px;
+            top:360px;
+        }
+        .FlipClick{
+            position: absolute;
+            right: 170px;
+            width: 200px;
+        }
+        #flip {
+      width: 14vw; 
+      height: 14vh;
+      /* margin-left: 50px; */
+      background: url("./images/aboutUs/Flip1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #flip:hover {
+      width: 14vw; 
+      height: 14vh;
+      /* margin-left: 50px; */
+      background: url("./images/aboutUs/Flip2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+    }
+    #image1{
+        position: absolute;
+        width: 800px;
+        top: 120px;
+        left: 290px;
+        object-fit: contain;
+    }
+    #back {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 4vh;
+      left: 1vw;
+    }
+    #back:hover {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #butterfly{
+        position: absolute;
+        width: 25%;
+        height: 25%;
+        object-fit: contain;
+        top: 350px;
+        left: 510px;
+    }
+    #card{
+        margin-top: 90px;
+        margin-left: 300px;
+    }
+    #Btnext{
+        position: absolute;
+        width: 80px;
+        top: 75vh;
+        right: 30vw;
+    }
+    #Btback{
+        position: absolute;
+        width: 80px;
+        top: 75vh;
+        left: 30vw;
+    }
+    #Btclose{
+        position: absolute;
+        width: 50px;
+        top: 16vh;
+        right: 30vw;
+    }
+    .contact{
+        position: absolute;
+        top: 45vh;
+        right: 30vw;
+    }
+    .ct{
+        width: 90px;
+    }
+    #page{
+        position: absolute;
+        top: 90px;
+        width: 50%;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 14vw;
+    height: 14vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 7vw;
+}
+#home {
+    position: fixed;
+    width: 20vw;
+    height: 16vh;
+    bottom: 4vh;
+    display: block;
+    right: 2vw;
+    margin: 10px;
+    background: url("./images/card/card1/Home1.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: background 0.3s ease;
+    z-index: 9;
+}
+#home:hover {
+    background: url("./images/card/card1/Home2.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 9;
+        }
+}
     @media (width: 1470px) {
          #image1{
             position: absolute;
@@ -266,12 +399,10 @@
         width: 50%;
     }
 }
-
     @media (width: 2240px) {
         #image1{
         width: 1100px;
-        object-fit: contain;
-       
+        object-fit: contain;   
     }
     #back {
       width: 10vw; 
@@ -301,10 +432,21 @@
         top: 450px;
         left: 750px;
     }
+    .btFlip{
+            position: absolute;
+            right: 270px;
+            top:560px;
+        }
+        .FlipClick{
+            position: absolute;
+            right: 250px;
+            width: 400px;
+            top: 450px;
+        }
     #flip {
       width: 12vw; 
       height: 12vh;
-      margin-left: 100px;
+      /* margin-left: 100px; */
       background: url("./images/aboutUs/Flip1.PNG");
       background-size: contain;
       background-repeat: no-repeat;
@@ -313,7 +455,7 @@
     #flip:hover {
       width: 12vw; 
       height: 12vh;
-      margin-left: 100px;
+      /* margin-left: 100px; */
       background: url("./images/aboutUs/Flip2.PNG");
       background-size: contain;
       background-repeat: no-repeat;
@@ -350,6 +492,39 @@
         position: absolute;
         width: 50%;
     }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 14vw;
+    height: 14vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 7vw;
+}
+#home {
+            position: fixed;
+            width: 20vw;
+            height: 16vh;
+            bottom: 1vh;
+            display: block;
+            right: 0vw;
+            margin: 10px;
+            background: url("./images/card/card1/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            background: url("./images/card/card1/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 9;
+        }
 }
         
     </style>
@@ -394,16 +569,16 @@
         </div>
 
         <div class="row d-flex justify-content-between" id="card" >
-            <div class="col-md-8 d-flex justify-content-end" style="display: none;">
+            <div class="col-md-9 d-flex justify-content-center" style="display: none;">
                 <img src="./images/aboutUs/Letter1.PNG" id="image1" class="change">
                 <img src="./images/aboutUs/Butterfly1.PNG" id="butterfly" class="hidden">
             </div>
 
-            <div class="col-md-4" style="padding-top: 150px;" style="display: none;">
-                <div class="row d-block justify-content-center">
-                    <img src="./images/aboutUs/Flip click.PNG" class="w-50 ">
+            <div class="col-md-3" style="padding-top: 150px;" style="display: none;">
+                <div class="row d-block justify-content-start  FlipClick">
+                    <img src="./images/aboutUs/Flip click.PNG">
                 </div>
-                <div class="row">
+                <div class="row btFlip">
                     <a id="flip"></a>
                 </div>
             </div>

@@ -10,20 +10,18 @@
         body {
             background-image: url(./images/home/B4.png);
             background-size: cover; 
+            /* background-repeat: no-repeat; */
+            background-position: center center;
+            height: 100vh;
             overflow: hidden;
-            /* width: 50%;
-            height: auto;
-            /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ */
-            /* background-position: center center;  */
-            /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
         }
         #mall {
             position: fixed;
-            width: 32vw;
-            height: 24vw;
-            /* top: 1vh; */
+            width: 35vw;
+            height: 28vw;
+            top: 1vh;
             display: block;
-            left: 8vw;
+            left: 3vw;
             background: url("./images/home/Mall1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -38,20 +36,20 @@
         }
         .characterImg {
             position: fixed;
-            max-width: 27vw;
-            width: 27%;
+            max-width: 29vw;
+            width: 29%;
             height: auto;
             bottom: 0;
-            left: 1vw;
+            left: -2vw;
             z-index: 1;
         }
         #ID1 {
             position: fixed;
-            width: 28vw;
-            height: 28vw;
-            bottom: -3vh;
+            width: 31vw;
+            height: 31vw;
+            bottom: 5vh;
             display: block;
-            right: 2vw;
+            right: -1vw;
             background: url("./images/home/Card1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -60,21 +58,21 @@
         }
         #ID1:hover {
             background: url("./images/home/Card2.PNG");
-            width: 28vw;
-            height: 28vw;
-            bottom: -3vh;
-            right: 2vw;
+            width: 31vw;
+            height: 31vw;
+            bottom: 5vh;
+            right: -1vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
         #phone {
             position: fixed;
-            width: 25vw;
-            height: 50vh;
+            width: 23vw;
+            height: 45vh;
             top: 5vh;
             display: block;
-            right: 9vw;
+            right: 8vw;
             background: url("./images/home/SOS1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -90,9 +88,9 @@
         }
         #aboutus {
             position: fixed;
-            width: 20vw;
-            height: 32vh;
-            bottom: 4vh;
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
             display: block;
             right: 27vw;
             background: url("./images/home/About\ us1.PNG");
@@ -104,22 +102,14 @@
         }
         #aboutus:hover {
             background: url("./images/home/About\ us2.PNG");
-            width: 20vw;
-            height: 32vh;
-            bottom: 4vh;
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
             right: 27vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
         }
-        /* .back {
-        position: fixed;
-        max-width: 9vw;
-        max-height: auto;
-        top: 3vh;
-        left: 5vh;
-        z-index: 1;
-      } */
       #back {
       position: fixed;
       width: 10vw; 
@@ -140,14 +130,60 @@
     #sound {
     position: fixed;
     background-image: url("./images/sound/Sound1.PNG");
-    width: 12vw;
+    width: 9vw;
     height: 12vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 60px;
-    right: -18px;
+    top: 70px;
+    right: 5px;
 }
+
     @media (width: 2240px) {
+        #mall {
+            position: fixed;
+            width: 30vw;
+            height: 24vw;
+            top: 2vh;
+            display: block;
+            left: 7vw;
+            background: url("./images/home/Mall1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #mall:hover {
+            background: url("./images/home/Mall2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        #ID1 {
+            position: fixed;
+            width: 32vw;
+            height: 30vw;
+            bottom: 2vh;
+            display: block;
+            right: -1vw;
+            background: url("./images/home/Card1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #ID1:hover {
+            background: url("./images/home/Card2.PNG");
+            width: 32vw;
+            height: 30vw;
+            bottom: 2vh;
+            right: -1vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+
+
     #sound {
     position: fixed;
     background-image: url("./images/sound/Sound1.PNG");

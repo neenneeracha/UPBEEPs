@@ -57,7 +57,6 @@
         top:  20vh;
         width: 1000px;
         height: 200px;
-        
       }
       #sound {
     position: fixed;
@@ -70,8 +69,59 @@
     left: 4vw;
 }
         }
-
-        @media (max-width: 2560px) {
+        @media (width: 1440px) {
+          .character {
+      max-width: 90vw;
+      width: 90%;
+      height: auto;
+    }
+    .character:hover{
+      transform: scale(1.1);
+    }
+    #ch{
+        position: absolute;
+        bottom: 10vh;
+        left: 8vw; 
+      }
+      #choose{
+        position: fixed;
+        top:  4vh;
+        left: 70px;
+        width: 1500px;
+        height: 100px;
+      }
+    #sound {
+    position: absolute;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 9vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 12vh;
+    left: 10vw;
+}
+}
+        @media (width: 2240px) {
+          .character {
+      width: 600px;
+      height: auto;
+    }
+    .character:hover{
+      transform: scale(1.1);
+    }
+    #ch{
+        position: absolute;
+        bottom: 5vh;
+        left: 15vw;
+        
+      }
+      #choose{
+        position: absolute;
+        left: 430px;
+        top:  4vh;
+        width: 1800px;
+        height: 200px;
+      }
           #back {
       position: fixed;
       width: 10vw; 
@@ -96,12 +146,47 @@
     #sound {
     position: fixed;
     background-image: url("./images/sound/Sound1.PNG");
-    width: 11vw;
+    width: 8vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 8vh;
+    left: 16vw;
+}
+
+        }
+        
+        @media (width: 2560px) {
+          #back {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      top: 50px;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      top: 50px;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 5vw;
     height: 11vh;
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 2vh;
-    left: 8vw;
+    left: 20vw;
 }
         }
 
