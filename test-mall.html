@@ -25,9 +25,10 @@
     <style>
         body{
             font-family: 'Love Ya Like A Sister', cursive;
+            background-image: url('./images/card/card1/Bg.PNG');
         }
       .bg-mall {
-            background-image: url('./images/card/card1/Bg.PNG');
+            /* background-image: url('./images/card/card1/Bg.PNG'); */
             background-size: cover; 
             width: 100%;
             overflow: hidden;
@@ -102,6 +103,7 @@
             background: #000;
         }
         .carousel-caption {
+            width: 100%;
             padding-bottom: 80px;
         }
         h2 {
@@ -141,8 +143,10 @@
         }
 
         .btn-large {
+            position: absolute;
             padding: 11px 45px;
             font-size: 18px;
+            right: 260px;
         }
 
         /**
@@ -230,6 +234,17 @@
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 }
+.arrow .carousel-2{
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% / 2));
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	gap: 50px;
+	border-radius: 8px;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
 .carousel::-webkit-scrollbar {
 	display: none;
 }
@@ -281,7 +296,9 @@
 #textAll:hover{
     color: #5BFFD8;
 }
-
+.navbar-toggler{
+    border: #fff;
+}
 
 @media screen and (max-width: 900px) {
 	.arrow .carousel {
@@ -295,6 +312,21 @@
 	}
 }
 @media (max-width: 1470px) {
+    .btn-large {
+            position: absolute;
+            padding: 11px 45px;
+            font-size: 18px;
+            right: 260px;
+        }
+    .productImg {
+            /* padding: 100px;  */
+            object-fit: cover; 
+            width: 1090px;
+            height: 550px;
+        }
+    #burger{
+        width: 50px;
+    }
     .arrow {
 	max-width: 2000px;
 	width: 80vw;
@@ -329,11 +361,40 @@ h1{
     height: 35px;
 }
 #btSeacrh{
-    font-size: 15px;
+    width: 25px;
+    height: 25px;
+}
+.gift {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50px;
+    top: 200px;
 }
 }
 
 @media (width: 2240px) {
+    .btn-large {
+            position: absolute;
+            padding: 11px 45px;
+            font-size: 18px;
+            right: 450px;
+        }
+    .productImg {
+            object-fit: cover; 
+            width: 1700px;
+            height: 800px;
+        }
+    #burger{
+        width: 80px;
+    }
+    .gift {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
     .arrow {
 	max-width: 2000px;
 	width: 80vw;
@@ -367,7 +428,9 @@ h1{
     height: 45px;
 }
 #btSeacrh{
-    font-size: 18px;
+    width: 25px;
+    height: 25px;
+    /* font-size: 18px; */
 }
 .nav-link{
     font-size: 20px;
@@ -388,12 +451,15 @@ h1{
   </head>
   <body>
 <section class="container-fluid fixed-top" style="background-color: #fff;">
-  <header class="py-3">
-    <nav class="navbar" aria-label="Light offcanvas navbar">
+  <header >
+    <nav class="navbar mb-1" aria-label="Light offcanvas navbar" >
           <div class="row justify-content-between align-items-center">
               <div class="col-4 ps-5">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+                  <button class="navbar-toggler ms-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+                      <!-- <span class="navbar-toggler-icon"></span> -->
+                      <!-- <span> -->
+                        <img src="./images/mall/elements/More.PNG" class="pt-5" id="burger">
+                      <!-- </span> -->
                     </button>
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
                       <div class="offcanvas-header">
@@ -427,9 +493,9 @@ h1{
                     </div>
               </div>
   
-              <div class="col-4 text-center">
-                  <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
-                      <img src="./images/mall/Logo head.PNG" class="w-25 h-25">
+              <div class="col-md-4 text-center">
+                  <a class="blog-header-logo text-body-emphasis text-decoration-none " href="#">
+                      <img src="./images/mall/Logo head.PNG" class="w-25 h-25 pt-5">
                   </a>
                 </div>
   
@@ -439,14 +505,14 @@ h1{
                   </a>
                   <a class="btn btn-sm btn-outline-secondary" href="#"></a>
                 </div> -->
-                <div class="col-4 d-flex justify-content-end align-items-center">
-                    <form class="d-flex" role="search" >
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="Search">
-                        <button class="btn btn-outline-success" type="submit" id="btSeacrh">Search</button>
+                <div class="col-4 d-flex justify-content-end align-items-center pt-5">
+                    <form class="d-flex mx-5" role="search" >
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="Search">
+                        <button class="btn btn-outline-success" type="submit"><img src="./images/mall/elements/Search.PNG" id="btSeacrh" ></button>
                     </form>
                 </div>
                  
-              
+>              
           </div>
     </nav>
   </header>
@@ -463,20 +529,20 @@ h1{
             <!-- <div class="row mt-5"> -->
                 <div id="popup" class="popup">
                     <div class="popup-content justify-content-center d-flex align-items-center">
-                      <div class="container p-3" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
+                      <div class="container p-3 gift" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
                         <div class="row">
                         <span class="close justify-content-end d-flex pe-5" id="close-button" onclick="closePopup()">&times;</span>
                           <div class="col-md-12">
                             <div class="caption">
                               <div class="row d-flex justify-content-center m-3">
-                                  <img src="./images/mall/Logo head.PNG" class="w-50">
+                                  <img src="./images/mall/Logo head.PNG" class="w-75">
                               </div>
                               <div class="main-button">
                                   <div class="row d-flex justify-content-between mt-5">
-                                      <div class="col-md-4 d-flex justify-content-center">
-                                          <p>Special Gift</p>
+                                      <div class="col-md-6 d-flex justify-content-center">
+                                          <p></p>
                                       </div>
-                                      <div class="col-md-4 d-flex justify-content-center">
+                                      <div class="col-md-6 d-flex justify-content-center pt-5">
                                           <a href="#">click here!</a>
                                       </div>
                                   </div>
@@ -498,7 +564,24 @@ h1{
 <!-- new -->
 <section class="contain bg-mall">
   <h1 style="padding-left: 15%; padding-top: 3%;">
-    NEW
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInLeft">Butterfly set 001</h2>
+        </div>
+        <div class="item ">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInDown">Butterfly Top 002</h2>
+        </div>
+        <div class="item ">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInRight">Flower dress 003</h2>
+        </div>
+    </div>
+    </div>
+    <div>
+        <ul></li>
+    </div>
   </h1>
   <div class="row d-flex justify-content-center">
     <div class="col-md-9 pt-5">
@@ -513,19 +596,19 @@ h1{
             <!-- Wrapper for Slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <!-- Set the first background image using inline CSS below. -->
                     <div class="fill "><img src="./images/mall/product/Butterfly set(2).PNG" class="d-block w-50" alt="..."></div>
                     <div class="carousel-caption">
-                        <h2 class="animated fadeInLeft">Butterfly set 001</h2>
                         <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                        <p class="animated fadeInUp">
+                            <a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a>
+                        </p>
                     </div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
                     <div class="fill"><img src="./images/mall/product/Butterfly top 01(1).PNG" class="d-block w-50" alt="..."></div>
                     <div class="carousel-caption">
-                        <h2 class="animated fadeInDown">Butterfly Top 002</h2>
+                        <!-- <h2 class="animated fadeInDown">Butterfly Top 002</h2> -->
                         <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
                         <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
                     </div>
@@ -534,7 +617,7 @@ h1{
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill"><img src="./images/mall/product/Flower dress(3).PNG" class="d-block w-50" alt="..."></div>
                     <div class="carousel-caption">
-                        <h2 class="animated fadeInRight">Flower dress 003</h2>
+                        <!-- <h2 class="animated fadeInRight">Flower dress 003</h2> -->
                         <!-- <p class="animated fadeInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
                         <p class="animated fadeInRight"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
                     </div>
@@ -557,25 +640,17 @@ h1{
 <!-- new -->
 
 <!-- product -->
-<section class="container-fluid">
-  <div class="row m-5">
-    <div class="row mt-5 ">
+<section class="container-fluid ">
+  <div class="row m-5 ">
+    <div class="row mt-5  ">
     <div class="col-md-12" >
       <h1 class="pb-4 mb-4 border-bottom">
         Butterfly set 001
       </h1>
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set.PNG" class="w-75">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-11 d-flex justify-content-center">
+                <img src="./images/mall/promotion.jpg" class=" productImg">
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set(2).PNG" class="w-75">
-            </div>
-        </div>
     </div>
   </div>
 </div>
@@ -586,17 +661,11 @@ h1{
         Butterfly Top 002
       </h1>
       <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(2).PNG" class="w-75">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-11 d-flex justify-content-center">
+                <img src="./images/mall/promotion.jpg" class=" productImg">
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(3).PNG" class="w-75">
-            </div>
-        </div>
+    </div>
     </div>
     </div>
     </div>
@@ -606,19 +675,11 @@ h1{
       <h1 class="pb-4 mb-4 border-bottom">
         Flower dress 003
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(3).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(2).PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div>
     
   <div class="row mt-5">
@@ -626,19 +687,11 @@ h1{
       <h1 class="pb-4 mb-4 border-bottom">
         Chic Skirt 004
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(2).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div>
     </div>
   
@@ -647,19 +700,11 @@ h1{
       <h1 class="pb-4 mb-4 border-bottom">
         Long Chic Skirt 005
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(2).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div>
     </div>
   </div>
@@ -668,19 +713,11 @@ h1{
       <h1 class="pb-4 mb-4 border-bottom">
         Dress Beep 006
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(4).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center" id="all2">
-                <img src="./images/mall/product/Flower dress(3).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div> 
     </div>
   </div>
@@ -692,7 +729,10 @@ h1{
     <h1 class="pb-5" style=" padding-left: 10vw;" id="all2">All</h1>
     <div class="col-md-12 d-flex justify-content-center ">
             <div class="arrow">
-                <i id="left" class="fa-solid fa-angle-left" style=" z-index: 100;"></i>
+                <!-- <i id="left" class="fa-solid fa-angle-left" style=" z-index: 100;">
+                </i> -->
+                <i id="left" style="z-index: 100;"><img src="./images/mall/elements/Back.PNG" style="width: 50px;"></i>
+                
                 <ul class="carousel">
                     <li class="card">
                         <div class="img">
@@ -755,7 +795,7 @@ h1{
                         </div>
                     </li>
                 </ul>
-                <i id="right" class="fa-solid fa-angle-right"></i>
+                <i id="right"><img src="./images/mall/elements/Next.PNG" style="width: 50px;"></i>
             </div>
         </div>
     </div>
@@ -872,7 +912,7 @@ h1{
                             </div>
                         </li>
                     </ul>
-                    <i id="right" class="fa-solid fa-angle-right"></i>
+                    <i id="right"><img src="./images/mall/elements/Next.PNG" style="width: 50px;"></i>
                 </div>
                 
             </div>
@@ -951,7 +991,7 @@ h1{
                             </div>
                         </li>
                     </ul>
-                    <i id="right" class="fa-solid fa-angle-right"></i>
+                    <i id="right"><img src="./images/mall/elements/Next.PNG" style="width: 50px;"></i>
                 </div>
                 
             </div>
@@ -965,12 +1005,12 @@ h1{
             <h1 class="pb-5" style=" padding-left: 10vw;">Review special</h1>
             <div class="col-md-12 d-flex justify-content-center">
                 <div class="arrow">
-                    <ul class="carousel">
+                    <ul class="carousel-2">
                         <li class="card">
                             <div class="img">
                                 <h2>Butterfly Set 001 (Headband)</h2>
                                 <a href="https://shope.ee/9pHR87v9ay">
-                                    <img src="./images/mall/product/acc1.jpeg" id="set1">
+                                    <img src="./images/mall/review/1.jpg" id="set1">
                                 </a>
                             </div>
                         </li>
@@ -978,7 +1018,7 @@ h1{
                             <div class="img">
                                 <h2>Bowbeep</h2>
                                 <a href="https://shope.ee/2VUqOdWLLc">
-                                    <img src="./images/mall/product/acc2.jpeg" id="set2">
+                                    <img src="./images/mall/review/2.jpeg" id="set2">
                                 </a>
                             </div>
                         </li>
@@ -986,7 +1026,7 @@ h1{
                             <div class="img">
                                 <h2>DreamJeans Set 007 (Scrunchies)</h2>
                                 <a href="https://shope.ee/9pHR87v9ay">
-                                    <img src="./images/mall/product/acc3.jpeg" id="set2">
+                                    <img src="./images/mall/review/3.jpeg" id="set2">
                                 </a>
                             </div>
                         </li>
@@ -994,12 +1034,12 @@ h1{
                             <div class="img">
                                 <h2>necklace (UPBEEP's x nibnubnib)</h2>
                                 <a href="https://shope.ee/1VcJEJXEuP">
-                                    <img src="./images/mall/product/acc4.jpg" id="set2">
+                                    <img src="./images/mall/review/4.jpg" id="set2">
                                 </a>
                             </div>
                         </li>
                     </ul>
-                    <i id="right" class="fa-solid fa-angle-right"></i>
+                    <i id="right"><img src="./images/mall/elements/Next.PNG" style="width: 50px;"></i>
                 </div>
                 
             </div>
@@ -1018,114 +1058,10 @@ h1{
 <script src="js/specialGift.js"></script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-    $(".custom-carousel").owlCarousel({ autoWidth: true, loop: true });
-    $(document).ready(function () {
-        $(".custom-carousel .item").click(function () {
-            $(".custom-carousel .item").not($(this)).removeClass("active");
-            $(this).toggleClass("active");
-        });
-    });
-  </script>
+  
 
   <!-- all -->
-  <script>
-    const arrow = document.querySelector(".arrow");
-const carousel = document.querySelector(".carousel");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const arrowBtns = document.querySelectorAll(".arrow i");
-const carouselChildrens = [...carousel.children];
-
-let isDragging = false,
-isAutoPlay = true,
-startX,
-startScrollLeft,
-timeoutId;
-
-// Get the number of cards that can fit in the carousel at once
-let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-// Insert copies of the last few cards to beginning of carousel for infinite scrolling
-carouselChildrens
-.slice(-cardPerView)
-.reverse()
-.forEach((card) => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-});
-
-// Insert copies of the first few cards to end of carousel for infinite scrolling
-carouselChildrens.slice(0, cardPerView).forEach((card) => {
-carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-});
-
-// Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
-carousel.classList.add("no-transition");
-carousel.scrollLeft = carousel.offsetWidth;
-carousel.classList.remove("no-transition");
-
-// Add event listeners for the arrow buttons to scroll the carousel left and right
-arrowBtns.forEach((btn) => {
-btn.addEventListener("click", () => {
-    carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
-});
-});
-
-const dragStart = (e) => {
-isDragging = true;
-carousel.classList.add("dragging");
-// Records the initial cursor and scroll position of the carousel
-startX = e.pageX;
-startScrollLeft = carousel.scrollLeft;
-};
-
-const dragging = (e) => {
-if (!isDragging) return; // if isDragging is false return from here
-// Updates the scroll position of the carousel based on the cursor movement
-carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-};
-
-const dragStop = () => {
-isDragging = false;
-carousel.classList.remove("dragging");
-};
-
-const infiniteScroll = () => {
-// If the carousel is at the beginning, scroll to the end
-if (carousel.scrollLeft === 0) {
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
-    carousel.classList.remove("no-transition");
-}
-// If the carousel is at the end, scroll to the beginning
-else if (
-    Math.ceil(carousel.scrollLeft) ===
-    carousel.scrollWidth - carousel.offsetWidth
-) {
-    carousel.classList.add("no-transition");
-    carousel.scrollLeft = carousel.offsetWidth;
-    carousel.classList.remove("no-transition");
-}
-
-// Clear existing timeout & start autoplay if mouse is not hovering over carousel
-clearTimeout(timeoutId);
-if (!arrow.matches(":hover")) autoPlay();
-};
-
-const autoPlay = () => {
-if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-// Autoplay the carousel after every 2500 ms
-timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
-};
-autoPlay();
-
-carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("mousemove", dragging);
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("scroll", infiniteScroll);
-arrow.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-arrow.addEventListener("mouseleave", autoPlay);
-
-</script>
+ 
 <!-- all -->
 
 <!-- search -->
