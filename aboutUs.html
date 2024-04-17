@@ -178,8 +178,140 @@
 
     }
 
-   
-    @media (max-width: 1470px) {
+    @media (width: 1440px) {
+        .btFlip{
+            position: absolute;
+            right: 120px;
+            top:360px;
+        }
+        .FlipClick{
+            position: absolute;
+            right: 250px;
+            width: 200px;
+        }
+        #flip {
+            
+      width: 14vw; 
+      height: 14vh;
+      /* margin-left: 50px; */
+      background: url("./images/aboutUs/Flip1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #flip:hover {
+      width: 14vw; 
+      height: 14vh;
+      /* margin-left: 50px; */
+      background: url("./images/aboutUs/Flip2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+    }
+    #image1{
+        position: absolute;
+        width: 800px;
+        top: 120px;
+        left: 290px;
+        object-fit: contain;
+    }
+    #back {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 4vh;
+      left: 1vw;
+    }
+    #back:hover {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 100px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #butterfly{
+        position: absolute;
+        width: 25%;
+        height: 25%;
+        object-fit: contain;
+        top: 350px;
+        left: 510px;
+    }
+    #card{
+        margin-top: 90px;
+        margin-left: 300px;
+    }
+    #Btnext{
+        position: absolute;
+        width: 80px;
+        top: 75vh;
+        right: 30vw;
+    }
+    #Btback{
+        position: absolute;
+        width: 80px;
+        top: 75vh;
+        left: 30vw;
+    }
+    #Btclose{
+        position: absolute;
+        width: 50px;
+        top: 16vh;
+        right: 30vw;
+    }
+    .contact{
+        position: absolute;
+        top: 45vh;
+        right: 30vw;
+    }
+    .ct{
+        width: 90px;
+    }
+    #page{
+        position: absolute;
+        top: 90px;
+        width: 50%;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 9vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 8vw;
+}
+#home {
+    position: fixed;
+    width: 13vw; 
+    height: 13vh;
+    bottom: 3vh;
+    display: block;
+    right: 4vw;
+    margin: 10px;
+    background: url("./images/card/card1/Home1.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: background 0.3s ease;
+    z-index: 9;
+}
+#home:hover {
+    background: url("./images/card/card1/Home2.PNG");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 9;
+        }
+}
+    @media (width: 1470px) {
          #image1{
             position: absolute;
             top: 80px;
