@@ -117,7 +117,6 @@
 
         #fname{
             top: 14vh;
-
         }
 
         #fdate{
@@ -167,6 +166,125 @@
         }
 
         }
+
+    @media (width: 1440px) {
+            #next {
+            position: fixed;
+            width: 19vw;
+            height: 13vh;
+            bottom: 6vh;
+            display: block;
+            right: 19vw;
+            margin: 10px;
+            background: url("./images/card/card2/Next.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #back {
+            position: fixed;
+            width: 20vw;
+            height: 15vh;
+            bottom: 6vh;
+            display: block;
+            left: 18vw;
+            background: url("./images/card/card2/Back.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #back:hover, #next:hover {
+            transform: scale(1.1);
+        }
+        #home {
+            position: fixed;
+            width: 25vw;
+            height: 16vh;
+            bottom: 6vh;
+            display: block;
+            right: 0vw;
+            background: url("./images/card/card2/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            
+        }
+        #home:hover {
+            position: fixed;
+            width: 25vw;
+            height: 15vh;
+            bottom: 6vh;
+            display: block;
+            right: 0vw;
+            background: url("./images/card/card2/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .contain {
+            /* margin-top: 15vh; */
+            position: absolute;
+            top: 120px;
+        }
+        .overlay-image {
+            position: absolute;
+            top: 25%;
+            left: 8.1%;
+            width: 52%; 
+            height: 50%; 
+            background-image: url('images/card/card2/Frame1.PNG');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 1; 
+        }
+        .overlay-text {
+            position: absolute;
+            width: 50vw;
+            height: 50vh; 
+            z-index: 1; 
+        }
+        .input {
+            position: absolute;
+            right: 3vw;
+            height: 5vh;
+            width: 18vw;
+            background: transparent;
+            border: none;
+            outline: none;
+            text-align: right; 
+            caret-color: #5BFFD8;
+            font-size: 2em;
+            color: #5BFFD8;
+            font-family: 'Love Ya Like A Sister', cursive;
+        }
+
+        #fname{
+            top: 12vh;
+        }
+
+        #fdate{
+            top: 19vh;
+            width: 15.5vw;
+        }
+        #fbirth{
+            top: 25.5vh;
+            width: 15.5vw; 
+        }
+
+        #fgoal{
+            top: 31vh;
+        }
+        #fstrength{
+            top: 37vh;
+        }
+    }
 
         @media (max-width: 1280px) {
             #fname{
