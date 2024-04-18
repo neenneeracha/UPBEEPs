@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" rel="stylesheet" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+    <script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+    <title>Document</title>
+
+    <style>
+        .carousel-wrap {
+  margin: 90px auto;
+  padding: 0 5%;
+  width: 80%;
+  position: relative;
+}
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .itemAll {
+  position: relative;
+  z-index: 100; 
+  -webkit-backface-visibility: hidden; 
+}
+
+/* end fix */
+.owl-nav > div {
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  color: #cdcbcd;
+}
+
+.owl-nav i {
+  font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+  left: -30px;
+}
+
+.owl-nav .owl-next {
+  right: -30px;
+}
+.itemAll .img {
+    width: 600px;
+}
+    </style>
+</head>
+<body>
+    <div class="carousel-wrap">
+        <div class="owl-carousel">
+          <div class="itemAll">
+                <div class="row">
+                    <div class="img">
+                        <a href="https://shope.ee/8pOtw4zkA9">
+                            <img src="./images/mall/product/Butterfly set(1).PNG" alt="img" draggable="false">
+                        </a>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="detail-all">Butterfly Set 001</div>
+                </div>
+        </div>
+
+          <div class="itemAll">
+            <div class="img">
+                <a href="https://shope.ee/4KwUZmdooz">
+                    <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
+                </a>
+            </div>
+            <div class="row ">
+                <div class="detail-all">Butterfly Top 002</div>
+            </div>
+        </div>
+
+          <div class="itemAll">
+            
+                          <div class="img">
+                              <a href="https://shope.ee/1VcJCcIaxM">
+                                  <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
+                              </a>
+                          </div>
+                          <div class="row ">
+                              <div class="detail-all">Flower Dress 003</div>
+                          </div>
+                          
+                      </div>
+
+          <div class="itemAll">
+            
+                          <div class="img">
+                              <a href="https://shope.ee/4KwUZqKKSi">
+                                  <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                              </a>   
+                          </div>
+                          <div class="row ">
+                              <div class="detail-all">Chic Skirt 004</div>
+                          </div>
+                     
+                    </div>
+
+          <div class="itemAll">
+             
+                          <div class="img">
+                              <a href="https://shope.ee/6AO8m8q3fg">
+                                  <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                              </a>
+                          </div>
+                          <div class="row ">
+                              <div class="detail-all">Long Chic Skirt 005</div>
+                          </div>
+                      </div>
+
+          <div class="itemAll">
+                          <div class="img">
+                              <a href="https://shope.ee/5plINwTcpt">
+                                  <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                              </a>
+                          </div>
+                          <div class="row ">
+                              <div class="detail-all">Dress Beep 006</div>
+                          </div>
+                      </div>
+
+          <div class="itemAll" id="set2">
+            <div class="img">
+                <a href="https://shope.ee/8pOty4gS5l">
+                    <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                </a>
+            </div>
+            <div class="row ">
+                <div class="detail-all">Dream Jeans Set 007</div>
+            </div>
+        </div>
+
+          <!-- <div class="item">
+            <img src="http://placehold.it/150x150"></div>
+          <div class="item">
+            <img src="http://placehold.it/150x150"></div>
+          <div class="item">
+            <img src="http://placehold.it/150x150"></div>
+          <div class="item">
+            <img src="http://placehold.it/150x150"></div>
+          <div class="item">
+            <img src="http://placehold.it/150x150"></div>
+        </div> -->
+      </div>
+      <script>
+        $('.owl-carousel').owlCarousel({
+  loop: true,
+  margin: 650,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>"
+  ],
+  autoplay: true,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 3
+    }
+  }
+})
+      </script>
+    
+</body>
+</html>

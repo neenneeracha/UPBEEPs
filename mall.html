@@ -10,24 +10,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome Link for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-<!-- all -->
-    <!-- <link rel="stylesheet" href="ttps://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" >
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<!-- all -->
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./images/mall/Logo head.PNG" />
+
+    <!-- testAll -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" rel="stylesheet" >
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+    <script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="./images/mall/Logo head.PNG" />
     <style>
-      .bg-mall {
+        body{
+            font-family: 'Love Ya Like A Sister', cursive;
             background-image: url('./images/card/card1/Bg.PNG');
+        }
+      .bg-mall {
+            /* background-image: url('./images/card/card1/Bg.PNG'); */
             background-size: cover; 
             width: 100%;
-            height: 100vh;
             overflow: hidden;
         }
       .bd-placeholder-img {
@@ -89,8 +100,13 @@
         display: block !important;
       }
 
-
       /* .carousel */
+      .carousel-control.right {
+            background-image: none;
+        }
+        .carousel-control.left {
+            background-image: none;
+        }
       .carousel,
         .item,
         .active {
@@ -98,9 +114,9 @@
         }
         .carousel-inner {
             height: 100%;
-            background: #000;
         }
         .carousel-caption {
+            width: 100%;
             padding-bottom: 80px;
         }
         h2 {
@@ -120,7 +136,7 @@
             -moz-background-size: cover;
             background-size: cover;
             -o-background-size: cover;
-            opacity: 0.6;
+            /* opacity: 0.6; */
         }
         /**
          * Button
@@ -140,8 +156,10 @@
         }
 
         .btn-large {
+            position: absolute;
             padding: 11px 45px;
             font-size: 18px;
+            right: 260px;
         }
 
         /**
@@ -188,261 +206,436 @@
             margin: auto;
         }
 
-        /* Agenda */
-  .timeline {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  padding: 20px;
-  width: 100%;
+        /* all */
+    .arrow {
+	max-width: 1200px;
+	width: 120vw;
+	position: relative;
+}
+.arrow i {
+	top: 50%;
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	font-size: 1.25rem;
+	position: absolute;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 50%;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+	transform: translateY(-50%);
+	transition: transform 0.1s linear;
+}
+.arrow i:active {
+	transform: translateY(-50%) scale(0.85);
+}
+.arrow i:first-child {
+	left: -80px;
+}
+.arrow i:last-child {
+	right: -80px;
+}
+.arrow .carousel {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% / 4));
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	border-radius: 8px;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+	display: none;
+}
+.carousel.no-transition {
+	scroll-behavior: auto;
+}
+.carousel.dragging {
+	scroll-snap-type: none;
+	scroll-behavior: auto;
+}
+.carousel.dragging .card {
+	cursor: grab;
+	user-select: none;
+}
+.carousel :where(.card, .img) {
+	display: flex;
+	align-items: center;
+}
+.carousel .card {
+	scroll-snap-align: start;
+	list-style: none;
+	background: transparent;
+	cursor: pointer;
+	flex-direction: column;
+    border-color: transparent;
+}
+.carousel .card h2 {
+	font-weight: 500;
+	font-size: 28px;
+    text-shadow: 2px 2px 2px #000;
+    color: #fefefe;
+    position: absolute;
+    bottom: 1vh;
+}
+.nav-link:hover{
+    color: #5BFFD8;
+
+}
+#textAll:hover{
+    color: #5BFFD8;
+}
+.navbar-toggler{
+    border: #fff;
 }
 
-.timeline-item {
-  margin-right: 20px;
-  padding: 20px;
-  border: 1px solid #333;
-  box-shadow: 3px 3px 6px rgba(51, 51, 51, 0.3);
-  border-radius: 10px;
- 
-}
-.timeline-item:hover {
-  border: 1px solid #f4f3ef;
-  background-color: #3a96c1;
 
-
-.timeline-content {
-  transition: 0.2s ease-in-out;
-}
-h3{
-color: #f4f3ef;
-}
-p{
-    color: #f4f3ef;
-}
+/* testAll */
+.carousel-wrap {
+  width: 80%;
+  position: relative;
 }
 
-.timeline-content {
-  /* margin-left: 20px; */
-  width: 300px;
-  height: 200px;
-
+.owl-carousel .itemAll {
+  position: relative;
+  z-index: 100; 
+  -webkit-backface-visibility: hidden; 
 }
 
-/* All */
-a {
-text-decoration: none;
-color: inherit;
-outline: none;
-transition: all 0.4s ease-in-out;
--webkit-transition: all 0.4s ease-in-out;
-}
-a:focus,a:active,a:visited,a:hover {
-text-decoration: none;
-outline: none;
-}
-/* a:hover {
-color: #e73700;
-} */
-h2 {
-margin-bottom: 48px;
-padding-bottom: 16px;
-font-size: 20px;
-line-height: 28px;
-font-weight: 700;
-position: relative;
-text-transform: capitalize;
-}
-h3 {
-margin: 0 0 10px;
-font-size: 28px;
-line-height: 36px;
-}
-/* button {
-outline: none !important;
-} */
-/******* Common Element CSS End *********/
-
-/* -------- title style ------- */
-.line-title {
-/* position: relative;
-width: 400px; */
-font-size: 35px;
+/* end fix */
+.owl-nav > div {
+  margin-top: -26px;
+  position: absolute;
+  top: 50%;
+  /* color: #cdcbcd; */
 }
 
-/******* Middle section CSS Start ******/
-/* -------- Landing page ------- */
-.all-section {
-padding: 20px 80px
-}
-.all-section .owl-stage {
-margin: 15px 0;
-display: flex;
-display: -webkit-flex;
-}
-.all-section .item {
-margin: 0 15px 60px;
-width: 320px;
-height: 400px;
-display: flex;
-display: -webkit-flex;
-align-items: flex-end;
--webkit-align-items: flex-end;
-background: #343434 no-repeat center center / cover;
-border-radius: 16px;
-overflow: hidden;
-position: relative;
-transition: all 0.4s ease-in-out;
--webkit-transition: all 0.4s ease-in-out;
-cursor: pointer;
-}
-.all-section .item.active {
-width: 400px;
-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
--webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-}
-.all-section .item:after {
-content: "";
-display: block;
-position: absolute;
-height: 100%;
-width: 100%;
-left: 0;
-top: 0;
-background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-}
-.all-section .item-desc {
-padding: 0 24px 12px;
-color: #fff;
-position: relative;
-z-index: 1;
-overflow: hidden;
-transform: translateY(calc(100% - 54px));
--webkit-transform: translateY(calc(100% - 54px));
-transition: all 0.4s ease-in-out;
--webkit-transition: all 0.4s ease-in-out;
-}
-.all-section .item.active .item-desc {
-transform: none;
--webkit-transform: none;
-}
-.all-section .item-desc p {
-opacity: 0;
--webkit-transform: translateY(32px);
-transform: translateY(32px);
-transition: all 0.4s ease-in-out 0.2s;
--webkit-transition: all 0.4s ease-in-out 0.2s;
-}
-.all-section .item.active .item-desc p {
-opacity: 1;
--webkit-transform: translateY(0);
-transform: translateY(0);
-}
-.all-section .owl-theme.custom-carousel .owl-dots {
-margin-top: -20px;
-position: relative;
-z-index: 5;
-}
-/******** Middle section CSS End *******/
-
-/***** responsive css Start ******/
-
-@media (min-width: 992px) and (max-width: 1199px) {
-h2 {
-margin-bottom: 32px;
-}
-h3 {
-margin: 0 0 8px;
-font-size: 24px;
-line-height: 32px;
+.owl-nav i {
+  font-size: 52px;
 }
 
-/* -------- Landing page ------- */
-.all-section {
-padding: 50px 50px;
-}
-.all-section .item {
-margin: 0 12px 60px;
-width: 260px;
-height: 360px;
-}
-.all-section .item.active {
-width: 400px;
-}
-.all-section .item-desc {
-transform: translateY(calc(100% - 46px));
--webkit-transform: translateY(calc(100% - 46px));
-}
+.owl-nav .owl-prev {
+top: 120px;
+  left: -80px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-h2 {
-margin-bottom: 32px;
+.owl-nav .owl-next {
+    top: 120px;
+  right: -80px;
 }
-h3 {
-margin: 0 0 8px;
-font-size: 24px;
-line-height: 32px;
-}
-/* .line-title {
-width: 330px;
-} */
+/* testAll */
 
-/* -------- Landing page ------- */
-.all-section{
-padding: 50px 30px 40px;
+@media screen and (max-width: 900px) {
+	.arrow .carousel {
+		grid-auto-columns: calc((100% / 2) - 9px);
+	}
 }
-.all-section .item {
-margin: 0 12px 60px;
-width: 240px;
-height: 330px;
+
+@media screen and (max-width: 600px) {
+	.arrow .carousel {
+		grid-auto-columns: 100%;
+	}
 }
-.all-section .item.active {
-width: 360px;
+@media (max-width: 1470px) {
+    #searchResults {
+            position: absolute;
+            top: 100%;
+            right: 70px;
+            max-height: 250px; /* กำหนดความสูงสูงสุด */
+            overflow-y: auto; /* ให้มีการเลื่อนแนวตั้งเมื่อเกินความสูงสูงสุด */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 10px;
+            z-index: 1000; 
+            display: none;
+            margin-top: 5px;
+        }
+    .arrow .carousel {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% / 4));
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	/* gap: 30px; */
+	border-radius: 8px;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
-.all-section .item-desc {
-transform: translateY(calc(100% - 42px));
--webkit-transform: translateY(calc(100% - 42px));
+    .card .img img {
+	width: 259.5px;
+	height: 255.73px;
+	object-fit: contain;
+
+}
+    #Headline{
+    position: absolute;
+    left: 60px;}
+    
+
+    .btn-large {
+            position: absolute;
+            padding: 11px 45px;
+            font-size: 18px;
+            right: 260px;
+        }
+    .productImg {
+            /* padding: 100px;  */
+            object-fit: cover; 
+            width: 1090px;
+            height: 550px;
+        }
+    #burger{
+        width: 50px;
+    }
+    .arrow {
+	max-width: 2000px;
+	width: 80vw;
+	position: relative;
+    margin-right: 30px;
+}
+h1{
+    font-size: 35px;
+    text-shadow: 2px 2px 2px #ffffff;
+}
+#promotion {
+    background-image: url('./images/mall/promotion.jpg');
+    background-size: cover; 
+    height: 600px;
+    margin-top: 80px;
+}
+#all,#top,#skirt,#dress,#acc, #set{
+   margin-top: 80px;
+}
+#search{
+    width: 25px;
+    height: 25px;
+}
+.nav-link{
+    font-size: 16px;
+    padding-left: 12px;
+}
+.arrow i{
+    font-size: 20px;
+}
+#Search{
+    width: 200px ;
+    height: 35px;
+}
+#btSeacrh{
+    width: 25px;
+    height: 25px;
+}
+.gift {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50px;
+    top: 200px;
+}
+.detail-all{
+    position: relative;
+    top: 10px;
+	font-size: 30px;
+    text-shadow: 2px 2px 2px #ffffff;
+    color: #000000;
+    font-weight: 500px;
+    padding-left: 15px;
+}
+.detail-all2{
+    position: relative;
+    top: 12px;
+	font-size: 52px;
+    text-shadow: 2px 2px 2px #ffffff;
+    color: #000000;
+    padding-bottom: 30px;
+}
+.carousel-inner {
+            height: 100%;
+        }
+        .carousel-caption {
+            width: 100%;
+            /* padding-bottom: 1000px; */
+        }
+    #Btcarousel1{
+        position: absolute;
+        top: 360px;
+        left: -20px;
+    }
+    #Btcarousel2{
+        position: absolute;
+        top: 360px;
+        right: -20px;
+
+    }
+    #carouselprev{
+        width: 50px;
+        height: 50px;
+
+    }
+    #carouselnext{
+        width: 50px;
+        height: 50px;
+    }
+    h1{
+    font-size: 45px;
 }
 }
 
-@media (max-width: 767px) {
-body {
-font-size: 14px;
+@media (width: 2240px) {
+    #searchResults {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            max-height: 200px; /* กำหนดความสูงสูงสุด */
+            overflow-y: auto; /* ให้มีการเลื่อนแนวตั้งเมื่อเกินความสูงสูงสุด */
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 10px;
+            z-index: 1000; /* กำหนด index สูงสุด */
+            margin-top: 5px;
+            display: none;
+        }
+    .arrow .carousel {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% / 4));
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	/* gap: 30px; */
+	border-radius: 8px;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
 }
-h2 {
-margin-bottom: 20px;
-}
-h3 {
-margin: 0 0 8px;
-font-size: 19px;
-line-height: 24px;
-}
-/* .line-title {
-width: 250px;
-} */
+.card .img img {
+	width: 419.5px;
+	height:413.4px;
+	object-fit: contain;
 
-/* -------- Landing page ------- */
-.all-section {
-padding: 30px 15px 20px;
 }
-.all-section .item {
-margin: 0 10px 40px;
-width: 200px;
-height: 280px;
-}
-.all-section .item.active {
-width: 270px;
-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
--webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-}
-.all-section .item-desc {
-padding: 0 14px 5px;
-transform: translateY(calc(100% - 42px));
--webkit-transform: translateY(calc(100% - 42px));
-}
-}
-/* all */
+    #carouselprev{
+        width: 80px;
+        height: 80px;
 
+    }
+    #carouselnext{
+        width: 80px;
+        height: 80px;
+    }
+
+    #Btcarousel1{
+        position: absolute;
+        top: 560px;
+        left: -45px;
+    }
+    #Btcarousel2{
+        position: absolute;
+        top: 560px;
+        right: -45px;
+
+    }
+    .name{
+        position: relative;
+        top:  -700px ;
+       right: 800px;
+       z-index: 2000;
+    }
+    .btn-large {
+            position: absolute;
+            padding: 11px 45px;
+            font-size: 18px;
+            right: 450px;
+        }
+    .productImg {
+            object-fit: cover; 
+            width: 1700px;
+            height: 800px;
+        }
+    #burger{
+        width: 80px;
+    }
+    .gift {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+}
+    .arrow {
+	max-width: 2000px;
+	width: 80vw;
+	position: relative;
+    margin-right: 30px;
+}
+#promotion{
+    background-image: url('./images/mall/promotion.jpg');
+    background-size: cover;
+    margin-top: 190px;
+    height: 750px;
+}
+h1{
+    font-size: 65px;
+}
+#promotion {
+    background-image: url('./images/mall/promotion.jpg');
+    background-size: cover; 
+}
+#all,#top,#skirt,#dress,#acc, #set{
+   margin-top: 90px;
+}
+#popup {
+    position: absolute;
+}
+.navbar-toggler-icon {
+    width: 50px;
+    height: 50px;
+}
+#Search{
+    width: 300px ;
+    height: 45px;
+}
+#btSeacrh{
+    width: 25px;
+    height: 25px;
+    /* font-size: 18px; */
+}
+.nav-link{
+    font-size: 20px;
+    padding-left: 12px;
+}
+.arrow i{
+    font-size: 25px;
+}
+.detail-all{
+    position: relative;
+    top: 10px;
+	font-size: 50px;
+    text-shadow: 2px 2px 2px #ffffff;
+    color: #000000;
+    font-weight: 500px;
+    padding-left: 15px;
+}
+.detail-all2{
+    position: relative;
+    top: 30px;
+	font-size: 85px;
+    text-shadow: 2px 2px 2px #ffffff;
+    color: #000000;
+    padding-bottom: 50px;
+    }
+    .owl-nav .owl-prev {
+        top: 190px;
+        left: -80px;
+        width: 80px;
+}
+
+.owl-nav .owl-next  {
+    top: 190px;
+  right: -80px;
+  width: 80px;
+}
+}
+ /* all */
     </style>
 
     <!-- Custom styles for this template -->
@@ -451,109 +644,96 @@ transform: translateY(calc(100% - 42px));
     <!-- <link href="blog.css" rel="stylesheet"> -->
   </head>
   <body>
-<section class="container-fluid">
-  <header class="py-3">
-    <nav class="navbar" aria-label="Light offcanvas navbar">
-      <div class="container justify-content-center align-items-center">
-          <div class="row justify-content-between align-items-center">
-              <div class="col-4">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
+<section class="container-fluid fixed-top" style="background-color: #fff;">
+  <header >
+    <nav class="navbar mt-3" aria-label="Light offcanvas navbar" >
+          <div class="row justify-content-between align-items-center ">
+              <div class="col-md-4 ps-5 align-items-center">
+                  <button class="navbar-toggler ms-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" aria-label="Toggle navigation">
+                      <!-- <span class="navbar-toggler-icon"></span> -->
+                      <!-- <span> -->
+                        <img src="./images/mall/elements/More.PNG" class="" id="burger">
+                      <!-- </span> -->
                     </button>
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
                       <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h5>
+                        <h3 class="offcanvas-title" id="offcanvasNavbarLightLabel">UPBEEPS</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                       </div>
                       <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">All</a>
+                            <a class="nav-link active" id="textAll" aria-current="page" href="#all2">All</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#">Set</a>
+                            <a class="nav-link" href="#set2">Set</a>
                           </li>
                           <li class="nav-item">
-                              <a class="nav-link" href="#">Top</a>
+                              <a class="nav-link" href="#top2">Top</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Skirt</a>
+                              <a class="nav-link" href="#skirt2">Skirt</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Dress</a>
+                              <a class="nav-link" href="#dress2">Dress</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">ACC</a>
+                              <a class="nav-link" href="#acc2">ACC</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Review special</a>
+                              <a class="nav-link" href="#review2">Review special</a>
                             </li>
-                          <!-- <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li>
-                                <hr class="dropdown-divider">
-                              </li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                          </li> -->
-                        </ul>
-                        <!-- <form class="d-flex mt-3" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form> -->
                       </div>
                     </div>
               </div>
   
-              <div class="col-4 text-center">
-                  <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
+              <div class="col-md-4 text-center align-items-center">
+                  <a class="blog-header-logo text-body-emphasis text-decoration-none " href="#">
                       <img src="./images/mall/Logo head.PNG" class="w-25 h-25">
                   </a>
                 </div>
   
-                <div class="col-4 d-flex justify-content-end align-items-center">
-                  <a class="link-secondary" href="#" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
-                  </a>
-                  <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                </div>
-              
+                <div class="col-md-4 d-flex justify-content-end align-items-center">
+                    <form class="d-flex mx-5" role="search" >
+                        <input type="text" id="searchInput" placeholder="Search for products...">
+                        <button class="btn btn-outline-success" type="submit"><img src="./images/mall/elements/Search.PNG" id="btSeacrh" ></button>
+                    </form>
+                    <div id="searchResults"></div>
+                </div> 
+                <img src="./images/mall/elements/Head line.PNG" class="mx-auto pt-2" style="width: 100vw;">
+                
           </div>
-      </div>
-    </nav>
+    </nav>   
+  </div>
   </header>
 </section>
 
 <!-- promotion -->
-<section class="contain-">
-  <div class="p-md-5 mb-5 rounded align-items-center bg-body-tertiary">
-    <div class="row d-flex justify-content-start m-5 mt-5"> 
-        <div class="col-lg-5">
+<section class="contain">
+  <div class="p-md-5 rounded align-items-center" id="promotion">
+    <div class="row d-flex justify-content-center m-5 mt-5"> 
+        <div class="col-md-10">
             <div class="row mt-5 d-flex ">
-                <h1 class="fw-normal" style="color: #000000; font-size: 30px;">Every dream with upbeep's</h1>
+                <h1 class="fw-normal" style="color: #000000;">Every dream with upbeep's</h1>
             </div>
-            <div class="row mt-5">
-                <div id="popup" class="popup" style="z-index: 2000;">
+
+            <!-- <div class="row mt-5"> -->
+                <div id="popup" class="popup">
                     <div class="popup-content justify-content-center d-flex align-items-center">
-                      <div class="container p-3" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
-                        <div class="row" >
+                      <div class="container p-3 gift" style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
+                        <div class="row">
                         <span class="close justify-content-end d-flex pe-5" id="close-button" onclick="closePopup()">&times;</span>
-                          <div class="col-md-5">
+                          <div class="col-md-12">
                             <div class="caption">
                               <div class="row d-flex justify-content-center m-3">
-                                  <img src="./images/mall/test-web/gift1.png" class="w-50">
+                                  <img src="./images/mall/Logo head.PNG" class="w-75">
                               </div>
                               <div class="main-button">
                                   <div class="row d-flex justify-content-between mt-5">
-                                      <div class="col-md-4 d-flex justify-content-center">
-                                          <p>Special Gift</p>
+                                      <div class="col-md-6 d-flex justify-content-center">
+                                          <p></p>
                                       </div>
-                                      <div class="col-md-4 d-flex justify-content-center">
+                                      <div class="col-md-6 d-flex justify-content-center pt-5">
                                           <a href="#">click here!</a>
                                       </div>
                                   </div>
@@ -564,95 +744,111 @@ transform: translateY(calc(100% - 42px));
                       </div>
                     </div>
             </div>
-        </div>
+        <!-- </div> -->
     </div>
 </div>
   </div>
 
 </section>
 <!-- promotion -->
+<section class="contain bg-mall mt-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-9 pt-5">
+          <div class="row g-0  rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div id="myCarousel" class="carousel slide">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#myCarousel" data-slide-to="1"></li>
+                      <li data-target="#myCarousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- Wrapper for Slides -->
+                  <div class="carousel-inner">
+                    <div class="card item active" id="p1">
+                        <div class="row">
+                            <div class="detail-all2">Butterfly Set 001</div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/product/Butterfly set(2).PNG">
+                        </div>
+                    </div>
 
-<!-- new -->
-<section class="contain bg-mall">
-  <h1 class="fst-italic" style="padding-left: 15%; padding-top: 3%;">
-    NEW
-  </h1>
-  <div class="row d-flex justify-content-center">
-    <div class="col-md-9 pt-5">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div id="myCarousel" class="carousel slide">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Wrapper for Slides -->
-            <div class="carousel-inner">
-                <div class="item active">
-                    <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill "><img src="./images/mall/product/Butterfly set(2).PNG" class="d-block w-50" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInLeft">Butterfly set 001</h2>
-                        <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+
+                      <!-- <div class="item active productImg">
+                          <div class="fill "><img src="./images/mall/product/Butterfly set(2).PNG" class="d-block w-50" alt="..."></div>
+                          <div class="carousel-caption">
+                              <h2 class="animated fadeInDown name">Butterfly Set 001</h2>
+                              <p class="animated fadeInUp">
+                                  <a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a>
+                              </p>
+                          </div>
+                      </div> -->
+                      <div class="card item" id="p2">
+                        <div class="row">
+                            <div class="detail-all2 animated fadeInDown">Butterfly Top 002</div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/product/Butterfly top 01(1).PNG">
+                        </div>
+                        <div class="carousel-caption">
+                            <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill"><img src="./images/mall/product/Butterfly top 01(1).PNG" class="d-block w-50" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInDown">Butterfly Top 002</h2>
-                        <!-- <p class="animated fadeInUp">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+
+
+
+                      <!-- <div class="item ">
+                          <div class="fill"><img src="./images/mall/product/Butterfly top 01(1).PNG" class="d-block w-50" alt="..."></div>
+                          <div class="carousel-caption">
+                              <h2 class="animated fadeInDown name">Butterfly Top 002</h2>
+                              <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                          </div>
+                      </div> -->
+
+                    <div class="card item" id="p3">
+                        <div class="row">
+                            <div class="detail-all2 animated fadeInRight">Flower dress 003</div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/product/Flower dress(3).PNG">
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill"><img src="./images/mall/product/Flower dress(3).PNG" class="d-block w-50" alt="..."></div>
-                    <div class="carousel-caption">
-                        <h2 class="animated fadeInRight">Flower dress 003</h2>
-                        <!-- <p class="animated fadeInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit</p> -->
-                        <p class="animated fadeInRight"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
-                    </div>
-                </div>
-            </div>
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="icon-prev "></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        </div>
-    
-        </div>
+
+
+                      <!-- <div class="item ">
+                          <div class="fill"><img src="./images/mall/product/Flower dress(3).PNG" class="d-block w-50" alt="..."></div>
+                          <div class="carousel-caption">
+                              <h2 class="animated fadeInRight name">Flower dress 003</h2>
+                              <p class="animated fadeInRight"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
+                          </div>
+                      </div>
+                  </div> -->
+  
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="Btcarousel1">
+                      <span><img src="./images/mall/elements/Back.PNG"  id="carouselprev"></span>
+                  </a>
+                  <a class="right carousel-control" href="#myCarousel" data-slide="next" id="Btcarousel2">
+                      <span><img src="./images/mall/elements/Next.PNG"  id="carouselnext"></span>
+                  </a>
+              </div>
+          </div>
+      </div>
     </div>
-  </div>
-    
-</section>
-<!-- new -->
+  </section>
 
 <!-- product -->
-<section class="container">
-  <div class="row">
-    <div class="row mt-5 ">
+<section class="container-fluid ">
+  <div class="row m-5 ">
+    <div class="row mt-5  ">
     <div class="col-md-12" >
       <h1 class="pb-4 mb-4 border-bottom">
         Butterfly set 001
       </h1>
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set.PNG" class="w-75">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-11 d-flex justify-content-center">
+                <img src="./images/mall/promotion.jpg" class=" productImg">
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly set(2).PNG" class="w-75">
-            </div>
-        </div>
     </div>
   </div>
 </div>
@@ -663,17 +859,11 @@ transform: translateY(calc(100% - 42px));
         Butterfly Top 002
       </h1>
       <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(2).PNG" class="w-75">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-11 d-flex justify-content-center">
+                <img src="./images/mall/promotion.jpg" class=" productImg">
             </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly top 02(3).PNG" class="w-75">
-            </div>
-        </div>
+    </div>
     </div>
     </div>
     </div>
@@ -683,40 +873,23 @@ transform: translateY(calc(100% - 42px));
       <h1 class="pb-4 mb-4 border-bottom">
         Flower dress 003
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(3).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(2).PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div>
     
-
   <div class="row mt-5">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 border-bottom">
         Chic Skirt 004
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(2).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
+</div>
     </div>
     </div>
   
@@ -725,111 +898,574 @@ transform: translateY(calc(100% - 42px));
       <h1 class="pb-4 mb-4 border-bottom">
         Long Chic Skirt 005
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(2).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Butterfly skirt 01.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
+</div>
     </div>
     </div>
-    </div>
-
   </div>
-
   <div class="row mt-5">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 border-bottom">
         Dress Beep 006
       </h1>
-      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis">
-        <div class="row d-flex justify-content-between">
-             <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(4).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress(3).PNG" class="w-75">
-            </div>
-            <div class="col-md-4 d-flex justify-content-center">
-                <img src="./images/mall/product/Flower dress.PNG" class="w-75">
-            </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-11 d-flex justify-content-center">
+            <img src="./images/mall/promotion.jpg" class=" productImg">
         </div>
-    </div>
-    </div>
+</div>
+    </div> 
     </div>
   </div>
 </section>
 <!-- product -->
 
 <!-- All -->
-<section class="container-fluid bg-mall">
-  <div class="row mt-5">
-    <div class="col-md-12">
-        <section class="all-section">
-            <h2 class="line-title">All</h2>
-            <div class="owl-carousel custom-carousel owl-theme">
-              <div class="item active" style="background-image: url('./images/mall/product/Butterfly\ set.PNG');">
-                <div class="item-desc">
-                  <h3>Butterfly Set 001</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+<section class="container-fluid bg-mall" >
+    <div class="row" style="margin-top: 10vh ;" id="all">
+      <h1 style=" padding-left: 10vw;" id="all2">All</h1>
+      <div class="col-md-12 d-flex justify-content-center ">
+        <div class="carousel-wrap">
+            <div class="owl-carousel">
+              <div class="itemAll">
+                    <div class="row">
+                        <div class="img">
+                            <a href="https://shope.ee/8pOtw4zkA9">
+                                <img src="./images/mall/product/Butterfly set(1).PNG" alt="img" draggable="false">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="detail-all">Butterfly Set 001</div>
+                    </div>
+            </div>
+    
+              <div class="itemAll">
+                <div class="img">
+                    <a href="https://shope.ee/4KwUZmdooz">
+                        <img src="./images/mall/product/Butterfly top 02(1).PNG" alt="img" draggable="false">
+                    </a>
                 </div>
-              </div>
-              
-
-              <div class="item" style="background-image: url(./images/mall/product/Butterfly\ top\ 02\(3\).PNG);">
-                <div class="item-desc">
-                  <h3>Butterfly Top 002</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="row ">
+                    <div class="detail-all">Butterfly Top 002</div>
                 </div>
-              </div>
-              <div class="item" style="background-image: url(./images/mall/product/Flower\ dress\(1\).PNG);">
-                <div class="item-desc">
-                  <h3>Flower Dress 003</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+            </div>
+    
+              <div class="itemAll">
+                
+                              <div class="img">
+                                  <a href="https://shope.ee/1VcJCcIaxM">
+                                      <img src="./images/mall/product/Butterfly skirt 01(1).PNG" alt="img" draggable="false">
+                                  </a>
+                              </div>
+                              <div class="row ">
+                                  <div class="detail-all">Flower Dress 003</div>
+                              </div>
+                              
+                          </div>
+    
+              <div class="itemAll">
+                
+                              <div class="img">
+                                  <a href="https://shope.ee/4KwUZqKKSi">
+                                      <img src="./images/mall/product/Flower dress(3).PNG" alt="img" draggable="false">
+                                  </a>   
+                              </div>
+                              <div class="row ">
+                                  <div class="detail-all">Chic Skirt 004</div>
+                              </div>
+                         
+                        </div>
+    
+              <div class="itemAll">
+                 
+                              <div class="img">
+                                  <a href="https://shope.ee/6AO8m8q3fg">
+                                      <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                                  </a>
+                              </div>
+                              <div class="row ">
+                                  <div class="detail-all">Long Chic Skirt 005</div>
+                              </div>
+                          </div>
+    
+              <div class="itemAll">
+                              <div class="img">
+                                  <a href="https://shope.ee/5plINwTcpt">
+                                      <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                                  </a>
+                              </div>
+                              <div class="row ">
+                                  <div class="detail-all">Dress Beep 006</div>
+                              </div>
+                          </div>
+    
+              <div class="itemAll" id="set2">
+                <div class="img">
+                    <a href="https://shope.ee/8pOty4gS5l">
+                        <img src="./images/mall/product/Butterfly set.PNG" alt="img" draggable="false">
+                    </a>
                 </div>
-              </div>
-              <div class="item" style="background-image: url(./images/mall/product/Flower\ dress\(2\).PNG);">
-                <div class="item-desc">
-                  <h3>Flower Dress 003</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="row ">
+                    <div class="detail-all">Dream Jeans Set 007</div>
                 </div>
-              </div>
-              <div class="item" style="background-image: url(./images/mall/product/Flower\ dress\(4\).PNG);">
-                <div class="item-desc">
-                  <h3>Flower Dress 003</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                </div>
-              </div>
-              <div class="item" style="background-image: url(./images/mall/product/Flower\ dress\(4\).PNG);">
-                <div class="item-desc">
-                  <h3>Flower Dress 003</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                </div>
-              </div>
-            </div> 
-    </div>
-</section>
+            </div>
+          </div>
+          </div>
+      </div>
+  </section>
+  <script>
+    $('.owl-carousel').owlCarousel({
+loop: true,
+margin: 30,
+nav: true,
+navText: [
+"<i><img src='./images/mall/elements/Back.PNG' style='width: 50px; height: 50px;'></i>",
+"<i><img src='./images/mall/elements/Next.PNG' style='width: 50px; height: 50px;'></i>",
+],
+autoplay: true,
+autoplayHoverPause: true,
+responsive: {
+0: {
+  items: 1
+},
+600: {
+  items: 3
+},
+1000: {
+  items: 4
+}
+}
+})
+  </script>
 <!-- All -->
+
+<!-- set -->
+<section class="container-fluid bg-mall" >
+    <div class="row" style="margin-top: 10vh ;" id="set">
+      <h1 style=" padding-left: 10vw;">Set</h1>
+      <div class="col-md-12 d-flex justify-content-center ">
+        <div class="carousel-wrap set">
+            <div class="owl-carousel dress">
+              <div class="itemAll">
+                    <div class="img">
+                        <a href="https://shope.ee/8pOtw4zkA9">
+                            <img src="./images/mall/product/Butterfly set(2).PNG" id="set1">
+                        </a>
+                    </div>
+                    <div class="row ">
+                        <div class="detail-all">Butterfly Set 001 (Top+Skirt)</div>
+                    </div>
+            </div>
+
+              <div class="itemAll">
+                    <div class="img" id="top2">
+                        <a href="https://shope.ee/8pOty4gS5l">
+                            <img src="./images/mall/product/set2.jpg" id="set2">
+                        </a>
+                    </div>
+                    <div class="row ">
+                        <div class="detail-all">Dream Jeans Set 007 (Vest+Skirt)</div>
+                    </div>
+                </div>
+          </div>
+          </div>
+      </div>
+  </section>
+  <script>
+    $('.set').owlCarousel({
+loop: false,
+margin: 30,
+nav: true,
+navText: [
+"<i></i>",
+"<i></i>",
+],
+autoplay: true,
+autoplayHoverPause: true,
+responsive: {
+0: {
+  items: 1
+},
+600: {
+  items: 3
+},
+1000: {
+  items: 2
+}
+}
+})
+</script>
+<!-- set -->
+
+    <!-- Top -->
+    <section class="container-fluid bg-mall" >
+        <div class="row" style="margin-top: 10vh ;" id="top">
+            <h1 style=" padding-left: 10vw;">Top</h1>
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="arrow">
+                    <ul class="carousel">
+                        <li class="card">
+                            <div class="img">
+                            
+                                <a href="https://shope.ee/7UtWLvSPnx">
+                                    <img src="./images/mall/product/Butterfly top 01(1).PNG" id="set1">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Butterfly Set 001 (halter)</div>
+                            </div>
+                        </li>
+
+                        <li class="card">
+                            <div class="img">
+                                <a href="https://shope.ee/4KwUZmdooz">
+                                    <img src="./images/mall/product/Butterfly top 02(1).PNG" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Butterfly Top 002</div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="img" id="skirt2">
+                                <a href="https://shope.ee/Vjm3DECcl">
+                                    <img src="./images/mall/promotion1.jpg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Dream Jeans Set 007 (Vest)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Top -->
+
+    <!-- skirt -->
+  <section class="container-fluid bg-mall" >
+        <div class="row" style="margin-top: 10vh ;" id="skirt">
+          <h1  style=" padding-left: 10vw;">Skirt</h1>
+          <div class="col-md-12 d-flex justify-content-center ">
+            <div class="carousel-wrap">
+                <div class="owl-carousel skirt">
+                  <div class="itemAll">
+                        <div class="img">
+                            <a href="https://shope.ee/1AzSo3eNMd">
+                                <img src="./images/mall/product/Butterfly skirt 01(1).PNG" id="set1">
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <div class="detail-all">Butterfly Set 001 (Skirt)</div>
+                        </div>  
+                </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/4KwUZqKKSi">
+                                    <img src="./images/mall/product/skirt2.jpeg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Chic Skirt 004</div>
+                            </div>
+                </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/6AO8m8q3fg">
+                                    <img src="./images/mall/product/skirt3.jpg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Long Chic Skirt 005</div>
+                            </div>
+                    </div>
+        
+                  <div class="itemAll">
+                        <div class="img" id="dress2">
+                            <a href="https://shope.ee/30R71mwI1h">
+                                <img src="./images/mall/product/skirt4.jpg" id="set2">
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <div class="detail-all">Dream Jeans Set 007 (Skirt)</div>
+                        </div>
+              </div>
+              </div>
+          </div>
+      </section>
+      <script>
+        $('.skirt').owlCarousel({
+    loop: false,
+    margin: 30,
+    nav: true,
+    navText: [
+    "<i></i>",
+    "<i><img src='./images/mall/elements/Next.PNG' style='width: 50px; height: 50px;'></i>",
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 4
+    }
+    }
+    })
+    </script> 
+    <!-- skirt -->
+
+    <!-- Dress -->
+    <section class="container-fluid bg-mall" >
+        <div class="row" style="margin-top: 10vh ;" id="dress">
+          <h1 style=" padding-left: 10vw;">Dress</h1>
+          <div class="col-md-12 d-flex justify-content-center ">
+            <div class="carousel-wrap dress">
+                <div class="owl-carousel dress">
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/1VcJCcIaxM">
+                                    <img src="./images/mall/product/Flower dress.PNG" id="set1">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Flower Dress 003</div>
+                            </div>  
+                </div>
+
+                  <div class="itemAll">
+                        <div class="img" id="acc2">
+                            <a href="https://shope.ee/5plINwTcpt">
+                                <img src="./images/mall/promotion.jpg" id="set2">
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <div class="detail-all">Dress Beep 006</div>
+                        </div>
+                    </div>
+              </div>
+              </div>
+          </div>
+      </section>
+      <script>
+        $('.dress').owlCarousel({
+    loop: false,
+    margin: 30,
+    nav: true,
+    navText: [
+    "<i></i>",
+    "<i></i>",
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 2
+    }
+    }
+    })
+    </script>
+    <!-- Dress -->
+
+    <!-- ACC -->
+    <section class="container-fluid bg-mall" >
+        <div class="row" style="margin-top: 10vh ;" id="acc">
+          <h1  style=" padding-left: 10vw;">ACC</h1>
+          <div class="col-md-12 d-flex justify-content-center ">
+            <div class="carousel-wrap">
+                <div class="owl-carousel acc">
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/9pHR87v9ay">
+                                    <img src="./images/mall/product/acc1.jpeg" id="set1">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Butterfly Set 001 (Headband)</div>
+                            </div>      
+                </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/2VUqOdWLLc">
+                                    <img src="./images/mall/product/acc2.jpeg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Bowbeep</div>
+                            </div>
+                </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/9pHR87v9ay">
+                                    <img src="./images/mall/product/acc3.jpeg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">DreamJeans Set 007 (Scrunchies)</div>
+                            </div>
+                    </div>
+        
+                  <div class="itemAll">
+                        <div class="img" id="review2">
+                            <a href="https://shope.ee/1VcJEJXEuP">
+                                <img src="./images/mall/product/acc4.jpg" id="set2">
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <div class="detail-all">necklace (UPBEEP's x nibnubnib)</div>
+                        </div>
+                        </div>
+              </div>
+              </div>
+          </div>
+      </section>
+      <script>
+        $('.acc').owlCarousel({
+    loop: false,
+    margin: 30,
+    nav: true,
+    navText: [
+    "<i></i>",
+    "<i><img src='./images/mall/elements/Next.PNG' style='width: 50px; height: 50px;'></i>",
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 4
+    }
+    }
+    })
+    </script> 
+    <!-- ACC -->
+
+    <!-- review -->  
+    <section class="container-fluid bg-mall" >
+        <div class="row" style="margin-top: 10vh ;" id="review">
+          <h1 style=" padding-left: 10vw;">Review</h1>
+          <div class="col-md-12 d-flex justify-content-center ">
+            <div class="carousel-wrap">
+                <div class="owl-carousel review">
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/9pHR87v9ay">
+                                    <img src="./images/mall/review/1.jpg" id="set1">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Dream Jeans Set 007</div>
+                            </div>
+                        
+                </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/2VUqOdWLLc">
+                                    <img src="./images/mall/review/2.jpeg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Flower Dress 003</div>
+                            </div>   
+                </div>
+        
+                  <div class="itemAll">
+                        <div class="img">
+                            <a href="https://shope.ee/9pHR87v9ay">
+                                <img src="./images/mall/review/3.jpeg" id="set2">
+                            </a>
+                        </div>
+                        <div class="row ">
+                            <div class="detail-all">Butterfly Top 002</div>
+                        </div>
+                    </div>
+        
+                  <div class="itemAll">
+                            <div class="img">
+                                <a href="https://shope.ee/1VcJEJXEuP">
+                                    <img src="./images/mall/review/4.jpg" id="set2">
+                                </a>
+                            </div>
+                            <div class="row ">
+                                <div class="detail-all">Dream Jeans Set 007</div>
+                            </div>
+                        </div>
+              </div>
+              </div>
+          </div>
+      </section>
+      <script>
+        $('.review').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    navText: [
+    "<i></i>",
+    "<i><img src='./images/mall/elements/Next.PNG' style='width: 55px; height: 55px;'></i>",
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    1000: {
+      items: 2
+    }
+    }
+    })
+    </script>
+     <!-- review -->
+
+
+
+    <footer class="container-fluid bg-mall">
+        <div style="width: 100px; height: 100px;" >
+        </div>
+        </footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/specialGift.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script>
-    $(".custom-carousel").owlCarousel({ autoWidth: true, loop: true });
-    $(document).ready(function () {
-        $(".custom-carousel .item").click(function () {
-            $(".custom-carousel .item").not($(this)).removeClass("active");
-            $(this).toggleClass("active");
-        });
-    });
-  </script>
+  
+
+  <!-- all -->
+ 
+<!-- all -->
+
+<!-- search -->
+<script src="./js/search.js">
+</script>
+<!-- search -->
 
     </body>
 </html>
