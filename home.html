@@ -17,22 +17,226 @@
             overflow: hidden;
         }
 
-        @media (width: 1280px) {
+        @media (max-width: 1280px) {
             body {
-            background-image: url(./images/home/B4.png);
-            background-size: cover; 
-            /* background-repeat: no-repeat; */
+            background-image: url(./images/home/Bg3.PNG);
             background-position: center center;
-            height: 50vh;
+            height: 100vh;
             overflow: hidden;
+        }
+        #home{
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 450px;
+            height: 350px;
+            position: absolute;
+            left: 330px;
+            top: 580px;
+            overflow: hidden;
+            z-index: -100;    
+
+        }
+        #pony{
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 380px;
+            height: 320px;
+            position: absolute;
+            left: 550px;
+            top: 220px;
+            overflow: hidden;
+            z-index: -100;
+           
+        }
+        #upbeep {
+            background: url(./images/home/Upbeep\ world.PNG);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 400vw;
+            height: 300vh;
+            margin-left: 50px;
+            margin-top: 25px;
+            overflow: hidden;
+        }
+        #cr {
+            background: url(./images/home/upbeep2024.PNG);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 100px;
+            z-index: -100;
         }
             #mall {
             position: fixed;
-            width: 40vw;
-            height: 25vw;
-            top: 15vh;
+            width: 50vw;
+            height: 30vw;
+            top: 10vh;
             display: block;
-            left: 2vw;
+            left: -3vw;
+            background: url("./images/home/Mall1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #mall:hover {
+            background: url("./images/home/Mall2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .characterImg {
+            position: fixed;
+            width: 32%;
+            height: auto;
+            bottom: 0;
+            left: -2vw;
+            z-index: 1;
+        }
+        #ID1 {
+            position: fixed;
+            width: 32vw;
+            height: 28vw;
+            bottom: 16vh;
+            display: block;
+            right: -1vw;
+            background: url("./images/home/Card1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #ID1:hover {
+            background: url("./images/home/Card2.PNG");
+            width: 30vw;
+            height: 30vw;
+            bottom: 16vh;
+            right: -1vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        #phone {
+            position: fixed;
+            width: 22vw;
+            height: 35vh;
+            top: 12vh;
+            display: block;
+            right: 7vw;
+            background: url("./images/home/SOS1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #phone:hover {
+            background: url("./images/home/SOS2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        #aboutus {
+            position: fixed;
+            width: 15vw;
+            height: 28vh;
+            bottom: 1vh;
+            right: 27vw;
+            background: url("./images/home/About\ us1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            /* transition: background 0.3s ease; */
+            z-index: 9;
+        }
+        #aboutus:hover {
+            background: url("./images/home/About\ us2.PNG");
+            width: 15vw;
+            height: 30vh;
+            bottom: 1vh;
+            right: 27vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        /* #aboutus {
+            position: fixed;
+            width: 14vw;
+            height: 23vh;
+            bottom: 4vh;
+            display: block;
+            right: 27vw;
+            background: url("./images/home/About\ us1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #aboutus:hover {
+            background: url("./images/home/About\ us2.PNG");
+            width: 14vw;
+            height: 24vh;
+            bottom: 4vh;
+            right: 27vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        } */
+      #back {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      top: 25px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 9vw;
+    height: 9vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 120px;
+    right: 5px;
+
+        }
+    }
+    @media (width: 1440px) {
+    #home{
+        display: none;
+           
+
+        }
+    #pony{
+            display: none;
+           
+        }
+    #cr {
+            background: url(./images/home/upbeep2024.PNG);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 100px;
+            z-index: -100;
+        }
+    #mall {
+            position: fixed;
+            width: 30vw;
+            height: 25vw;
+            top: 5vh;
+            display: block;
+            left: 4vw;
             background: url("./images/home/Mall1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -51,16 +255,16 @@
             width: 26%;
             height: auto;
             bottom: 0;
-            left: 2vw;
+            left: -1vw;
             z-index: 1;
         }
         #ID1 {
             position: fixed;
             width: 28vw;
             height: 28vw;
-            bottom: 7vh;
+            bottom: 9vh;
             display: block;
-            right: 2vw;
+            right: 0vw;
             background: url("./images/home/Card1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -71,8 +275,8 @@
             background: url("./images/home/Card2.PNG");
             width: 28vw;
             height: 28vw;
-            bottom: 7vh;
-            right: 2vw;
+            bottom: 9vh;
+            right: 0vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
@@ -97,6 +301,7 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
+        
         #aboutus {
             position: fixed;
             width: 19vw;
@@ -147,16 +352,33 @@
     background-repeat: no-repeat;
     top: 70px;
     right: 5px;
+}
 
-        }
-    }
+}
 
 @media (width: 1470px) {
+    #home{
+        display: none;
+           
+
+        }
+    #pony{
+            display: none;
+           
+        }
+    #cr {
+            background: url(./images/home/upbeep2024.PNG);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 100px;
+            z-index: -100;
+        }
     #mall {
             position: fixed;
             width: 30vw;
-            height: 22vw;
-            top: 4vh;
+            height: 25vw;
+            top: 5vh;
             display: block;
             left: 4vw;
             background: url("./images/home/Mall1.PNG");
@@ -177,16 +399,16 @@
             width: 26%;
             height: auto;
             bottom: 0;
-            left: 2vw;
+            left: -1vw;
             z-index: 1;
         }
         #ID1 {
             position: fixed;
             width: 28vw;
             height: 28vw;
-            bottom: 7vh;
+            bottom: 9vh;
             display: block;
-            right: 2vw;
+            right: 0vw;
             background: url("./images/home/Card1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
@@ -197,8 +419,8 @@
             background: url("./images/home/Card2.PNG");
             width: 28vw;
             height: 28vw;
-            bottom: 7vh;
-            right: 2vw;
+            bottom: 9vh;
+            right: 0vw;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
@@ -223,6 +445,7 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
+        
         #aboutus {
             position: fixed;
             width: 19vw;
@@ -278,6 +501,23 @@
 }
 
     @media (width: 2240px) {
+        #home{
+        display: none;
+           
+
+        }
+        #pony{
+            display: none;
+           
+        }
+        #cr {
+            background: url(./images/home/upbeep2024.PNG);
+            background-size: contain; 
+            background-repeat: no-repeat;
+            width: 300px;
+            height: 200px;
+            z-index: -100;
+        }
         #phone {
             position: fixed;
             width: 23vw;
@@ -312,13 +552,12 @@
             width: 19vw;
             height: 30vh;
             bottom: 2vh;
-            display: block;
             right: 27vw;
             background: url("./images/home/About\ us1.PNG");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center center;
-            transition: background 0.3s ease;
+            /* transition: background 0.3s ease; */
             z-index: 9;
         }
         #aboutus:hover {
@@ -388,12 +627,19 @@
 <body>
     <section>
         <div class=" row  mt-2 me-4">
-            <div class="col-md-6 d-flex justify-content-start ps-3">
+            <div class="col-md-3 d-flex justify-content-start ps-3">
                 <a href="characters.html" id="back"></a>
-            </div>  
-            <div class="col-md-6 d-flex justify-content-end pt-2" style="z-index: -100;">
-                <img src="./images/home/upbeep2024.PNG" class="col-md-6 d-block justify-content-end"  style="width: 28%;">
             </div>
+            <div class="col-md-6 d-flex justify-content-start ps-3">
+                <div id="upbeep"></div>
+            </div>
+
+            <div class="col-md-3 d-flex justify-content-end pt-2" style="z-index: -100;">
+                <!-- <img src="./images/home/upbeep2024.PNG" class="col-md-6 d-block justify-content-end"  style="width: 28%;"> -->
+                <div id="cr"></div>
+            </div>
+            <img src="./images/home/Pony.PNG" id="pony">
+            <img src="./images/home/Home (1).PNG" id="home">
         </div>
         <!-- <div class="row d-flex justify-content-start ps-3 w-50">
             <a href="characters.html" id="back"></a>
@@ -405,6 +651,10 @@
           <a href="mall.html">
             <div id="mall"></div>
           </a>
+         
+         
+            
+          
           <!-- แสดงรูปที่เลือกมาจากหน้าที่แล้ว -->
           <img class="characterImg" id="characterImage" src="" alt="Character">
           <!-- แสดงรูปที่เลือกมาจากหน้าที่แล้ว -->

@@ -72,21 +72,150 @@
     bottom: 4vh;
     left: 2.5vw;
 }
-@media (width: 2560px) {
-    #shelf2{
+@media (width: 2240px) {
+    /* #shelf2{
         padding-top : 45px;
-    }
-}
-@media (max-width: 1280px) {
+    } */
     #shelf1{
-        position: fixed;
-        top: 5vh;
+        position: absolute;
+        right: 350px;
+        top: -2vh;
     }
 
     #shelf2{
-        position: fixed;
+        position: absolute;
+        right: 350px;
+        bottom: 2vh;
+    }
+    .shelf-image {
+        width: 350px;
+        margin: 85px;
+    transition: transform 0.3s ease;
+}
+.shelf-image:hover {
+    transform: scale(1.05);
+}
+}
+
+
+@media (max-width: 1280px) {
+    body {
+            background-image: url('./images/sos/elements/Shelf+bg.png');
+            background-size: contain; 
+            background-position: center center; 
+            overflow: hidden;
+        }
+    #shelf1{
+        position: absolute;
+        right: 195px;
+        top: 11vh;
+    }
+
+    #shelf2{
+        position: absolute;
+        right: 195px;
+        bottom: 16.5vh;
+    }
+    .shelf-image {
+        width: 200px;
+        margin: 50px;
+    transition: transform 0.3s ease;
+}
+.shelf-image:hover {
+    transform: scale(1.05);
+}
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 13vw;
+    height: 13vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 1.5vw;
+}
+#home {
+            position: absolute;
+            width: 14vw; 
+            height: 14vh;
+            right: -2.5vw;
+            background: url("./images/sos/elements/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            position: absolute;
+            width: 14vw; 
+            height: 14vh;
+            right: -2.5vw;
+            background: url("./images/sos/elements/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+}
+
+@media (width: 1440px) {
+    body {
+            background-image: url('./images/sos/elements/Shelf+bg.png');
+            background-size: contain; 
+            background-position: center center; 
+            overflow: hidden;
+        }
+    #shelf1{
+        position: absolute;
+        right: 300px;
+        top: 6vh;
+    }
+
+    #shelf2{
+        position: absolute;
+        right: 300px;
         bottom: 10vh;
     }
+    .shelf-image {
+        width: 200px;
+        margin: 40px;
+    transition: transform 0.3s ease;
+}
+.shelf-image:hover {
+    transform: scale(1.05);
+}
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 13vw;
+    height: 13vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 8vh;
+    left: 1.5vw;
+}
+#home {
+            position: absolute;
+            width: 14vw; 
+            height: 14vh;
+            right: -3.5vw;
+            background: url("./images/sos/elements/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            position: absolute;
+            width: 14vw; 
+            height: 14vh;
+            right: -2.5vw;
+            background: url("./images/sos/elements/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
 }
 
 @media (max-width: 1024px) {
@@ -170,34 +299,34 @@
                     <div class="row d-flex justify-content-center ps-5" id="shelf1">
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/5ea03310ab.html">
-                            <img src="./images/sos/SOS01.png" class="w-75 shelf-image">
+                            <img src="./images/sos/SOS01.png" class=" shelf-image">
                         </a>
                         </div>
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/6fdffd9fb1.html">
-                            <img src="./images/sos/SOS 02.PNG" class="w-75 shelf-image">
+                            <img src="./images/sos/SOS 02.PNG" class=" shelf-image">
                         </a>
                         </div>
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/6ed418d250.html">
-                            <img src="./images/sos/SOS03.PNG" class="w-75 shelf-image">
+                            <img src="./images/sos/SOS03.PNG" class=" shelf-image">
                         </a>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center ps-5 mt-5 " id="shelf2">
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/35cfa65b95.html">
-                                <img src="./images/sos/SOS04.PNG" class="w-75 shelf-image">
+                                <img src="./images/sos/SOS04.PNG" class=" shelf-image">
                             </a> 
                         </div>
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/752f7d2e31.html">
-                                <img src="./images/sos/SOS05.PNG" class="w-75 shelf-image">
+                                <img src="./images/sos/SOS05.PNG" class=" shelf-image">
                             </a>
                         </div>
                         <div class="col-md-3 mt-5">
                             <a href="https://heyzine.com/flip-book/b4264509a8.html">
-                                <img src="./images/sos/SOS06.PNG" class="w-75 shelf-image">
+                                <img src="./images/sos/SOS06.PNG" class=" shelf-image">
                             </a> 
                         </div>
                     </div>
