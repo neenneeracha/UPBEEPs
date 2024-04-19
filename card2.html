@@ -141,7 +141,7 @@
             top: 41vh;
            
         }
-        @media (max-width: 2560px) {
+        @media (width: 2560px) {
             #fname{
             top: 15vh;
 
@@ -168,7 +168,7 @@
 
         }
 
-    @media (width: 1440px) {
+    @media (max-width: 1440px) {
             #next {
             position: fixed;
             width: 19vw;
@@ -288,26 +288,33 @@
     }
 
         @media (max-width: 1280px) {
+            .contain {
+            position: absolute;
+            top: 180px;
+        }
             #fname{
-            top: 12vh;
+            top: 8.5vh;
+            
         }
 
         #fdate{
-            top: 19vh;
+            top: 14.5vh;
             width: 15.5vw;
         }
 
         #fbirth{
-            top: 25.5vh;
+            top: 19.5vh;
             width: 15.5vw;
         }
 
         #fgoal{
-            top: 30.5vh;
+            top: 23vh;
+            
         }
 
         #fstrength{
-            top: 36.5vh;
+            top: 27.5vh;
+
         }
         #back, #next, #home{
             position: fixed;
@@ -360,7 +367,7 @@
                     <input type="text"  class="input" id="fgoal" name="fgoal">
                     <input type="text"  class="input" id="fstrength" name="fstrength">
                 </div>
-                <img src="images/card/card2/Card.PNG" style="width: 60%; background-size: contain;" />
+                <img src="images/card/card2/Card.PNG" id="card" style="width: 60%; background-size: contain;" />
             </div>
         </div>
     </section>
