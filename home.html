@@ -16,7 +16,142 @@
             height: 100vh;
             overflow: hidden;
         }
-@media (max-width: 1470px) {
+
+        @media (width: 1280px) {
+            body {
+            background-image: url(./images/home/B4.png);
+            background-size: cover; 
+            /* background-repeat: no-repeat; */
+            background-position: center center;
+            height: 50vh;
+            overflow: hidden;
+        }
+            #mall {
+            position: fixed;
+            width: 40vw;
+            height: 25vw;
+            top: 15vh;
+            display: block;
+            left: 2vw;
+            background: url("./images/home/Mall1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #mall:hover {
+            background: url("./images/home/Mall2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .characterImg {
+            position: fixed;
+            max-width: 26vw;
+            width: 26%;
+            height: auto;
+            bottom: 0;
+            left: 2vw;
+            z-index: 1;
+        }
+        #ID1 {
+            position: fixed;
+            width: 28vw;
+            height: 28vw;
+            bottom: 7vh;
+            display: block;
+            right: 2vw;
+            background: url("./images/home/Card1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+        }
+        #ID1:hover {
+            background: url("./images/home/Card2.PNG");
+            width: 28vw;
+            height: 28vw;
+            bottom: 7vh;
+            right: 2vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        #phone {
+            position: fixed;
+            width: 23vw;
+            height: 45vh;
+            top: 5vh;
+            display: block;
+            right: 8vw;
+            background: url("./images/home/SOS1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #phone:hover {
+            background: url("./images/home/SOS2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        #aboutus {
+            position: fixed;
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
+            display: block;
+            right: 27vw;
+            background: url("./images/home/About\ us1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #aboutus:hover {
+            background: url("./images/home/About\ us2.PNG");
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
+            right: 27vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+      #back {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #back:hover {
+      position: fixed;
+      width: 10vw; 
+      height: 10vh;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 9vw;
+    height: 12vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 70px;
+    right: 5px;
+
+        }
+    }
+
+@media (width: 1470px) {
     #mall {
             position: fixed;
             width: 30vw;
@@ -143,6 +278,58 @@
 }
 
     @media (width: 2240px) {
+        #phone {
+            position: fixed;
+            width: 23vw;
+            height: 45vh;
+            top: 5vh;
+            display: block;
+            right: 8vw;
+            background: url("./images/home/SOS1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #phone:hover {
+            background: url("./images/home/SOS2.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .characterImg {
+            position: fixed;
+            max-width: 26vw;
+            width: 26%;
+            height: auto;
+            bottom: 0;
+            left: 2vw;
+            z-index: 1;
+        }
+        #aboutus {
+            position: fixed;
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
+            display: block;
+            right: 27vw;
+            background: url("./images/home/About\ us1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+        #aboutus:hover {
+            background: url("./images/home/About\ us2.PNG");
+            width: 19vw;
+            height: 30vh;
+            bottom: 2vh;
+            right: 27vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
         #mall {
             position: fixed;
             width: 30vw;
@@ -164,9 +351,9 @@
         }
         #ID1 {
             position: fixed;
-            width: 32vw;
+            width: 30vw;
             height: 30vw;
-            bottom: 2vh;
+            bottom: 5vh;
             display: block;
             right: -1vw;
             background: url("./images/home/Card1.PNG");
@@ -177,9 +364,9 @@
         }
         #ID1:hover {
             background: url("./images/home/Card2.PNG");
-            width: 32vw;
+            width: 30vw;
             height: 30vw;
-            bottom: 2vh;
+            bottom: 5vh;
             right: -1vw;
             background-size: contain;
             background-repeat: no-repeat;
