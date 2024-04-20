@@ -13,6 +13,7 @@
             background-size: cover; 
             background-position: center center; 
             overflow: hidden;
+            /* background-repeat: no-repeat; */
         }
         #back {
             position: fixed;
@@ -98,7 +99,7 @@
 }
 
 
-@media (max-width: 1280px) {
+@media (width: 1280px) {
     body {
             background-image: url('./images/sos/elements/Shelf+bg.png');
             background-size: contain; 
@@ -151,6 +152,67 @@
             width: 14vw; 
             height: 14vh;
             right: -2.5vw;
+            background: url("./images/sos/elements/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+}
+@media (max-width: 1680px) {
+    body {
+            background-image: url('./images/sos/elements/Shelf+bg.png');
+            background-size: contain; 
+            background-position: center center; 
+            overflow: hidden;
+        }
+    #shelf1{
+        position: absolute;
+        right: 390px;
+        top: 2vh;
+    }
+
+    #shelf2{
+        position: absolute;
+        right: 390px;
+        bottom: 4vh;
+    }
+    .shelf-image {
+        width: 200px;
+        margin: 50px;
+    transition: transform 0.3s ease;
+}
+.shelf-image:hover {
+    transform: scale(1.05);
+}
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 13vw;
+    height: 13vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 670px;
+    left: 5vw;
+}
+#home {
+            position: absolute;
+            width: 18vw; 
+            height: 18vh;
+            right: -5vw;
+           top: 640px;
+            background: url("./images/sos/elements/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            position: absolute;
+            width: 18vw; 
+            height: 18vh;
+            right: -5vw;
+           top: 670px;
             background: url("./images/sos/elements/Home2.PNG");
             background-size: contain;
             background-repeat: no-repeat;
