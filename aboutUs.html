@@ -68,9 +68,7 @@
             height: 5vh;
             width: 14vw;
         }
-    /* #image1{
-        width: 650px;
-    } */
+
     .hidden {
             display: none;
         }
@@ -718,6 +716,140 @@
     }
     .ct{
         width: 150px;
+    }
+    #page{
+        position: absolute;
+        width: 50%;
+    }
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 13vw;
+    height: 13vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 4vh;
+    left: 8vw;
+}
+#home {
+            position: fixed;
+            width: 22vw;
+            height: 18vh;
+            bottom: 2vh;
+            display: block;
+            right: 2vw;
+            margin: 10px;
+            background: url("./images/card/card1/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            background: url("./images/card/card1/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            z-index: 9;
+        }
+}
+
+@media (width: 4480px) {
+        #image1{
+        position: relative;
+        width: 50vw;
+        object-fit: contain; 
+        left: 4vw;  
+    }
+    #back {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 150px;
+      background: url("./images/sos/elements/Back\ pink1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+      position: fixed;
+      top: 4vh;
+      left: 3vw;
+    }
+    #back:hover {
+      width: 10vw; 
+      height: 10vh;
+      margin-left: 150px;
+      background: url("./images/sos/elements/Back\ pink2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #butterfly{
+        position: absolute;
+        width: 22vw;
+        height: 22vh;
+        object-fit: contain;
+        top: 38vh;
+        left: 35.5vw;
+    }
+
+        .FlipClick{
+            position: absolute;
+            right: 12vw;
+            width: 16vw;
+            top: 35vh;
+        }
+    #flip {
+      width: 18vw; 
+      height: 15vh;
+      /* margin-left: 100px; */
+      background: url("./images/aboutUs/Flip1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: background 0.3s ease;
+    }
+    #flip:hover {
+        width: 18vw; 
+      height: 15vh;
+      /* margin-left: 100px; */
+      background: url("./images/aboutUs/Flip2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scale(1.1);
+    }
+    .btFlip{
+            position: absolute;
+            right: 8vw;
+            top:45vh;
+        }
+    #card{
+        margin-top: 90px;
+        margin-left: 300px;
+    }
+    #Btnext{
+        position: absolute;
+        top: 80vh;
+        right: 30vw;
+        width: 4vw;
+    }
+    #Btback{
+        position: absolute;
+        top: 80vh;
+        left: 30vw;
+        width: 4vw;
+    }
+    #Btclose{
+        position: absolute;
+        top: 12vh;
+        right: 30vw;
+        width: 3vw;
+    }
+    .contact{
+        position: absolute;
+        top: 45.5vh;
+        right: 33vw;
+    }
+    .ct{
+        width: 6vw;
     }
     #page{
         position: absolute;

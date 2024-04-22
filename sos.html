@@ -114,6 +114,69 @@
     transform: scale(1.05);
 }
 }
+@media (width: 4480px) {
+    #credit{
+        position: relative;
+        width: 3vw;
+        height: 3vh;
+        right: 2vw;
+    }
+
+    
+    #shelf1{
+        position: absolute;
+        right: 15vw;
+        top: -1vh;
+    }
+
+    #shelf2{
+        position: absolute;
+        right: 15vw;
+        bottom: 3vh;
+    }
+    .shelf-image {
+        width: 16vw;
+        margin: 4vw;
+    transition: transform 0.3s ease;
+}
+.shelf-image:hover {
+    transform: scale(1.05);
+}
+    #sound {
+    position: fixed;
+    background-image: url("./images/sound/Sound1.PNG");
+    width: 13vw;
+    height: 13vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: 10vh;
+    left: 3vw;
+}
+#home {
+            position: absolute;
+            width: 15vw; 
+            height: 16vh;
+            right: -5vw;
+           bottom: 4vh;
+            background: url("./images/sos/elements/Home1.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: background 0.3s ease;
+            z-index: 9;
+        }
+
+        #home:hover {
+            position: absolute;
+            width: 15vw; 
+            height: 16vh;
+            right: -5vw;
+           bottom: 4vh;
+            background: url("./images/sos/elements/Home2.PNG");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 9;
+        }
+}
 
 
 @media (width: 1280px) {
@@ -470,7 +533,7 @@
             <!-- shelf -->
             <div class="col-md-1">
                 <div class="row" style="margin-top: 2vh;">
-                    <img src="./images/card/card3/credit.PNG" class="w-100">
+                    <img src="./images/card/card3/credit.PNG" class="w-100" id="credit">
                 </div>
                 <div class="row" style="margin-top: 80vh;">
                     <a id="home" href="home.html"></a>
