@@ -344,6 +344,9 @@ top: 120px;
 	}
 }
 @media screen and (max-width: 1470px) {
+    #pd{
+       padding-top: 7vh;
+    }
     .acc-name{
         font-size: 25px;
     }
@@ -431,10 +434,10 @@ top: 120px;
         }
     .productImg {
             /* padding: 100px;  */
-            object-fit: cover; 
-            width: 1090px;
-            height: 550px;
-            margin-top: 20px;
+            object-fit: contain; 
+            width: 800px;
+            /* height: 550px; */
+           
         }
     #burger{
         width: 50px;
@@ -546,17 +549,20 @@ h1{
 #line1{
     position: absolute;
     object-fit: contain;
-    width: 1105px;
+    width: 814px;
     top: 70px;
-    left: 128px;
+    left: 18.8vw;
 
 }
 #product1{
-    margin-left: 125px;
+    margin-left: 18vw;
 }
 }
 
 @media screen and (width: 1680px) {
+    #pd{
+       padding-top: 7vh;
+    }
     .acc-name{
        font-size:  27px;
     }
@@ -874,9 +880,10 @@ top: -10px;
             right: 450px;
         }
     .productImg {
-            object-fit: cover; 
+            object-fit: contain; 
             width: 1700px;
-            height: 800px;
+            /* height: 800px; */
+            margin-bottom: 100px;
         }
     #burger{
         width: 80px;
@@ -981,7 +988,7 @@ h1{
        font-size:  64px;
     }
     #pd{
-       padding-top: 10vh;
+       padding-top: 14vh;
     }
     #allNext,#allBack{
         position: relative;
@@ -1066,26 +1073,34 @@ h1{
 
 }
     #carouselprev{
+        position: absolute;
         width: 6vw;
         height: 11vh;
+        top: 20vh;
+        left: -100px;
 
     }
     #carouselnext{
+        position: absolute;
+        top: 20vh;
         width: 6vw;
         height: 11vh;
+        right: -380px;
     }
 
     #Btcarousel1{
         position: absolute;
         top: 560px;
-        left: -45px;
+        left: -250px;
+        opacity: 1;
     }
     #Btcarousel2{
         position: absolute;
         top: 560px;
-        right: -45px;
-
+        right: 50px;
+        opacity: 1;
     }
+    
     .name{
         position: relative;
         top:  -700px ;
@@ -1099,9 +1114,9 @@ h1{
             right: 450px;
         }
     .productImg {
-            object-fit: cover; 
+            object-fit: contain; 
             width: 75vw;
-            height: 40vh;
+            /* height: 40vh; */
         }
     #burger{
         width: 2.5vw;
@@ -1174,8 +1189,8 @@ h1{
 }
 .detail-all2{
     position: relative;
-    top: 30px;
-	font-size: 85px;
+    top: 40px;
+	font-size: 130px;
     text-shadow: 2px 2px 2px #ffffff;
     color: #000000;
     padding-bottom: 50px;
@@ -1207,15 +1222,39 @@ h1{
     
 }
 .close {
-    font-size: 120px;
+    font-size: 150px;
+    color: rgb(221, 11, 11);
+    opacity: 1;
+}
+.gift {
+    width: 22vw;
+    height: 33vh;
+    position: absolute;
+    left: 6vw;
+    top: 20vh;
 }
 #clickHere{
-    font-size: 60px;
+    position: absolute;
+    bottom: 40px;
+    font-size: 62px;
+    color:#ffffff;
+    text-shadow: 2px 5px 2px #000000;
 
+}
+.clickImg{
+    position: relative;
+    object-fit: contain;
+    top: -10px;
+    /* width: 20vw; */
+    height: 35vh;
 }
 #textAll{
     font-size: 45px;
 }
+
+        /* .carousel-inner{
+            width: 100%;
+        } */
 }
 
  /* all */
@@ -1304,21 +1343,21 @@ h1{
             <!-- <div class="row mt-5"> -->
                 <div id="popup" class="popup">
                     <div class="popup-content justify-content-center d-flex align-items-center fixed-top">
-                      <div class="container p-3 gift " style="background-color: rgb(255, 255, 255); border: 1px solid #dfdfdf; border-radius: 6px; box-shadow: 6px 6px 5px rgba(25, 25, 25, 0.5)">
+                      <div class="container gift " style="background-color: transparent;">
                         <div class="row">
                         <span class="close justify-content-end d-flex pe-5" id="close-button" onclick="closePopup()">&times;</span>
                           <div class="col-md-12">
                             <div class="caption">
-                              <div class="row d-flex justify-content-center m-3">
-                                  <img src="./images/mall/Logo head.PNG" class="w-75">
+                              <div class="row d-flex justify-content-center">
+                                  <img src="./images/mall/elements/กล่องลอยๆ.PNG" class=" clickImg" >
                               </div>
                               <div class="main-button">
-                                  <div class="row d-flex justify-content-between mt-5">
+                                  <div class="row d-flex justify-content-between">
                                       <div class="col-md-6 d-flex justify-content-center">
                                           <p></p>
                                       </div>
-                                      <div class="col-md-6 d-flex justify-content-center pt-5">
-                                          <a href="#" id="clickHere">click here!</a>
+                                      <div class="col-md-6 d-flex justify-content-center ">
+                                          <a href="https://drive.google.com/drive/folders/12hqtmubw90LZNHUMHqSYVsjd8ACwhatr" id="clickHere">click here!</a>
                                       </div>
                                   </div>
                               </div>
@@ -1350,26 +1389,24 @@ h1{
                   <div class="carousel-inner">
                     <div class="card item active" id="p1">
                         <div class="row">
-                            <div class="detail-all2">Butterfly Set</div>
+                            <div class="detail-all2 animated fadeInUp">Dream Jeans Set</div>
                         </div>
                         <div class="productImg">
-                            <img src="./images/mall/product/Butterfly set(2).PNG">
+                            <img src="./images/mall/products/longImgs/ปก1.PNG" class="w-100">
                         </div>
                     </div>
 
                       <div class="card item" id="p2">
                         <div class="row">
-                            <div class="detail-all2 animated fadeInDown">Butterfly Top</div>
+                            <div class="detail-all2 animated fadeInDown">Butterfly Set</div>
                         </div>
                         <div class="productImg">
-                            <img src="./images/mall/product/Butterfly top 01(1).PNG">
+                            <img src="./images/mall/products/longImgs/ปก2.PNG" class="w-100">
                         </div>
                         <div class="carousel-caption">
                             <p class="animated fadeInUp"><a href="#" class="btn btn-transparent btn-rounded btn-large">Learn More</a></p>
                         </div>
                     </div>
-
-
 
                       <!-- <div class="item ">
                           <div class="fill"><img src="./images/mall/product/Butterfly top 01(1).PNG" class="d-block w-50" alt="..."></div>
@@ -1381,23 +1418,48 @@ h1{
 
                     <div class="card item" id="p3">
                         <div class="row">
-                            <div class="detail-all2 animated fadeInRight">Flower dress</div>
+                            <div class="detail-all2 animated fadeInRight">Butterfly Top</div>
+                            
                         </div>
                         <div class="productImg">
-                            <img src="./images/mall/product/Flower dress(3).PNG">
+                            <img src="./images/mall/products/longImgs/ปก3.PNG" class="w-100">
                         </div>
                     </div>
-  
-                  <!-- Controls -->
-                  <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="Btcarousel1">
-                      <span><img src="./images/mall/elements/Back.PNG"  id="carouselprev"></span>
-                  </a>
-                  <a class="right carousel-control" href="#myCarousel" data-slide="next" id="Btcarousel2">
-                      <span><img src="./images/mall/elements/Next.PNG"  id="carouselnext"></span>
-                  </a>
+
+                    <div class="card item" id="p3">
+                        <div class="row">
+                            <div class="detail-all2 animated fadeInLeft">Flower dress </div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/products/longImgs/ปก4.PNG" class="w-100">
+                        </div>
+                    </div>
+                    <div class="card item" id="p3">
+                        <div class="row">
+                            <div class="detail-all2 animated fadeInDown">UPBEEP's Baby Tee Shirt & Dream Jeans Skirt</div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/products/longImgs/ปก5.PNG" class="w-100">
+                        </div>
+                    </div>
+                    <div class="card item" id="p3">
+                        <div class="row">
+                            <div class="detail-all2 animated fadeInUp">Bowbeep! </div>
+                        </div>
+                        <div class="productImg">
+                            <img src="./images/mall/products/longImgs/ปก6.PNG" class="w-100">
+                        </div>
+                    </div>
               </div>
           </div>
       </div>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev" id="Btcarousel1">
+        <span><img src="./images/mall/elements/Back.PNG"  id="carouselprev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next" id="Btcarousel2">
+        <span><img src="./images/mall/elements/Next.PNG"  id="carouselnext"></span>
+    </a>
     </div>
   </section>
 
@@ -1415,7 +1477,7 @@ h1{
       
         <div class="row d-flex justify-content-center">
             <div class="col-md-11 d-flex justify-content-center">
-                <img src="./images/mall/promotion.jpg" class=" productImg">
+                <img src="./images/mall/products/longImgs/1.Butterfly set.PNG" class=" productImg">
         </div>
     </div>
   </div>
@@ -1433,7 +1495,7 @@ h1{
       
         <div class="row d-flex justify-content-center">
             <div class="col-md-11 d-flex justify-content-center">
-                <img src="./images/mall/promotion.jpg" class=" productImg">
+                <img src="./images/mall/products/longImgs/2.Butterfly Top.PNG" class=" productImg">
         </div>
     </div>
   </div>
@@ -1450,7 +1512,7 @@ h1{
     </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-11 d-flex justify-content-center">
-            <img src="./images/mall/promotion.jpg" class=" productImg">
+            <img src="./images/mall/products/longImgs/3.Flower dress.PNG" class=" productImg">
         </div>
 </div>
     </div>
@@ -1459,14 +1521,14 @@ h1{
   <div class="row mt-5" id="pd">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4" id="product1">
-        Chic Skirt 
+        Dream Jeans Set 
       </h1>
       <div>
         <img src="./images/mall/elements/line/3.PNG" id="line1">
     </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-11 d-flex justify-content-center">
-            <img src="./images/mall/promotion.jpg" class=" productImg">
+            <img src="./images/mall/products/longImgs/4.Dream Jeans Set.PNG" class=" productImg">
         </div>
 </div>
     </div>
@@ -1475,14 +1537,14 @@ h1{
   <div class="row mt-5" id="pd">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4 " id="product1">
-        Long Chic Skirt
+        UPBEEP's Baby Tee Shirt & Dream Jeans Skirt
       </h1>
       <div>
         <img src="./images/mall/elements/line/5.PNG" id="line1">
     </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-11 d-flex justify-content-center">
-            <img src="./images/mall/promotion.jpg" class=" productImg">
+            <img src="./images/mall/products/longImgs/5.UPBEEP_s Baby T-Shirt & Dream Jeans Skirt.PNG" class=" productImg">
         </div>
 </div>
     </div>
@@ -1492,14 +1554,14 @@ h1{
   <div class="row mt-5" id="pd">
     <div class="col-md-12">
       <h1 class="pb-4 mb-4" id="product1">
-        Dress Beep 
+        Bowbeep! 
       </h1>
       <div>
         <img src="./images/mall/elements/line/6.PNG" id="line1">
     </div>
       <div class="row d-flex justify-content-center">
         <div class="col-md-11 d-flex justify-content-center">
-            <img src="./images/mall/promotion.jpg" class=" productImg">
+            <img src="./images/mall/products/longImgs/6.Bowbeep!.PNG" class=" productImg">
         </div>
 </div>
     </div> 
