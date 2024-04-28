@@ -1,862 +1,1097 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- loading -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <!-- loading -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
-    <!-- Fabric.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.1/fabric.min.js"></script>
-    <!-- Fabric.js -->
-    <link rel="shortcut icon" type="image/x-icon" href="./images/icon logo2.PNG" />
-    <title>Setting Card ID</title>
-    <style>
-        body {
-            background-image: url('./images/card/card3/BG.PNG');
-            background-size: cover; 
-            height: 100vh;
-            background-repeat: no-repeat;
-            background-position: center center;
-            overflow: hidden;
-        }
-        #home {
-            width: 6vw;
-            height: 12vh;
-            background: url("./images/card/card3/Home1.PNG");
-            background-size: contain;
-            background-repeat: no-repeat; 
-            background-position: center center; 
-            transition: background 0.3s ease; 
-            
-        }
-        #home:hover {
-            width:6vw;
-            height: 12vh;
-            background: url("./images/card/card3/Home2.PNG");
-            background-size: contain;
-            background-repeat: no-repeat; 
-            background-position: center center; 
-            
-        }
-        .overlay-image {
-            position: absolute;
-            top: 33%;
-            width: 32%; 
-            height: 29%;
-            left: 7%; 
-            background-image: url('images/card/card3/FramePNG.PNG');
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 3; 
-        }
-        .overlay-text {
-            position: absolute;
-            top: 290px;
-            left: 35%;
-            z-index: 1; 
-            color: #5BFFD8;
-            font-family: 'Love Ya Like A Sister', cursive;
-            font-size: 23px;
-        }
-        #date{
-          padding-top: 15px;
-        }
-        #birth{
-          padding-top: 18px;
-        }
-        #goal{
-          padding-top: 18px;
-        }
-        #strength{
-          padding-top: 18px;
-        }
-          
-/*DEMO*/
-.preview {
-  margin: 10px;
-  display: none;
-}
-.preview--rounded {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-}
-/* IMMUTABLE */
-.hide {
-  display: none !important;
-}
-* {
-  box-sizing: border-box;
-}
-.photo__zoom {
-  position: relative;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-.photo__zoom input[type=range] {
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  height: 18px;
-}
-.photo__zoom input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-.photo__zoom input[type=range]:focus {
-  outline: none;
-}
-.photo__zoom input[type=range]::-ms-track {
-  width: 100%;
-  cursor: pointer;
-  background: transparent;
-  border-color: transparent;
-  color: transparent;
-}
-.photo__zoom input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  margin-top: -9px;
-  box-sizing: border-box;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-  display: block;
-  border-radius: 50%;
-  background: #eee;
-  border: 1px solid #ddd;
-}
-.photo__zoom input[type=range]::-webkit-slider-thumb:hover {
-  border-color: #c1c1c1;
-}
-.photo__zoom input[type=range]::-ms-thumb {
-  margin-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-  display: block;
-  border-radius: 50%;
-  background: #eee;
-  border: 1px solid #ddd;
-}
-.photo__zoom input[type=range]::-ms-thumb:hover {
-  border-color: #c1c1c1;
-}
-.photo__zoom input[type=range]::-moz-range-thumb {
-  margin-top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-  display: block;
-  border-radius: 50%;
-  background: #eee;
-  border: 1px solid #ddd;
-}
-.photo__zoom input[type=range]::-moz-range-thumb:hover {
-  border-color: #c1c1c1;
-}
-.photo__zoom input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  background: #eee;
-  border: 0;
-}
-.photo__zoom input[type=range]::-moz-range-track {
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  background: #eee;
-  border: 0;
-}
-.photo__zoom input[type=range]::-ms-track {
-  width: 100%;
-  height: 1px;
-  cursor: pointer;
-  background: #eee;
-  border: 0;
-}
-.photo__zoom input[type=range].zoom--minValue::before,
-.photo__zoom input[type=range].zoom--maxValue::after {
-  color: #f8f8f8;
-}
-.photo__zoom input[type=range]::before,
-.photo__zoom input[type=range]::after {
-  position: absolute;
-  content: "\f03e";
-  display: block;
-  font-family: 'FontAwesome';
-  color: #aaa;
-  transition: color 0.3s ease;
-}
-.photo__zoom input[type=range]::after {
-  font-size: 18px;
-  right: -2px;
-  top: 2px;
-}
-.photo__zoom input[type=range]::before {
-  font-size: 14px;
-  left: 4px;
-  top: 4px;
-}
-/**
+
+  <!-- loading -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <!-- loading -->
+
+  <!-- Fabric.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.1/fabric.min.js"></script>
+  <!-- Fabric.js -->
+  <link rel="shortcut icon" type="image/x-icon" href="./images/icon logo2.PNG" />
+  <script src="html2canvas.min.js"></script>
+  <title>Setting Card ID</title>
+  <style>
+    body {
+      background-image: url('./images/card/card3/BG.PNG');
+      background-size: cover;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: center center;
+      overflow: hidden;
+    }
+
+    #home {
+      width: 6vw;
+      height: 12vh;
+      background: url("./images/card/card3/Home1.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: background 0.3s ease;
+
+    }
+
+    #home:hover {
+      width: 6vw;
+      height: 12vh;
+      background: url("./images/card/card3/Home2.PNG");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 33%;
+      width: 32%;
+      height: 29%;
+      left: 7%;
+      background-image: url('images/card/card3/FramePNG.PNG');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 3;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 290px;
+      left: 35%;
+      z-index: 1;
+      color: #5BFFD8;
+      font-family: 'Love Ya Like A Sister', cursive;
+      font-size: 23px;
+    }
+
+    #date {
+      padding-top: 15px;
+    }
+
+    #birth {
+      padding-top: 18px;
+    }
+
+    #goal {
+      padding-top: 18px;
+    }
+
+    #strength {
+      padding-top: 18px;
+    }
+
+    /*DEMO*/
+    .preview {
+      margin: 10px;
+      display: none;
+    }
+
+    .preview--rounded {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+    }
+
+    /* IMMUTABLE */
+    .hide {
+      display: none !important;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .photo__zoom {
+      position: relative;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .photo__zoom input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+      height: 18px;
+    }
+
+    .photo__zoom input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+
+    .photo__zoom input[type=range]:focus {
+      outline: none;
+    }
+
+    .photo__zoom input[type=range]::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+    }
+
+    .photo__zoom input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      margin-top: -9px;
+      box-sizing: border-box;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      background: #eee;
+      border: 1px solid #ddd;
+    }
+
+    .photo__zoom input[type=range]::-webkit-slider-thumb:hover {
+      border-color: #c1c1c1;
+    }
+
+    .photo__zoom input[type=range]::-ms-thumb {
+      margin-top: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      background: #eee;
+      border: 1px solid #ddd;
+    }
+
+    .photo__zoom input[type=range]::-ms-thumb:hover {
+      border-color: #c1c1c1;
+    }
+
+    .photo__zoom input[type=range]::-moz-range-thumb {
+      margin-top: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      display: block;
+      border-radius: 50%;
+      background: #eee;
+      border: 1px solid #ddd;
+    }
+
+    .photo__zoom input[type=range]::-moz-range-thumb:hover {
+      border-color: #c1c1c1;
+    }
+
+    .photo__zoom input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      background: #eee;
+      border: 0;
+    }
+
+    .photo__zoom input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      background: #eee;
+      border: 0;
+    }
+
+    .photo__zoom input[type=range]::-ms-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      background: #eee;
+      border: 0;
+    }
+
+    .photo__zoom input[type=range].zoom--minValue::before,
+    .photo__zoom input[type=range].zoom--maxValue::after {
+      color: #f8f8f8;
+    }
+
+    .photo__zoom input[type=range]::before,
+    .photo__zoom input[type=range]::after {
+      position: absolute;
+      content: "\f03e";
+      display: block;
+      font-family: 'FontAwesome';
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .photo__zoom input[type=range]::after {
+      font-size: 18px;
+      right: -2px;
+      top: 2px;
+    }
+
+    .photo__zoom input[type=range]::before {
+      font-size: 14px;
+      left: 4px;
+      top: 4px;
+    }
+
+    /**
 * FRAME STYLE
 */
-.photo__frame--circle {
-  border: 1px solid #a25454;
-  /* border-radius: 50%; */
-}
-.photo__helper {
-  position: relative;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  padding: 15px 0;
-}
-.photo__helper .canvas--helper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.photo__frame img,
-.photo__helper {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.profile {
-    position: absolute;
-    top: 35.5%; 
-    left: 7.84%; 
-    z-index: 2; 
-}
-.photo {
-  /* text-align: center; */
-  /* margin-bottom: 15px; */
-}
-.photo input[type=file] {
-  display: none;
-}
-.photo__options {
-    left: -2%;
-  position: relative;
-}
+    .photo__frame--circle {
+      /* border: 1px solid #a25454; */
+      /* border-radius: 50%; */
+    }
 
-/* ถังขยะ */
-.photo__options .remove {
-  display: inline-block;
-  text-decoration: none;
-  width: 15%;
-}
-.photo__options .remove:hover {
-  color: #000;
-}
+    .photo__helper {
+      position: relative;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      padding: 15px 0;
+    }
 
-/* ปรับขนาด */
-.photo__zoom {
-  width:22%;
-  display: inline-block;
-}
+    .photo__helper .canvas--helper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
-/* ขนาดกรอบรูป */
-.photo__frame {
-  cursor: move;
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-  width: 181px;
-  height: 228px;
-}
-.photo__frame img,
-.photo__helper img {
-  position: relative;
-}
-.photo__frame .message {
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: inline-block;
-  /* color: #268eff; */
-  z-index: 3;
-}
-.photo__frame .is-dragover {
-  display: none;
-}
-/* .message p {
+    .photo__frame img,
+    .photo__helper {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .profile {
+      position: absolute;
+      top: 35.5%;
+      left: 7.84%;
+      z-index: 2;
+    }
+
+    .photo {
+      /* text-align: center; */
+      /* margin-bottom: 15px; */
+    }
+
+    .photo input[type=file] {
+      display: none;
+    }
+
+    .photo__options {
+      left: -2%;
+      position: relative;
+    }
+
+    /* ถังขยะ */
+    .photo__options .remove {
+      display: inline-block;
+      text-decoration: none;
+      width: 15%;
+    }
+
+    .photo__options .remove:hover {
+      color: #000;
+    }
+
+    /* ปรับขนาด */
+    .photo__zoom {
+      width: 22%;
+      display: inline-block;
+    }
+
+    /* ขนาดกรอบรูป */
+    .photo__frame {
+      cursor: move;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      width: 200px;
+      height: 259px;
+      left: 5px;
+      right: 5px;
+      top: 10%;
+    }
+
+    .photo__frame img,
+    .photo__helper img {
+      position: relative;
+    }
+
+    .photo__frame .message {
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      /* color: #268eff; */
+      z-index: 3;
+    }
+
+    .photo__frame .is-dragover {
+      display: none;
+    }
+
+    /* .message p {
   font-size: 0.9em;
 } */
-.photo__options {
-  list-style: none;
-}
-.photo__options li {
-  display: inline-block;
-  text-align: center;
-  width: 55%;
-}
-.photo--empty .photo__frame {
-  cursor: pointer;
-}
-/**
+    .photo__options {
+      list-style: none;
+    }
+
+    .photo__options li {
+      display: inline-block;
+      text-align: center;
+      width: 55%;
+    }
+
+    .photo--empty .photo__frame {
+      cursor: pointer;
+    }
+
+    /**
 * IMG states
 */
-.profile.is-dragover .photo__frame img,
-.photo--empty img,
-.photo--error img,
-.photo--error--file-type img,
-.photo--error--image-size img,
-.photo--loading img {
-  display: none;
-}
-/**
+    .profile.is-dragover .photo__frame img,
+    .photo--empty img,
+    .photo--error img,
+    .photo--error--file-type img,
+    .photo--error--image-size img,
+    .photo--loading img {
+      display: none;
+    }
+
+    /**
 * States
 */
 
-/* DRAGOVER */
-.profile.is-dragover .photo__frame .is-dragover {
-  display: inline-block;
-}
-.profile.is-dragover .message.is-empty,
-.profile.is-dragover .message.is-loading,
-.profile.is-dragover .message.is-wrong-file-type,
-.profile.is-dragover .message.is-wrong-image-size {
-  display: none;
-}
-/* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
-.element-container {
-    position: relative;
-    
-}
-.element1-image {
-    position: absolute;
-    top: 8vh;
-    z-index: 2; 
-    width: 6vw;
-    /* padding: 2%;   */
-}
-.element2-image {
-    position: absolute;
-    top: 24vh;
-    z-index: 2; 
-    width: 8vw;  
-}
-.element3-image {
-    position: absolute;
-    top: 43vh;
-    z-index: 2; 
-    width: 4vw;  
-}
-.element4-image {
-    position: absolute;
-    top: 52vh;
-    z-index: 2; 
-    width: 5vw;   
-    margin: 1%;
-}
-#back:hover, #confirm:hover , #next:hover {
-    transform: scale(1.1);
-}
+    /* DRAGOVER */
+    .profile.is-dragover .photo__frame .is-dragover {
+      display: inline-block;
+    }
 
-@media (width: 1280px) {
-  #name{
+    .profile.is-dragover .message.is-empty,
+    .profile.is-dragover .message.is-loading,
+    .profile.is-dragover .message.is-wrong-file-type,
+    .profile.is-dragover .message.is-wrong-image-size {
+      display: none;
+    }
 
-}
-#date{
-  padding-top: 10px;
+    /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
+    .element-container {
+      position: relative;
 
-}
-#birth{
-  padding-top: 13px;
-  
-}
-#goal{
-  padding-top: 6px;
+    }
 
-}
-#strength{
-  padding-top: 13px;
-}
-   /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
-.element-container {
-    position: relative;
-    
-}
-.element1-image {
-    position: absolute;
-    top: 6vh;
-    z-index: 2; 
-    width: 6vw;
-    /* padding: 2%;   */
-}
-.element2-image {
-    position: absolute;
-    top: 17vh;
-    z-index: 2; 
-    width: 8vw;  
-}
-.element3-image {
-    position: absolute;
-    top: 30vh;
-    z-index: 2; 
-    width: 4vw;  
-}
-.element4-image {
-    position: absolute;
-    top: 36vh;
-    z-index: 2; 
-    width: 5vw;   
-    margin: 1%;
-}
-.profile {
-    position: absolute;
-    top: 29.4%; 
-    left: 7.8%; 
-    z-index: 2; 
-}
-.photo__frame {
-          cursor: move;
-          overflow: hidden;
-          position: relative;
-          display: inline-block;
-          width: 168px;
-          height: 200px;
-}
-.photo__zoom {
-  width:26%;
-  display: inline-block;
-}
-  
+    .element1-image {
+      position: absolute;
+      top: 8vh;
+      z-index: 2;
+      width: 6vw;
+      /* padding: 2%;   */
+    }
+
+    .clicked-image {
+      position: absolute;
+      top: 4vh;
+      z-index: 2;
+      width: 200px;
+      align-items: center;
+      /* padding: 2%;   */
+    }
 
 
-}
-@media (width: 1440px) {
-   /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
-.element-container {
-    position: relative;
-    
-}
-.element1-image {
-    position: absolute;
-    top: 6vh;
-    z-index: 2; 
-    width: 6vw;
-    /* padding: 2%;   */
-}
-.element2-image {
-    position: absolute;
-    top: 21vh;
-    z-index: 2; 
-    width: 8vw;  
-}
-.element3-image {
-    position: absolute;
-    top: 38vh;
-    z-index: 2; 
-    width: 4vw;  
-}
-.element4-image {
-    position: absolute;
-    top: 46vh;
-    z-index: 2; 
-    width: 5vw;   
-    margin: 1%;
-}
-.profile {
-    position: absolute;
-    top: 33.2%; 
-    left: 7.8%; 
-    z-index: 2; 
-}
-.photo__frame {
-          cursor: move;
-          overflow: hidden;
-          position: relative;
-          display: inline-block;
-          width: 180px;
-          height: 230px;
-}
-.photo__zoom {
-  width:26%;
-  display: inline-block;
-}
-  
+    .element2-image {
+      position: absolute;
+      top: 24vh;
+      z-index: 2;
+      width: 8vw;
+    }
+
+    .element3-image {
+      position: absolute;
+      top: 43vh;
+      z-index: 2;
+      width: 4vw;
+    }
+
+    .element4-image {
+      position: absolute;
+      top: 52vh;
+      z-index: 2;
+      width: 5vw;
+      margin: 1%;
+    }
+
+    .after-click {
+      position: absolute;
+      top: 22vh;
+      left: 60vh;
+      z-index: 2;
+      width: 5vw;
+      margin: 1%;
+    }
+
+    #back:hover,
+    #confirm:hover,
+    #next:hover {
+      transform: scale(1.1);
+    }
+
+    @media (width: 1280px) {
+      #name {}
+
+      #date {
+        padding-top: 10px;
+
+      }
+
+      #birth {
+        padding-top: 13px;
+
+      }
+
+      #goal {
+        padding-top: 6px;
+
+      }
+
+      #strength {
+        padding-top: 13px;
+      }
+
+      /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
+      .element-container {
+        position: relative;
+
+      }
+
+      .element1-image {
+        position: absolute;
+        top: 6vh;
+        z-index: 2;
+        width: 6vw;
+        /* padding: 2%;   */
+      }
+
+      .clicked-image {
+        position: absolute;
+        top: 4vh;
+        z-index: 2;
+        width: 200px;
+        align-items: center;
+        /* padding: 2%;   */
+      }
+
+      .element2-image {
+        position: absolute;
+        top: 17vh;
+        z-index: 2;
+        width: 8vw;
+      }
+
+      .element3-image {
+        position: absolute;
+        top: 30vh;
+        z-index: 2;
+        width: 4vw;
+      }
+
+      .element4-image {
+        position: absolute;
+        top: 36vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      .after-click {
+        position: absolute;
+        top: 22vh;
+        left: 60vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      .profile {
+        position: absolute;
+        top: 29.4%;
+        left: 7.8%;
+        z-index: 2;
+      }
+
+      .photo__frame {
+        cursor: move;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 259px;
+      }
+
+      .photo__zoom {
+        width: 26%;
+        display: inline-block;
+      }
 
 
-}
 
-@media (width: 1680px) {
-  /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
-.element-container {
-    position: relative;
-    
-}
-.element1-image {
-    position: absolute;
-    top: 10vh;
-    z-index: 2; 
-    width: 6vw;
-    /* padding: 2%;   */
-}
-.element2-image {
-    position: absolute;
-    top: 27vh;
-    z-index: 2; 
-    width: 8vw;  
-}
-.element3-image {
-    position: absolute;
-    top: 48vh;
-    z-index: 2; 
-    width: 4vw;  
-}
-.element4-image {
-    position: absolute;
-    top: 59vh;
-    z-index: 2; 
-    width: 5vw;   
-    margin: 1%;
-}
-  #back, #confirm  {
-    position: relative;
-   width: 5px;
-   top: -30px;
-}
-#next {
-  position: relative;
-  top: -60px;
-}
-  #back:hover, #confirm:hover , #next:hover {
-    transform: scale(1.1);
-}
-  .overlay-text {
-            position: absolute;
-            top: 300px;
-            left: 600px;
-            color: #5BFFD8;
-            font-family: 'Love Ya Like A Sister', cursive;
-            font-size: 30px;
-        }
-        #name{
+    }
 
-        }
-        #date{
-          padding-top: 20px;
+    @media (width: 1440px) {
 
-        }
-        #birth{
-          padding-top: 25px;
-        }
-        #goal{
-          padding-top: 6px;
-        }
-        #strength{
-          padding-top: 13px;
-        }
-        .profile {
-    position: absolute;
-    top: 38.5%; 
-    left: 7.2%; 
-    z-index: 2; 
-}
-        .photo__frame {
-          cursor: move;
-          overflow: hidden;
-          position: relative;
-          display: inline-block;
-          width: 220px;
-          height: 270px;
-}
-.photo__zoom {
-  width:26%;
-  display: inline-block;
-}
+      /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
+      .element-container {
+        position: relative;
+
+      }
+
+      .element1-image {
+        position: absolute;
+        top: 6vh;
+        z-index: 2;
+        width: 6vw;
+        /* padding: 2%;   */
+      }
+
+      .clicked-image {
+        position: absolute;
+        top: 4vh;
+        z-index: 2;
+        width: 200px;
+        align-items: center;
+        /* padding: 2%;   */
+      }
+
+      .element2-image {
+        position: absolute;
+        top: 21vh;
+        z-index: 2;
+        width: 8vw;
+      }
+
+      .element3-image {
+        position: absolute;
+        top: 38vh;
+        z-index: 2;
+        width: 4vw;
+      }
+
+      .element4-image {
+        position: absolute;
+        top: 46vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      .after-click {
+        position: absolute;
+        top: 22vh;
+        left: 60vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      .profile {
+        position: absolute;
+        top: 33.2%;
+        left: 7.8%;
+        z-index: 2;
+      }
+
+      .photo__frame {
+        cursor: move;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 259px;
+      }
+
+      .photo__zoom {
+        width: 26%;
+        display: inline-block;
+      }
+
+    }
+
+    @media (width: 1680px) {
+
+      /* เรียงลำดับส่วน elements ให้อยู่ข้างบนรูปภาพหลัก */
+      .element-container {
+        position: relative;
+
+      }
+
+      .element1-image {
+        position: absolute;
+        top: 10vh;
+        z-index: 2;
+        width: 6vw;
+        /* padding: 2%;   */
+      }
+
+      .clicked-image {
+        position: absolute;
+        top: 4vh;
+        z-index: 2;
+        width: 200px;
+        align-items: center;
+        /* padding: 2%;   */
+      }
+
+      .element2-image {
+        position: absolute;
+        top: 27vh;
+        z-index: 2;
+        width: 8vw;
+      }
+
+      .element3-image {
+        position: absolute;
+        top: 48vh;
+        z-index: 2;
+        width: 4vw;
+      }
+
+      .element4-image {
+        position: absolute;
+        top: 59vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      .after-click {
+        position: absolute;
+        top: 22vh;
+        left: 60vh;
+        z-index: 2;
+        width: 5vw;
+        margin: 1%;
+      }
+
+      #back,
+      #confirm {
+        position: relative;
+        width: 5px;
+        top: -30px;
+      }
+
+      #next {
+        position: relative;
+        top: -60px;
+      }
+
+      #back:hover,
+      #confirm:hover,
+      #next:hover {
+        transform: scale(1.1);
+      }
+
+      .overlay-text {
+        position: absolute;
+        top: 300px;
+        left: 600px;
+        color: #5BFFD8;
+        font-family: 'Love Ya Like A Sister', cursive;
+        font-size: 30px;
+      }
+
+      #name {}
+
+      #date {
+        padding-top: 20px;
+
+      }
+
+      #birth {
+        padding-top: 25px;
+      }
+
+      #goal {
+        padding-top: 6px;
+      }
+
+      #strength {
+        padding-top: 13px;
+      }
+
+      .profile {
+        position: absolute;
+        top: 38.5%;
+        left: 7.2%;
+        z-index: 2;
+      }
+
+      .photo__frame {
+        cursor: move;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 259px;
+      }
+
+      .photo__zoom {
+        width: 26%;
+        display: inline-block;
+      }
 
 
-}
+    }
 
-@media (width: 2240px) {
-  .overlay-text {
-            position: absolute;
-            top: 400px;
-            left: 800px;
-            color: #5BFFD8;
-            font-family: 'Love Ya Like A Sister', cursive;
-            font-size: 40px;
-        }
-        #name{
+    @media (width: 2240px) {
+      .overlay-text {
+        position: absolute;
+        top: 400px;
+        left: 800px;
+        color: #5BFFD8;
+        font-family: 'Love Ya Like A Sister', cursive;
+        font-size: 40px;
+      }
 
-        }
-        #date{
-          padding-top: 20px;
+      #name {}
 
-        }
-        #birth{
-          padding-top: 25px;
-        }
-        #goal{
-          padding-top: 22px;
-        }
-        #strength{
-          padding-top: 24px;
-        }
-        .profile {
-    position: absolute;
-    top: 33.2%; 
-    left: 6.2%; 
-    z-index: 2; 
-}
-        .photo__frame {
-          cursor: move;
-          overflow: hidden;
-          position: relative;
-          display: inline-block;
-          width: 310px;
-          height: 360px;
-}
-.photo__zoom {
-  width:40%;
-  display: inline-block;
-}
+      #date {
+        padding-top: 20px;
 
-        }
-    </style>
+      }
+
+      #birth {
+        padding-top: 25px;
+      }
+
+      #goal {
+        padding-top: 22px;
+      }
+
+      #strength {
+        padding-top: 24px;
+      }
+
+      .profile {
+        position: absolute;
+        top: 33.2%;
+        left: 6.2%;
+        z-index: 2;
+      }
+
+      .photo__frame {
+        cursor: move;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 259px;
+      }
+
+      .photo__zoom {
+        width: 40%;
+        display: inline-block;
+      }
+
+    }
+  </style>
 </head>
+
 <body>
-    <section class="container-fluid">
-        <div class="row d-flex justify-content-between ">
-            <!-- left -->
-            <div class="col-md-6 ps-5">
-                <div class="row d-flex justify-content-start mt-5">
-                    <img src="./images/card/card3/Logo.PNG" class="w-25 h-25">
-                    <a id="home" href="home.html"></a>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-md-4">
-                        <div class="profile">
-                            <div class="photo">
-                                <input type="file" accept="image/*">
-                                <!-- <div class="photo__helper"> -->
-                                    <div class="photo__frame photo__frame--circle">
-                                        <canvas class="photo__canvas"></canvas>
-                                    </div>
-                                <!-- </div> -->
-                                <div class="photo__options hide">
-                                    <div class="photo__zoom">
-                                        <input type="range" class="zoom-handler">
-                                    </div>
-                                    <!-- ถังขยะ -->
-                                    <a href="javascript:;" class="remove ps-2">
-                                        <!-- <i class="fa fa-trash"></i> -->
-                                        <img src="./images/card/card3/Trash.PNG" style="width: 32%;" >
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="overlay-text">
-                            <div class="row" id="name">
-                                <div id="display_name"></div>
-                            </div>
-                            <div class="row" id="date">
-                                <div id="display_date"></div>
-                            </div>
-                            <div class="row" id="birth">
-                                <div id="display_birth"></div>
-                            </div>
-                            <div class="row" id="goal">
-                                <div id="display_goal"></div>
-                            </div>
-                            <div class="row" id="strength">
-                                <div id="display_strength"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="overlay-image"></div> -->
-                <!-- Image uploading -->
-                
-                <!-- End of Image uploading --> 
-                <img src="./images/card/card3/Card2.PNG" > 
-                </div>
-                <div class="row d-flex justify-content-between mt-4">
-                    <div class="col-md-4 align-items-center ">
-                        <a href="card2.html" class="d-flex justify-content-center pt-4">
-                            <img src="./images/card/card3/Back.PNG" id="back" class="w-100">
-                        </a>
-                    </div>
-
-                    <div class="col-md-4">
-                        <a href="" class="d-flex justify-content-center mt-4 pt-2">
-                            <img src="./images/card/card3/Confirm.PNG" id="confirm" style="width: 90%;" >
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- left -->
-
-            <!-- right -->
-            <div class="col-md-6" style="padding-left: 6vw;">
-                <div class="row d-flex justify-content-end mt-3">
-                    <img src="./images/card/card3/credit.PNG" class="w-25">
-                </div>
-
-                <div class="row d-flex justify-content-center element-container" style="margin-top: 8vh;">
-                    <!-- element1 -->
-                    <div class="row d-flex justify-content-center ms-5 "  >
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center">
-                                <img src="./images/card/card3/elements/Frame1.PNG" class="element1-image ">
-                            </a> 
-                        </div>
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center">
-                                <img src="./images/card/card3/elements/Frame2.PNG" class="element1-image">
-                            </a> 
-                        </div>
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center">
-                                <img src="./images/card/card3/elements/Frame3.PNG" class="element1-image">
-                            </a> 
-                        </div>
-                    </div>
-
-                     <!-- element2 -->
-                    <div class="row d-flex justify-content-center ms-5">
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center ">
-                                <img src="./images/card/card3/elements/Jeans1.PNG" class="element2-image">
-                            </a> 
-                        </div>
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center">
-                                <img src="./images/card/card3/elements/Jeans2.PNG" class="element2-image">
-                            </a> 
-                        </div>
-                        <div class="col-md-2">
-                            <a href="" class="d-flex justify-content-center">
-                                <img src="./images/card/card3/elements/Jeans3.PNG" class="element2-image">
-                            </a> 
-                        </div>
-                    </div>
-
-                     <!-- element3 -->
-                    <div class="row ">
-                        <div class="row d-flex justify-content-center ms-5 ps-4">
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Butterfly1.PNG" class="element3-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Mouth1.PNG" class="element3-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Mouth2.PNG" class="element3-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Mouth3.PNG" class="element3-image">
-                                </a> 
-                            </div>
-                        </div>
-
-                        <div class="row d-flex justify-content-center ms-3">
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center ">
-                                    <img src="./images/card/card3/elements/Butterfly2.PNG" class="element4-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Heart.PNG" class="element4-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center">
-                                    <img src="./images/card/card3/elements/Star blue.PNG" class="element4-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center pe-4">
-                                    <img src="./images/card/card3/elements/Flower.PNG" class="element4-image">
-                                </a> 
-                            </div>
-                            <div class="col-md-2">
-                                <a href="" class="d-flex justify-content-center pe-5">
-                                    <img src="./images/card/card3/elements/Sunny.PNG" class="element4-image">
-                                </a> 
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <img src="./images/card/card3/Jeans.PNG" class="w-75"> -->
-                    <img src="./images/card/card3/Jeans.PNG" style="width: 38vw;">
-                </div>
-
-                <div class="row d-flex justify-content-center mt-5">
-                    <!-- <a id="home" href="home.html"></a> -->
-                    <a href="card4.html" class="d-flex justify-content-end pt-4 me-5 pe-4">
-                        <img src="./images/card/card3/Next.PNG" id="next" style="width: 32%;" >
-                    </a>
-                </div>
-                
-            </div>
-            <!-- right -->
+  <section class="container-fluid">
+    <div class="row d-flex justify-content-between ">
+      <!-- left -->
+      <div class="col-md-6 ps-5">
+        <div class="row d-flex justify-content-start mt-5">
+          <img src="./images/card/card3/Logo.PNG" class="w-25 h-25">
 
         </div>
-    </section>
-    
-    <script>
-        window.onload = function() {
-            var params = new URLSearchParams(window.location.search);
-            var name = params.get('name');
-            var date = params.get('date');
-            var birth = params.get('birth');
-            var goal = params.get('goal');
-            var strength = params.get('strength');
-            
-            document.getElementById("display_name").innerText = name;
-            document.getElementById("display_date").innerText = date;
-            document.getElementById("display_birth").innerText = birth;
-            document.getElementById("display_goal").innerText = goal;
-            document.getElementById("display_strength").innerText = strength;
-        }
-        </script>
-         <script src="js/uploadImg.js"></script>
-         <script>
-        $(document).ready(function() {
-    // เมื่อกดปุ่ม Confirm
-    $('#confirm').click(function(event) {
-        event.preventDefault(); // ป้องกันการโหลดหน้าใหม่เมื่อคลิกที่ลิงก์
+        <div class="row mt-4">
+          <div class="col-md-10">
+            <div class="profile">
+              <div class="photo">
+                <img id="uploaded_image" src="">
+                <div id="clicked_image_container"></div>
+              </div>
+            </div>
 
-        // บันทึกข้อมูลลง Local Storage
-        localStorage.setItem('profileImage', self.model.file);
+            <div id="clicked_image_3"></div>
 
-        // แสดงข้อความยืนยันการบันทึกข้อมูล
-        alert('ข้อมูลได้ถูกบันทึกลงใน Local Storage เรียบร้อยแล้ว');
+            <div class="overlay-text">
+              <div class="row" id="name">
+                <div id="display_name"></div>
+              </div>
+              <div class="row" id="date">
+                <div id="display_date"></div>
+              </div>
+              <div class="row" id="birth">
+                <div id="display_birth"></div>
+              </div>
+              <div class="row" id="goal">
+                <div id="display_goal"></div>
+              </div>
+              <div class="row" id="strength">
+                <div id="display_strength"></div>
+              </div>
+            </div>
+          </div>
+          <img src="./images/card/card3/Card1.PNG" id="cardImage">
+        </div>
+        <div class="row d-flex justify-content-between mt-4">
+          <div class="col-md-4 align-items-center ">
+            <a href="card2.html" class="d-flex justify-content-center pt-4">
+              <img src="./images/card/card3/Back.PNG" id="back" class="w-100">
+            </a>
+          </div>
+
+          <div class="col-md-4">
+            <a href="" class="d-flex justify-content-center mt-4 pt-2">
+              <img src="./images/card/card3/Next.PNG" id="next" style="width: 90%;">
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- left -->
+
+      <!-- right -->
+      <div class="col-md-6" style="padding-left: 6vw;">
+        <div class="row d-flex justify-content-end mt-3">
+          <img src="./images/card/card3/credit.PNG" class="w-25">
+        </div>
+
+        <div class="row d-flex justify-content-center element-container" style="margin-top: 8vh;">
+          <!-- element1 -->
+          <div class="row d-flex justify-content-center ms-5 ">
+            <div class="col-md-2">
+              <a href="" class="d-flex justify-content-center">
+                <img src="./images/card/card3/elements/Frame1.PNG" class="element1-image ">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="" class="d-flex justify-content-center">
+                <img src="./images/card/card3/elements/Frame2.PNG" class="element1-image">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="" class="d-flex justify-content-center">
+                <img src="./images/card/card3/elements/Frame3.PNG" class="element1-image">
+              </a>
+            </div>
+          </div>
+
+          <!-- element2 -->
+          <div class="row d-flex justify-content-center ms-5">
+            <div class="col-md-2">
+              <a href="#" class="d-flex justify-content-center "
+                onclick="changeCardImage('./images/card/card3/Card1.PNG')">
+                <img src="./images/card/card3/elements/Jeans1.PNG" class="element2-image">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="#" class="d-flex justify-content-center"
+                onclick="changeCardImage('./images/card/card3/Card2.PNG')">
+                <img src="./images/card/card3/elements/Jeans2.PNG" class="element2-image">
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a href="#" class="d-flex justify-content-center"
+                onclick="changeCardImage('./images/card/card3/Card3.PNG')">
+                <img src="./images/card/card3/elements/Jeans3.PNG" class="element2-image">
+              </a>
+            </div>
+          </div>
+
+          <!-- element3 -->
+          <div class="row ">
+            <div class="row d-flex justify-content-center ms-5 ps-4">
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Butterfly1.PNG" class="element3-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Mouth1.PNG" class="element3-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Mouth2.PNG" class="element3-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Mouth3.PNG" class="element3-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center ms-3">
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center ">
+                  <img src="./images/card/card3/elements/Butterfly2.PNG" class="element4-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Heart.PNG" class="element4-image" onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center">
+                  <img src="./images/card/card3/elements/Star blue.PNG" class="element4-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center pe-4">
+                  <img src="./images/card/card3/elements/Flower.PNG" class="element4-image"
+                    onclick="addImage(this.src)">
+                </a>
+              </div>
+              <div class="col-md-2">
+                <a href="#" class="d-flex justify-content-center mt-4 pt-2"
+                  onclick="convertLeftDivToCanvasAndDownload()">
+                  <img src="./images/card/card3/Next.PNG" id="next" style="width: 90%;">
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <img src="./images/card/card3/Jeans.PNG" style="width: 38vw;">
+        </div>
+
+        <div class="row d-flex justify-content-center mt-5">
+          <a id="home" href="home.html"></a>
+        </div>
+
+      </div>
+      <!-- right -->
+
+    </div>
+  </section>
+
+
+  <script>
+    function convertToPngAndDownload() {
+      html2canvas(document.querySelector(".container-fluid")).then(canvas => {
+        var imageData = canvas.toDataURL("image/png");
+        var anchor = document.createElement('a');
+        anchor.setAttribute("href", imageData);
+        anchor.setAttribute("download", "screenshot.png");
+        anchor.click();
+      });
+    }
+  </script>
+
+  <script>
+
+    $(document).ready(function () {
+      $('.element1-image').click(function (e) {
+        e.preventDefault();
+
+        var src = $(this).attr('src');
+        var newImage = $('<img>');
+        newImage.attr('src', src);
+        newImage.addClass('clicked-image');
+        $('#clicked_image_container').append(newImage);
+      });
     });
-});
-         </script>
 
-        
+  </script>
+
+  <script>
+    function changeCardImage(imagePath) {
+      document.getElementById('cardImage').src = imagePath;
+    }
+  </script>
+
+  <script>
+    function addImage(src) {
+      var clickedImageContainer = document.getElementById('clicked_image_3');
+      clickedImageContainer.innerHTML = '<img src="' + src + '" class="element3-image">';
+      clickedImageContainer.classList.add('after-click');
+    }
+  </script>
+
+  <canvas id="convertedCanvas" style="display: none;"></canvas>
+
+  <script>
+    function convertToCanvasAndShow() {
+      // Select the desired HTML content to convert
+      var htmlContent = document.querySelector(".col-md-6.ps-5");
+
+      // Use html2canvas to convert HTML content to canvas
+      html2canvas(htmlContent).then(function (canvas) {
+        // Show the canvas
+        canvas.style.display = "block";
+
+        // Append the canvas to the body or any other desired location
+        document.body.appendChild(canvas);
+      });
+    }
+  </script>
+
+  <script>
+    window.onload = function () {
+      var params = new URLSearchParams(window.location.search);
+      var name = params.get('name');
+      var date = params.get('date');
+      var birth = params.get('birth');
+      var goal = params.get('goal');
+      var strength = params.get('strength');
+      var imageData = params.get('imageData');
+
+      document.getElementById("display_name").innerText = name;
+      document.getElementById("display_date").innerText = date;
+      document.getElementById("display_birth").innerText = birth;
+      document.getElementById("display_goal").innerText = goal;
+      document.getElementById("display_strength").innerText = strength;
+      document.getElementById("uploaded_image").src = imageData;
+
+    }
+  </script>
+  <script>
+    window.onload = function () {
+      var params = new URLSearchParams(window.location.search);
+      var name = params.get('name');
+      var date = params.get('date');
+      var birth = params.get('birth');
+      var goal = params.get('goal');
+      var strength = params.get('strength');
+      var imageData = params.get('imageData');
+
+      document.getElementById("display_name").innerText = name;
+      document.getElementById("display_date").innerText = date;
+      document.getElementById("display_birth").innerText = birth;
+      document.getElementById("display_goal").innerText = goal;
+      document.getElementById("display_strength").innerText = strength;
+      document.getElementById("uploaded_image").src = imageData;
+    }
+  </script>
+
 </body>
+
 </html>
